@@ -5,7 +5,6 @@
 //  Created by mehrnoush abdinian on 04.08.22.
 //
 
-
 import UIKit
 
 class AppCoordinator: BaseCoordinator {
@@ -13,8 +12,8 @@ class AppCoordinator: BaseCoordinator {
     var navigationController: UINavigationController
     private var window: UIWindow
     
-    private var registerCoordinator: RegisterCoordinator?
-    
+    private var loginCoordinator: LoginCoordinator?
+
     init(in window: UIWindow) {
         self.navigationController = UINavigationController()
     
@@ -26,7 +25,7 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func start() {
-        registerCoordinator = RegisterCoordinator(with: navigationController)
-        registerCoordinator?.start()
+        loginCoordinator = LoginCoordinator(with: navigationController)
+        loginCoordinator?.start()
     }
 }

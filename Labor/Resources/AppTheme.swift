@@ -12,8 +12,9 @@ public enum AppTheme {
     static let borderWidth: CGFloat = 1
     static let backGround_color: UIColor = .init(red: 181/255, green: 42/255, blue: 41/255, alpha: 1)
     static let fixedBottomView_corner: CGFloat = 30
-    static let link_text_color = UIColor(red: 0, green: 119/255, blue: 204/255, alpha: 1)
-
+    static let link_text_color: UIColor = UIColor(red: 0, green: 119/255, blue: 204/255, alpha: 1)
+    static let gray_color: UIColor = UIColor(red: 166/255, green: 166/255, blue: 166/255, alpha: 1)
+    
     enum main_textField_button {
         static let height: CGFloat = 52
         static let cornerRadius: CGFloat = 12

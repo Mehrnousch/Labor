@@ -23,7 +23,7 @@ class RegisterCoordinator: BaseCoordinator {
     
     func start() {
         VC.coordinator = self
-        navigate(to: VC, with: .push)
+        navigate(to: VC, with: .present)
     }
 }
 

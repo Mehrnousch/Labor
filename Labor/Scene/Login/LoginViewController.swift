@@ -1,20 +1,34 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 11.08.22.
 //
 
+
 import UIKit
 
-class RegisterViewController: UIViewController {
+class LoginViewController: UIViewController {
     
-    var coordinator: RegisterCoordinator?
-    let baseView = RegisterView()
+    var coordinator: LoginCoordinator?
+    let baseView = LoginView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        actionButtons()
         layout()
+    }
+    
+    func actionButtons() {
+        baseView.loginButton.addAction { [weak self] in
+            guard let self = self else { return }
+            
+        }
+        
+        baseView.registerButton.addAction { [weak self] in
+            guard let self = self else { return }
+            self.coordinator?.toRegister()
+        }
     }
     
     func layout() {
@@ -27,4 +41,3 @@ class RegisterViewController: UIViewController {
         ])
     }
 }
-
