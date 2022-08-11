@@ -5,6 +5,7 @@
 //  Created by mehrnoush abdinian on 08.08.22.
 //
 
+
 import UIKit
 
 class ViewBuilder {
@@ -31,7 +32,7 @@ class ViewBuilder {
     }
     
     @discardableResult
-    func borderColor(_ color: UIColor, borderWidth: CGFloat = AppTheme.borderWidth) -> ViewBuilder {
+    func borderColor(_ color: UIColor, borderWidth: CGFloat = AppTheme.view.borderWidth) -> ViewBuilder {
         self.view.layer.borderColor = color.cgColor
         self.view.layer.borderWidth = borderWidth
         return self

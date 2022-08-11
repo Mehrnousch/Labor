@@ -48,6 +48,11 @@
 		565F8E1F28A53ACA00259852 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E1E28A53ACA00259852 /* LoginViewController.swift */; };
 		565F8E2128A53AE700259852 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2028A53AE700259852 /* LoginView.swift */; };
 		565F8E2328A53C2E00259852 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2228A53C2E00259852 /* UIButton.swift */; };
+		565F8E2628A53D5200259852 /* ExperimenteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2528A53D5200259852 /* ExperimenteCoordinator.swift */; };
+		565F8E2828A53D6F00259852 /* ExperimenteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2728A53D6F00259852 /* ExperimenteViewModel.swift */; };
+		565F8E2A28A53D7F00259852 /* ExperimenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2928A53D7F00259852 /* ExperimenteViewController.swift */; };
+		565F8E2D28A53DC100259852 /* ExperimenteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2C28A53DC100259852 /* ExperimenteView.swift */; };
+		565F8E2F28A53DDE00259852 /* ExperimenteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2E28A53DDE00259852 /* ExperimenteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +99,11 @@
 		565F8E1E28A53ACA00259852 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		565F8E2028A53AE700259852 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		565F8E2228A53C2E00259852 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		565F8E2528A53D5200259852 /* ExperimenteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimenteCoordinator.swift; sourceTree = "<group>"; };
+		565F8E2728A53D6F00259852 /* ExperimenteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimenteViewModel.swift; sourceTree = "<group>"; };
+		565F8E2928A53D7F00259852 /* ExperimenteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimenteViewController.swift; sourceTree = "<group>"; };
+		565F8E2C28A53DC100259852 /* ExperimenteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimenteView.swift; sourceTree = "<group>"; };
+		565F8E2E28A53DDE00259852 /* ExperimenteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimenteTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +173,7 @@
 			children = (
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
+				565F8E2428A53D3A00259852 /* Experimente */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -268,6 +279,26 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		565F8E2428A53D3A00259852 /* Experimente */ = {
+			isa = PBXGroup;
+			children = (
+				565F8E2528A53D5200259852 /* ExperimenteCoordinator.swift */,
+				565F8E2728A53D6F00259852 /* ExperimenteViewModel.swift */,
+				565F8E2928A53D7F00259852 /* ExperimenteViewController.swift */,
+				565F8E2B28A53DA300259852 /* Views */,
+			);
+			path = Experimente;
+			sourceTree = "<group>";
+		};
+		565F8E2B28A53DA300259852 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				565F8E2C28A53DC100259852 /* ExperimenteView.swift */,
+				565F8E2E28A53DDE00259852 /* ExperimenteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				562C114928A4E21F00863C45 /* MainSpinner.swift in Sources */,
+				565F8E2628A53D5200259852 /* ExperimenteCoordinator.swift in Sources */,
 				562C113128A4DF9800863C45 /* BaseCoordinator.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
@@ -354,10 +386,12 @@
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
+				565F8E2A28A53D7F00259852 /* ExperimenteViewController.swift in Sources */,
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,
 				562C110B28A4D26600863C45 /* AppDelegate.swift in Sources */,
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
+				565F8E2F28A53DDE00259852 /* ExperimenteTableViewCell.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
@@ -374,6 +408,8 @@
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
 				562C113C28A4E0EE00863C45 /* ViewBuilder.swift in Sources */,
+				565F8E2828A53D6F00259852 /* ExperimenteViewModel.swift in Sources */,
+				565F8E2D28A53DC100259852 /* ExperimenteView.swift in Sources */,
 				562C114528A4E1D600863C45 /* LoadingViewController.swift in Sources */,
 				562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */,
 				562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */,

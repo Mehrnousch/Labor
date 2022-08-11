@@ -5,6 +5,7 @@
 //  Created by mehrnoush abdinian on 08.08.22.
 //
 
+
 import UIKit
 
 class ButtonBuilder {
@@ -28,7 +29,7 @@ class ButtonBuilder {
     }
     
     @discardableResult
-    func setTitle(_ text: String, color: UIColor, fontSize: CGFloat = 16, fontWeight: FontWeight = .bold) -> ButtonBuilder {
+    func setTitle(_ text: String, color: UIColor, fontSize: CGFloat = AppTheme.label.minimumSize, fontWeight: FontWeight = .regular) -> ButtonBuilder {
         self.button.titleLabel?.font = UIFont.appPrimaryFontWith(size: fontSize, weight: fontWeight)
         self.button.setTitleColor(color, for: .normal)
         self.button.setTitle(text, for: .normal)
@@ -44,7 +45,7 @@ class ButtonBuilder {
     }
     
     @discardableResult
-    func setBorder(borderWidth: CGFloat = AppTheme.borderWidth, borderColor: String = "normal_main_textField_border_color") -> ButtonBuilder {
+    func setBorder(borderWidth: CGFloat = AppTheme.button.borderWidth, borderColor: String = "normal_main_textField_border_color") -> ButtonBuilder {
         self.button.layer.borderWidth = borderWidth
         self.button.layer.borderColor = UIColor(named: borderColor)?.cgColor
         return self
@@ -132,3 +133,4 @@ class ButtonBuilder {
         return button
     }
 }
+
