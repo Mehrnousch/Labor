@@ -29,7 +29,7 @@ class TextViewBuilder {
     
     @discardableResult
     func setBorder() -> TextViewBuilder {
-        textview.layer.cornerRadius = AppTheme.main_textField.cornerRadius
+        textview.layer.cornerRadius = AppTheme.main_textField_button.cornerRadius
         textview.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.04).cgColor
         textview.layer.shadowOpacity = 1
         textview.layer.shadowRadius = 24

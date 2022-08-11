@@ -31,7 +31,7 @@ class TextFieldBuilder {
     }
     
     @discardableResult
-    func mainSetting(keyboardType: UIKeyboardType, radius: CGFloat = AppTheme.main_textField.cornerRadius, placeholder: String, textAlignment: NSTextAlignment, textColor: UIColor = .clear, backGroundColor: UIColor) -> TextFieldBuilder {
+    func mainSetting(keyboardType: UIKeyboardType, radius: CGFloat = AppTheme.main_textField_button.cornerRadius, placeholder: String, textAlignment: NSTextAlignment, textColor: UIColor = .clear, backGroundColor: UIColor) -> TextFieldBuilder {
         self.textfield.layer.cornerRadius = radius
         self.textfield.keyboardType = keyboardType
         self.textfield.placeholder = placeholder
@@ -43,14 +43,14 @@ class TextFieldBuilder {
     
     @discardableResult
     func setBorderDeselected() -> TextFieldBuilder {
-        self.textfield.layer.borderWidth = AppTheme.main_textField.borderWidth
-        self.textfield.layer.borderColor = AppTheme.main_textField.borderColor.cgColor
+        self.textfield.layer.borderWidth = AppTheme.main_textField_button.borderWidth
+        self.textfield.layer.borderColor = AppTheme.main_textField_button.borderColor.cgColor
         return self
     }
     
     @discardableResult
     func setBorderSelected() -> TextFieldBuilder {
-        self.textfield.layer.borderWidth = AppTheme.main_textField.borderWidth
+        self.textfield.layer.borderWidth = AppTheme.main_textField_button.borderWidth
         self.textfield.layer.borderColor = UIColor(named: "select_main_textField_border_color")?.cgColor
         return self
     }

@@ -28,7 +28,7 @@ class ButtonBuilder {
     }
     
     @discardableResult
-    func setTitle(_ text: String, color: UIColor, fontSize: CGFloat = 14, fontWeight: FontWeight = .bold) -> ButtonBuilder {
+    func setTitle(_ text: String, color: UIColor, fontSize: CGFloat = 16, fontWeight: FontWeight = .bold) -> ButtonBuilder {
         self.button.titleLabel?.font = UIFont.appPrimaryFontWith(size: fontSize, weight: fontWeight)
         self.button.setTitleColor(color, for: .normal)
         self.button.setTitle(text, for: .normal)
