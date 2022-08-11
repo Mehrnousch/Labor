@@ -2,7 +2,7 @@
 //  BaseCoordinator.swift
 //  Labor
 //
-//  Created by mehrnoush abdinian on 04.08.22.
+//  Created by mehrnoush abdinian on 11.08.22.
 //
 
 import UIKit
@@ -30,7 +30,7 @@ extension BaseCoordinator {
     func start() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
-
+    
     func finish() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }

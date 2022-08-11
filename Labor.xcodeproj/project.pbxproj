@@ -39,6 +39,10 @@
 		562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C115C28A4E3A700863C45 /* PaddingTextField.swift */; };
 		562C116028A4E40A00863C45 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C115F28A4E40A00863C45 /* AppTheme.swift */; };
 		562C116228A4E44000863C45 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116128A4E44000863C45 /* Utility.swift */; };
+		562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116428A4FD2100863C45 /* RegisterCoordinator.swift */; };
+		562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116628A4FDB500863C45 /* RegisterViewModel.swift */; };
+		562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116828A4FDC800863C45 /* RegisterViewController.swift */; };
+		562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116A28A4FDF400863C45 /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		562C115C28A4E3A700863C45 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		562C115F28A4E40A00863C45 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		562C116128A4E44000863C45 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		562C116428A4FD2100863C45 /* RegisterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCoordinator.swift; sourceTree = "<group>"; };
+		562C116628A4FDB500863C45 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		562C116828A4FDC800863C45 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		562C116A28A4FDF400863C45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				562C116328A4FCF500863C45 /* Register */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -223,6 +232,17 @@
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		562C116328A4FCF500863C45 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				562C116428A4FD2100863C45 /* RegisterCoordinator.swift */,
+				562C116628A4FDB500863C45 /* RegisterViewModel.swift */,
+				562C116828A4FDC800863C45 /* RegisterViewController.swift */,
+				562C116A28A4FDF400863C45 /* RegisterView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,12 +339,16 @@
 				562C114F28A4E2A600863C45 /* String.swift in Sources */,
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
+				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
+				562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */,
 				562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */,
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
+				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
 				562C113C28A4E0EE00863C45 /* ViewBuilder.swift in Sources */,
 				562C114528A4E1D600863C45 /* LoadingViewController.swift in Sources */,
 				562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */,
+				562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
