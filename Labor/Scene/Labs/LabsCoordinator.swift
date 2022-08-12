@@ -9,13 +9,14 @@
 import UIKit
 
 protocol LabsCoordinatorDelegate {
-    
+    func toCalendar()
 }
 
 class LabsCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
     let VC = LabsViewController()
+    private var calendarCoordinator: CalendarCoordinator!
     
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -29,5 +30,8 @@ class LabsCoordinator: BaseCoordinator {
 
 //MARK: - Delegate
 extension LabsCoordinator: LabsCoordinatorDelegate {
-
+    func toCalendar() {
+        calendarCoordinator = CalendarCoordinator(with: navigationController)
+        calendarCoordinator?.start()
+    }
 }

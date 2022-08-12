@@ -10,6 +10,8 @@ import UIKit
 
 class LabsView: UIView {
     
+    var selectedCell: ()-> Void = {}
+
     var list: [String] = []
     let labsTableView: UITableView = {
         let tableView = UITableView()
@@ -68,5 +70,11 @@ extension LabsView: UITableViewDelegate, UITableViewDataSource {
 //        let cellRow = list[indexPath.row]
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! labsTableViewCell
+        cell.selectionStyle = .none
+        selectedCell()
     }
 }

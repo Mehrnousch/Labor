@@ -32,7 +32,7 @@ class ViewBuilder {
     }
     
     @discardableResult
-    func borderColor(_ color: UIColor, borderWidth: CGFloat = AppTheme.view.borderWidth) -> ViewBuilder {
+    func setBorder(_ color: UIColor, borderWidth: CGFloat = AppTheme.view.borderWidth) -> ViewBuilder {
         self.view.layer.borderColor = color.cgColor
         self.view.layer.borderWidth = borderWidth
         return self

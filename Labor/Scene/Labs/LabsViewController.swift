@@ -16,14 +16,21 @@ class LabsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
+        actionForSelectedCell()
         layout()
     }
     
-    func navigtionBarConfigure() {
+    private func navigtionBarConfigure() {
         title = "Labs"
     }
     
-    func layout() {
+    private func actionForSelectedCell() {
+        baseView.selectedCell = {
+            self.coordinator?.toCalendar()
+        }
+    }
+    
+    private func layout() {
         view.addSubview(baseView)
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: baseView.topAnchor),

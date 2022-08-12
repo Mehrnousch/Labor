@@ -12,7 +12,7 @@ class AppCoordinator: BaseCoordinator {
     var navigationController: UINavigationController
     private var window: UIWindow
     
-    private var loginCoordinator: LoginCoordinator?
+    private var loginCoordinator: CalendarCoordinator?
 
     init(in window: UIWindow) {
         self.navigationController = UINavigationController()
@@ -25,7 +25,7 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func start() {
-        loginCoordinator = LoginCoordinator(with: navigationController)
+        loginCoordinator = CalendarCoordinator(with: navigationController)
         loginCoordinator?.start()
     }
 }

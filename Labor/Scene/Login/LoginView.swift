@@ -10,7 +10,7 @@ import UIKit
 class LoginView: UIView {
     
     let fixedTopView = ViewBuilder()
-        .setBackground(AppTheme.view.backGround_color)
+        .setBackground(AppTheme.view.backGround_red_color)
         .build()
     
     let logoImage = ImageBuilder()
@@ -66,7 +66,7 @@ class LoginView: UIView {
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = AppTheme.view.backGround_color
+        backgroundColor = AppTheme.view.backGround_red_color
     }
     
     func layout() {

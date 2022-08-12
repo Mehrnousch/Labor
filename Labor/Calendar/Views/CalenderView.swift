@@ -10,6 +10,10 @@ import UIKit
 
 class CalendarView: UIView {
     
+    let titleView = LabelBuilder()
+        .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .build()
+    
     var list: [String] = []
     let calendarTableView: UITableView = {
         let tableView = UITableView()
@@ -42,9 +46,14 @@ class CalendarView: UIView {
     }
     
     private func layout() {
+        addSubview(titleView)
         addSubview(calendarTableView)
         NSLayoutConstraint.activate([
-            calendarTableView.topAnchor.constraint(equalTo: topAnchor),
+            titleView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            calendarTableView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 20),
             calendarTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             calendarTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             calendarTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -68,5 +77,11 @@ extension CalendarView: UITableViewDelegate, UITableViewDataSource {
 //        let cellRow = list[indexPath.row]
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! CalendarTableViewCell
+        cell.selectionStyle = .none
+        
     }
 }

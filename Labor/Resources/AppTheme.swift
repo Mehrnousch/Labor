@@ -18,9 +18,11 @@ public enum AppTheme {
     }
     
     enum view {
-        static let backGround_color: UIColor = .init(red: 181/255, green: 42/255, blue: 41/255, alpha: 1)
+        static let backGround_red_color: UIColor = .init(red: 181/255, green: 42/255, blue: 41/255, alpha: 1)
+        static let backGround_blue_color: UIColor = .init(red: 192/255, green: 216/255, blue: 237/255, alpha: 1)
         static let fixedBottomView_corner: CGFloat = 30
         static let borderWidth: CGFloat = 1
+        static let cornerRadius: CGFloat = 12
     }
     
     enum cell {
