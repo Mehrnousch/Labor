@@ -17,10 +17,10 @@ class LoginView: UIView {
         .setImage("Logo")
         .build()
 
-    let logoLabel1 = LabelBuilder()
+    let logoTopLabel = LabelBuilder()
         .setText("Institut für Werkstoffwissenschaften und -technologien", color: .white, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
         .build()
-    let logoLabel2 = LabelBuilder()
+    let logoBottomLabel = LabelBuilder()
         .setText("Werkstofftechnik", color: .white, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
         .build()
     
@@ -72,8 +72,8 @@ class LoginView: UIView {
     func layout() {
         addSubview(fixedTopView)
         fixedTopView.addSubview(logoImage)
-        fixedTopView.addSubview(logoLabel1)
-        fixedTopView.addSubview(logoLabel2)
+        fixedTopView.addSubview(logoTopLabel)
+        fixedTopView.addSubview(logoBottomLabel)
         addSubview(fixedBottomView)
         fixedBottomView.addSubview(fixedBottomViewHeader)
         fixedBottomView.addSubview(emailTextField)
@@ -92,11 +92,11 @@ class LoginView: UIView {
             logoImage.heightAnchor.constraint(equalToConstant: 148),
             logoImage.widthAnchor.constraint(equalToConstant: 199),
             
-            logoLabel1.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20),
-            logoLabel1.centerXAnchor.constraint(equalTo: centerXAnchor),
+            logoTopLabel.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20),
+            logoTopLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            logoLabel2.topAnchor.constraint(equalTo: logoLabel1.bottomAnchor, constant: 5),
-            logoLabel2.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
+            logoBottomLabel.topAnchor.constraint(equalTo: logoTopLabel.bottomAnchor, constant: 5),
+            logoBottomLabel.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
            
             
             
