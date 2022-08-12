@@ -9,12 +9,14 @@
 import UIKit
 
 protocol ReservedExperimentCoordinatorDelegate {
+    func toLabs()
 }
 
 class ReservedExperimentCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
     let VC = ReservedExperimentViewController()
+    private var labsCoordinator: LabsCoordinator!
 
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -28,5 +30,8 @@ class ReservedExperimentCoordinator: BaseCoordinator {
 
 //MARK: - Delegate
 extension ReservedExperimentCoordinator: ReservedExperimentCoordinatorDelegate {
-    
+    func toLabs() {
+        labsCoordinator = LabsCoordinator(with: navigationController)
+        labsCoordinator?.start()
+    }
 }

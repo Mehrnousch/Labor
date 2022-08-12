@@ -32,7 +32,7 @@ class ReservedExperimentViewController: UIViewController {
     }
     
     @objc func rightHandAction() {
-        print("right bar button action")
+        self.coordinator?.toLabs()
     }
 
     @objc func leftHandAction() {

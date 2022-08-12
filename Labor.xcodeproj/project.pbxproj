@@ -54,6 +54,12 @@
 		565F8E2D28A53DC100259852 /* ReservedExperimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2C28A53DC100259852 /* ReservedExperimentView.swift */; };
 		565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2E28A53DDE00259852 /* ReservedExperimentTableViewCell.swift */; };
 		565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 565F8E3228A69AED00259852 /* IQKeyboardManagerSwift */; };
+		565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3528A6A9A000259852 /* LabsCoordinator.swift */; };
+		565F8E3828A6A9B400259852 /* LabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3728A6A9B400259852 /* LabsViewModel.swift */; };
+		565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3928A6A9C400259852 /* LabsViewController.swift */; };
+		565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3C28A6AB2F00259852 /* LabsView.swift */; };
+		565F8E3F28A6AB5400259852 /* labsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3E28A6AB5400259852 /* labsTableViewCell.swift */; };
+		565F8E4128A6ACC800259852 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4028A6ACC800259852 /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +111,12 @@
 		565F8E2928A53D7F00259852 /* ReservedExperimentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedExperimentController.swift; sourceTree = "<group>"; };
 		565F8E2C28A53DC100259852 /* ReservedExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedExperimentView.swift; sourceTree = "<group>"; };
 		565F8E2E28A53DDE00259852 /* ReservedExperimentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedExperimentTableViewCell.swift; sourceTree = "<group>"; };
+		565F8E3528A6A9A000259852 /* LabsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsCoordinator.swift; sourceTree = "<group>"; };
+		565F8E3728A6A9B400259852 /* LabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsViewModel.swift; sourceTree = "<group>"; };
+		565F8E3928A6A9C400259852 /* LabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsViewController.swift; sourceTree = "<group>"; };
+		565F8E3C28A6AB2F00259852 /* LabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsView.swift; sourceTree = "<group>"; };
+		565F8E3E28A6AB5400259852 /* labsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = labsTableViewCell.swift; sourceTree = "<group>"; };
+		565F8E4028A6ACC800259852 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +188,7 @@
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
+				565F8E3428A6A98200259852 /* Labs */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 				562C115228A4E2E500863C45 /* CGRect.swift */,
 				562C115428A4E30300863C45 /* UITextView.swift */,
 				565F8E2228A53C2E00259852 /* UIButton.swift */,
+				565F8E4028A6ACC800259852 /* UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -297,6 +311,26 @@
 			children = (
 				565F8E2C28A53DC100259852 /* ReservedExperimentView.swift */,
 				565F8E2E28A53DDE00259852 /* ReservedExperimentTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		565F8E3428A6A98200259852 /* Labs */ = {
+			isa = PBXGroup;
+			children = (
+				565F8E3528A6A9A000259852 /* LabsCoordinator.swift */,
+				565F8E3728A6A9B400259852 /* LabsViewModel.swift */,
+				565F8E3928A6A9C400259852 /* LabsViewController.swift */,
+				565F8E3B28A6AB0800259852 /* Views */,
+			);
+			path = Labs;
+			sourceTree = "<group>";
+		};
+		565F8E3B28A6AB0800259852 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				565F8E3C28A6AB2F00259852 /* LabsView.swift */,
+				565F8E3E28A6AB5400259852 /* labsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,17 +417,22 @@
 			files = (
 				562C114928A4E21F00863C45 /* MainSpinner.swift in Sources */,
 				565F8E2628A53D5200259852 /* ReservedExperimentCoordinator.swift in Sources */,
+				565F8E3F28A6AB5400259852 /* labsTableViewCell.swift in Sources */,
+				565F8E3828A6A9B400259852 /* LabsViewModel.swift in Sources */,
 				562C113128A4DF9800863C45 /* BaseCoordinator.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
+				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
+				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
+				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
 				565F8E2A28A53D7F00259852 /* ReservedExperimentController.swift in Sources */,
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,
@@ -412,6 +451,7 @@
 				565F8E2328A53C2E00259852 /* UIButton.swift in Sources */,
 				562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */,
 				562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */,
+				565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */,
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
