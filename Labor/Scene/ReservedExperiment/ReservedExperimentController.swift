@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ExperimenteViewController: UIViewController {
+class ReservedExperimentViewController: UIViewController {
     
-    var coordinator: ExperimenteCoordinator?
-    let baseView = ExperimenteView()
+    var coordinator: ReservedExperimentCoordinator?
+    let baseView = ReservedExperimentView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ExperimenteViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Experimente"
+        title = "Tests gemacht"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))

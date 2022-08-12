@@ -5,10 +5,9 @@
 //  Created by mehrnoush abdinian on 11.08.22.
 //
 
-
 import UIKit
 
-class ExperimenteTableViewCell: UITableViewCell {
+class ReservedExperimentTableViewCell: UITableViewCell {
     
     let containerView = ViewBuilder()
         .setCornerRadius(AppTheme.cell.corner)
@@ -16,11 +15,11 @@ class ExperimenteTableViewCell: UITableViewCell {
         .build()
     
     let labName = LabelBuilder()
-        .setText("lab NaExperiExperimentExperimentExperimentExperimentExperimentExperimentmentme", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
+        .setText("lab NaExe", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
         .build()
     
     let titleExperiment = LabelBuilder()
-        .setText("title ExperiExperimentExperimentExperimentExperimentExperimentExperimentment", color: .black, fontSize: AppTheme.label.maximumSize, fontWeight: .bold)
+        .setText("title ExperiExper", color: .black, fontSize: AppTheme.label.maximumSize, fontWeight: .bold)
         .build()
     
     let containerDateExperiment = ViewBuilder()
@@ -29,9 +28,7 @@ class ExperimenteTableViewCell: UITableViewCell {
         .build()
     
     let dateExperiment = LabelBuilder()
-        .setText("date", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
-        .setBackground(.white)
-        .setCornerRadius(4)
+        .setText("2020-10-20  23-23 am", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
         .build()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -52,8 +49,8 @@ class ExperimenteTableViewCell: UITableViewCell {
         contentView.addSubview(containerView)
         containerView.addSubview(labName)
         containerView.addSubview(titleExperiment)
-        containerView.addSubview(dateExperiment)
-//        containerDateExperiment.addSubview(dateExperiment)
+        containerView.addSubview(containerDateExperiment)
+        containerDateExperiment.addSubview(dateExperiment)
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
@@ -68,15 +65,14 @@ class ExperimenteTableViewCell: UITableViewCell {
             titleExperiment.leadingAnchor.constraint(equalTo: labName.leadingAnchor),
             titleExperiment.trailingAnchor.constraint(equalTo: labName.trailingAnchor),
             
-            dateExperiment.topAnchor.constraint(equalTo: titleExperiment.bottomAnchor, constant: 20),
-            dateExperiment.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
-            dateExperiment.leadingAnchor.constraint(equalTo: labName.leadingAnchor),
-            dateExperiment.trailingAnchor.constraint(equalTo: labName.trailingAnchor),
-//
-//            dateExperiment.topAnchor.constraint(equalTo: containerDateExperiment.topAnchor, constant: 2),
-//            dateExperiment.bottomAnchor.constraint(equalTo: containerDateExperiment.bottomAnchor, constant: -2),
-//            dateExperiment.trailingAnchor.constraint(equalTo: labName.trailingAnchor, constant: 6),
-//            dateExperiment.leadingAnchor.constraint(equalTo: containerDateExperiment.leadingAnchor, constant: 6),
+            containerDateExperiment.topAnchor.constraint(equalTo: titleExperiment.bottomAnchor, constant: 20),
+            containerDateExperiment.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
+            containerDateExperiment.leadingAnchor.constraint(equalTo: labName.leadingAnchor),
+            
+            dateExperiment.topAnchor.constraint(equalTo: containerDateExperiment.topAnchor, constant: 2),
+            dateExperiment.bottomAnchor.constraint(equalTo: containerDateExperiment.bottomAnchor, constant: -2),
+            dateExperiment.trailingAnchor.constraint(equalTo: containerDateExperiment.trailingAnchor, constant: -6),
+            dateExperiment.leadingAnchor.constraint(equalTo: containerDateExperiment.leadingAnchor, constant: 6),
         ])
     }
     

@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ExperimenteCoordinatorDelegate {
+protocol ReservedExperimentCoordinatorDelegate {
 }
 
-class ExperimenteCoordinator: BaseCoordinator {
+class ReservedExperimentCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
-    let VC = ExperimenteViewController()
+    let VC = ReservedExperimentViewController()
 
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -27,6 +27,6 @@ class ExperimenteCoordinator: BaseCoordinator {
 }
 
 //MARK: - Delegate
-extension ExperimenteCoordinator: ExperimenteCoordinatorDelegate {
+extension ReservedExperimentCoordinator: ReservedExperimentCoordinatorDelegate {
     
 }

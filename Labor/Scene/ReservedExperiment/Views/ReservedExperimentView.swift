@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExperimenteView: UIView {
+class ReservedExperimentView: UIView {
     
     var list: [String] = []
     let experimenteTableView: UITableView = {
@@ -22,7 +22,7 @@ class ExperimenteView: UIView {
         tableView.isScrollEnabled = true
         tableView.layer.masksToBounds = true
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(ExperimenteTableViewCell.self, forCellReuseIdentifier: "ExperimenteTableViewCell")
+        tableView.register(ReservedExperimentTableViewCell.self, forCellReuseIdentifier: "ReservedExperimentTableViewCell")
         return tableView
     }()
     
@@ -58,13 +58,13 @@ class ExperimenteView: UIView {
 
 
 //MARK: - Delegate & DataSource
-extension ExperimenteView: UITableViewDelegate, UITableViewDataSource {
+extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ExperimenteTableViewCell", for: indexPath) as! ExperimenteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReservedExperimentTableViewCell", for: indexPath) as! ReservedExperimentTableViewCell
 //        let cellRow = list[indexPath.row]
 
         return cell
