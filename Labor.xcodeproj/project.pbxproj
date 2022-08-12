@@ -16,7 +16,7 @@
 		562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 562C112528A4D53E00863C45 /* Roboto-Light.ttf */; };
 		562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 562C112628A4D53E00863C45 /* Roboto-Bold.ttf */; };
 		562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 562C112728A4D53E00863C45 /* Roboto-Regular.ttf */; };
-		562C112F28A4DF7B00863C45 /* AppCoordinatot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C112E28A4DF7B00863C45 /* AppCoordinatot.swift */; };
+		562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C112E28A4DF7B00863C45 /* AppCoordinator.swift */; };
 		562C113128A4DF9800863C45 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C113028A4DF9800863C45 /* BaseCoordinator.swift */; };
 		562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C113528A4E02F00863C45 /* ButtonBuilder.swift */; };
 		562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C113728A4E06800863C45 /* ImageBuilder.swift */; };
@@ -53,6 +53,7 @@
 		565F8E2A28A53D7F00259852 /* ExperimenteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2928A53D7F00259852 /* ExperimenteViewController.swift */; };
 		565F8E2D28A53DC100259852 /* ExperimenteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2C28A53DC100259852 /* ExperimenteView.swift */; };
 		565F8E2F28A53DDE00259852 /* ExperimenteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E2E28A53DDE00259852 /* ExperimenteTableViewCell.swift */; };
+		565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 565F8E3228A69AED00259852 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +68,7 @@
 		562C112528A4D53E00863C45 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		562C112628A4D53E00863C45 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		562C112728A4D53E00863C45 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		562C112E28A4DF7B00863C45 /* AppCoordinatot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatot.swift; sourceTree = "<group>"; };
+		562C112E28A4DF7B00863C45 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		562C113028A4DF9800863C45 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		562C113528A4E02F00863C45 /* ButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBuilder.swift; sourceTree = "<group>"; };
 		562C113728A4E06800863C45 /* ImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBuilder.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +164,7 @@
 			children = (
 				562C110A28A4D26600863C45 /* AppDelegate.swift */,
 				562C110C28A4D26600863C45 /* SceneDelegate.swift */,
-				562C112E28A4DF7B00863C45 /* AppCoordinatot.swift */,
+				562C112E28A4DF7B00863C45 /* AppCoordinator.swift */,
 				562C113028A4DF9800863C45 /* BaseCoordinator.swift */,
 			);
 			path = Base;
@@ -181,6 +183,7 @@
 		562C113228A4DFEE00863C45 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				562C114328A4E16200863C45 /* Extension */,
 				562C113428A4DFFA00863C45 /* Builder */,
 				562C113328A4DFF600863C45 /* Component */,
 			);
@@ -191,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				562C114128A4E15900863C45 /* LoadingVC */,
-				562C114328A4E16200863C45 /* Extension */,
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
 			);
@@ -315,6 +317,9 @@
 			dependencies = (
 			);
 			name = Labor;
+			packageProductDependencies = (
+				565F8E3228A69AED00259852 /* IQKeyboardManagerSwift */,
+			);
 			productName = Labor;
 			productReference = 562C110728A4D26600863C45 /* Labor.app */;
 			productType = "com.apple.product-type.application";
@@ -343,6 +348,9 @@
 				Base,
 			);
 			mainGroup = 562C10FE28A4D26600863C45;
+			packageReferences = (
+				565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 562C110828A4D26600863C45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,7 +387,7 @@
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
-				562C112F28A4DF7B00863C45 /* AppCoordinatot.swift in Sources */,
+				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
@@ -620,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		565F8E3228A69AED00259852 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		562C111328A4D26600863C45 /* Labor.xcdatamodeld */ = {
