@@ -9,6 +9,22 @@ import UIKit
 
 class LoginView: UIView {
     
+    let fixedTopView = ViewBuilder()
+        .setBackground(AppTheme.view.backGround_color)
+        .build()
+    
+    let logoImage = ImageBuilder()
+        .setImage("Logo")
+        .build()
+
+    let logoLabel1 = LabelBuilder()
+        .setText("Institut für Werkstoffwissenschaften und -technologien", color: .white, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
+        .build()
+    let logoLabel2 = LabelBuilder()
+        .setText("Werkstofftechnik", color: .white, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
+        .build()
+    
+    
     let fixedBottomView = ViewBuilder()
         .setBackground(.white)
         .setCornerRadius(AppTheme.view.fixedBottomView_corner, onlyTop: true, onlyBottom: false)
@@ -54,6 +70,10 @@ class LoginView: UIView {
     }
     
     func layout() {
+        addSubview(fixedTopView)
+        fixedTopView.addSubview(logoImage)
+        fixedTopView.addSubview(logoLabel1)
+        fixedTopView.addSubview(logoLabel2)
         addSubview(fixedBottomView)
         fixedBottomView.addSubview(fixedBottomViewHeader)
         fixedBottomView.addSubview(emailTextField)
@@ -61,6 +81,28 @@ class LoginView: UIView {
         fixedBottomView.addSubview(loginButton)
         fixedBottomView.addSubview(registerButton)
         NSLayoutConstraint.activate([
+            
+            fixedTopView.topAnchor.constraint(equalTo: topAnchor),
+            fixedTopView.bottomAnchor.constraint(equalTo: fixedBottomView.topAnchor),
+            fixedTopView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            fixedTopView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            logoImage.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
+            logoImage.topAnchor.constraint(equalTo: fixedTopView.topAnchor, constant: 70),
+            logoImage.heightAnchor.constraint(equalToConstant: 148),
+            logoImage.widthAnchor.constraint(equalToConstant: 199),
+            
+            logoLabel1.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20),
+            logoLabel1.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            logoLabel2.topAnchor.constraint(equalTo: logoLabel1.bottomAnchor, constant: 5),
+            logoLabel2.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
+           
+            
+            
+            
+            
+            
             fixedBottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
             fixedBottomView.leadingAnchor.constraint(equalTo: leadingAnchor),
             fixedBottomView.trailingAnchor.constraint(equalTo: trailingAnchor),
