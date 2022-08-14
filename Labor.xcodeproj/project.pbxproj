@@ -72,10 +72,13 @@
 		565F8E6228A7F0F800259852 /* LabBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6128A7F0F800259852 /* LabBookViewController.swift */; };
 		565F8E6428A7F11300259852 /* LabBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6328A7F11300259852 /* LabBookView.swift */; };
 		565F8E6628A7F12300259852 /* LabBookViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6528A7F12300259852 /* LabBookViewCell.swift */; };
-		565F8E6A28A82F1F00259852 /* AddDescriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6928A82F1F00259852 /* AddDescriptionCoordinator.swift */; };
-		565F8E6C28A82F3E00259852 /* AddDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6B28A82F3E00259852 /* AddDescriptionViewModel.swift */; };
-		565F8E6E28A82F5E00259852 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6D28A82F5E00259852 /* AddDescriptionViewController.swift */; };
-		565F8E7028A82F7600259852 /* AddDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6F28A82F7600259852 /* AddDescriptionView.swift */; };
+		565F8E6A28A82F1F00259852 /* DescriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */; };
+		565F8E6C28A82F3E00259852 /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */; };
+		565F8E6E28A82F5E00259852 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6D28A82F5E00259852 /* DescriptionViewController.swift */; };
+		565F8E7028A82F7600259852 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6F28A82F7600259852 /* DescriptionView.swift */; };
+		565F8E7B28A84D3300259852 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E7928A84D3300259852 /* 1.png */; };
+		565F8E7C28A84D3300259852 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E7A28A84D3300259852 /* 2.jpg */; };
+		565F8E7E28A9107000259852 /* pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E7D28A9107000259852 /* pdf.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,10 +148,13 @@
 		565F8E6128A7F0F800259852 /* LabBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewController.swift; sourceTree = "<group>"; };
 		565F8E6328A7F11300259852 /* LabBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookView.swift; sourceTree = "<group>"; };
 		565F8E6528A7F12300259852 /* LabBookViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewCell.swift; sourceTree = "<group>"; };
-		565F8E6928A82F1F00259852 /* AddDescriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionCoordinator.swift; sourceTree = "<group>"; };
-		565F8E6B28A82F3E00259852 /* AddDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewModel.swift; sourceTree = "<group>"; };
-		565F8E6D28A82F5E00259852 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
-		565F8E6F28A82F7600259852 /* AddDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionView.swift; sourceTree = "<group>"; };
+		565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCoordinator.swift; sourceTree = "<group>"; };
+		565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
+		565F8E6D28A82F5E00259852 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		565F8E6F28A82F7600259852 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		565F8E7928A84D3300259852 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		565F8E7A28A84D3300259852 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		565F8E7D28A9107000259852 /* pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,8 +190,6 @@
 			children = (
 				562C112C28A4DF0E00863C45 /* Base */,
 				562C112D28A4DF1A00863C45 /* Scene */,
-				565F8E6728A82ED000259852 /* AddDescription */,
-				565F8E4228A6CAA800259852 /* Calendar */,
 				562C113228A4DFEE00863C45 /* Application */,
 				562C115E28A4E3CD00863C45 /* Resources */,
 				562C111B28A4D26700863C45 /* Info.plist */,
@@ -223,7 +227,9 @@
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
 				565F8E3428A6A98200259852 /* Labs */,
+				565F8E4228A6CAA800259852 /* Calendar */,
 				565F8E5B28A7E9CF00259852 /* LabBook */,
+				565F8E6728A82ED000259852 /* Description */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -303,7 +309,10 @@
 				562C115F28A4E40A00863C45 /* AppTheme.swift */,
 				562C116128A4E44000863C45 /* Utility.swift */,
 				562C111628A4D26700863C45 /* Assets.xcassets */,
+				565F8E7928A84D3300259852 /* 1.png */,
+				565F8E7A28A84D3300259852 /* 2.jpg */,
 				565F8E5528A6DDAF00259852 /* Logo.png */,
+				565F8E7D28A9107000259852 /* pdf.png */,
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -412,15 +421,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		565F8E6728A82ED000259852 /* AddDescription */ = {
+		565F8E6728A82ED000259852 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				565F8E6928A82F1F00259852 /* AddDescriptionCoordinator.swift */,
-				565F8E6B28A82F3E00259852 /* AddDescriptionViewModel.swift */,
-				565F8E6D28A82F5E00259852 /* AddDescriptionViewController.swift */,
-				565F8E6F28A82F7600259852 /* AddDescriptionView.swift */,
+				565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */,
+				565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */,
+				565F8E6D28A82F5E00259852 /* DescriptionViewController.swift */,
+				565F8E6F28A82F7600259852 /* DescriptionView.swift */,
 			);
-			path = AddDescription;
+			path = Description;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,9 +497,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				562C112828A4D53E00863C45 /* Roboto-Medium.ttf in Resources */,
+				565F8E7B28A84D3300259852 /* 1.png in Resources */,
 				562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */,
+				565F8E7C28A84D3300259852 /* 2.jpg in Resources */,
 				565F8E5628A6DDAF00259852 /* Logo.png in Resources */,
 				562C111A28A4D26700863C45 /* LaunchScreen.storyboard in Resources */,
+				565F8E7E28A9107000259852 /* pdf.png in Resources */,
 				562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */,
 				562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */,
 				562C111728A4D26700863C45 /* Assets.xcassets in Resources */,
@@ -519,9 +531,9 @@
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */,
-				565F8E7028A82F7600259852 /* AddDescriptionView.swift in Sources */,
+				565F8E7028A82F7600259852 /* DescriptionView.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
-				565F8E6C28A82F3E00259852 /* AddDescriptionViewModel.swift in Sources */,
+				565F8E6C28A82F3E00259852 /* DescriptionViewModel.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
@@ -547,7 +559,7 @@
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
 				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
 				565F8E2328A53C2E00259852 /* UIButton.swift in Sources */,
-				565F8E6A28A82F1F00259852 /* AddDescriptionCoordinator.swift in Sources */,
+				565F8E6A28A82F1F00259852 /* DescriptionCoordinator.swift in Sources */,
 				562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */,
 				562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */,
 				565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */,
@@ -558,7 +570,7 @@
 				565F8E2828A53D6F00259852 /* ReservedExperimentViewModel.swift in Sources */,
 				565F8E2D28A53DC100259852 /* ReservedExperimentView.swift in Sources */,
 				565F8E6428A7F11300259852 /* LabBookView.swift in Sources */,
-				565F8E6E28A82F5E00259852 /* AddDescriptionViewController.swift in Sources */,
+				565F8E6E28A82F5E00259852 /* DescriptionViewController.swift in Sources */,
 				562C114528A4E1D600863C45 /* LoadingViewController.swift in Sources */,
 				562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */,
 				565F8E5E28A7F0C700259852 /* LabBookCoordinator.swift in Sources */,
