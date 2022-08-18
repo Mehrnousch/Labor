@@ -7,7 +7,7 @@
 
 
 import UIKit
-
+import CoreTelephony
 class LabBookViewController: UIViewController {
     
     var coordinator: LabBookCoordinator?
@@ -18,6 +18,22 @@ class LabBookViewController: UIViewController {
         navigtionBarConfigure()
         actionButtons()
         layout()
+        
+        let networkInfo = CTTelephonyNetworkInfo()
+        if #available(iOS 12.0, *) {
+            let carrier = networkInfo.serviceSubscriberCellularProviders?.first?.value.mobileCountryCode
+            print("1-country code is = \(carrier)")
+            if carrier == "262" {
+                print("made in germani")
+            }
+            
+        } else {
+            let carrier = networkInfo.subscriberCellularProvider?.mobileCountryCode
+            print("2-country code is = \(carrier)")
+            if carrier == "262" {
+                print("made in germani")
+            }
+        }
     }
     
     func navigtionBarConfigure() {
