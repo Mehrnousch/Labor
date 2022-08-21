@@ -44,4 +44,8 @@ public enum AppTheme {
         static let borderWidth: CGFloat = 1
         static let cornerRadius: CGFloat = 12
     }
+    enum navigationItem {
+        static let red_color: UIColor = .init(red: 181/255, green: 42/255, blue: 41/255, alpha: 1)
+        
+    }
 }

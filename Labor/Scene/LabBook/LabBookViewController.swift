@@ -41,10 +41,13 @@ class LabBookViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
+        navigationItem.rightBarButtonItem?.tintColor = .red
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Experimente",
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(leftHandAction))
+        navigationItem.leftBarButtonItem?.tintColor = .red
+
     }
     
     @objc func rightHandAction() {
