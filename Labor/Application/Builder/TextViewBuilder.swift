@@ -29,12 +29,12 @@ class TextViewBuilder {
     
     @discardableResult
     func setBorder() -> TextViewBuilder {
-        textview.layer.cornerRadius = AppTheme.textField.cornerRadius
+        textview.layer.cornerRadius = AppTheme.view.cornerRadius
         textview.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.04).cgColor
         textview.layer.shadowOpacity = 1
         textview.layer.shadowRadius = 24
         textview.layer.shadowOffset = CGSize(width: 0, height: 4)
-        textview.layer.borderWidth = CGFloat(AppTheme.textField.borderWidth)
+        textview.layer.borderWidth = CGFloat(AppTheme.view.borderWidth)
         textview.layer.borderColor = UIColor(named: "normal_main_textField_border_color")?.cgColor
         return self
     }
@@ -46,7 +46,7 @@ class TextViewBuilder {
     }
     
     @discardableResult
-    func setText(_ text: String, color: UIColor = UIColor(named: "black") ?? .black, fontSize: CGFloat = AppTheme.label.normalSize, fontWeight: FontWeight = .regular) -> TextViewBuilder {
+    func setText(_ text: String, color: UIColor = UIColor(named: "black") ?? .black, fontSize: CGFloat = 16, fontWeight: FontWeight = .regular) -> TextViewBuilder {
         self.textview.font = UIFont.appPrimaryFontWith(size: fontSize, weight: fontWeight)
         self.textview.textColor = color
         self.textview.text = text
@@ -69,4 +69,3 @@ class TextViewBuilder {
         return textview
     }
 }
-
