@@ -1,5 +1,5 @@
 //
-//  DetailesTableViewCell.swift
+//  LabBooksTableViewCell.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 23.08.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailesTableViewCell: UITableViewCell {
+class LabBooksTableViewCell: UITableViewCell {
     
     let containerView = ViewBuilder()
         .setCornerRadius(AppTheme.cell.corner)

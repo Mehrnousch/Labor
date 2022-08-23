@@ -33,11 +33,11 @@ class ReservedExperimentTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentViewStyle()
+        cellStyle()
         layout()
     }
     
-    func contentViewStyle() {
+    func cellStyle() {
         contentView.backgroundColor = .white
     }
     

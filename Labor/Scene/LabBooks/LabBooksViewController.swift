@@ -1,5 +1,5 @@
 //
-//  DetailesViewController.swift
+//  LabBooksViewController.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 23.08.22.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DetailesViewController: UIViewController {
+class LabBooksViewController: UIViewController {
     
-    var coordinator: DetailesCoordinator?
-    let baseView = DetailesView()
+    var coordinator: LabBooksCoordinator?
+    let baseView = LabBooksView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class DetailesViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Detailes Experience"
+        title = "LabBooks "
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))

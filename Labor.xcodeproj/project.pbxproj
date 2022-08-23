@@ -85,16 +85,16 @@
 		565F8E7C28A84D3300259852 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E7A28A84D3300259852 /* 2.jpg */; };
 		565F8E7E28A9107000259852 /* pdf.png in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E7D28A9107000259852 /* pdf.png */; };
 		568EED2028B52DD40054E850 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 568EED1F28B52DD40054E850 /* Kingfisher */; };
-		568EED2428B5332F0054E850 /* DetailesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EED2328B5332F0054E850 /* DetailesCoordinator.swift */; };
-		568EED2628B533500054E850 /* DetailesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EED2528B533500054E850 /* DetailesViewModel.swift */; };
-		56EC3B0128B5338B00C9F4C4 /* DetailesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0028B5338B00C9F4C4 /* DetailesViewController.swift */; };
-		56EC3B0328B533B700C9F4C4 /* DetailesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0228B533B700C9F4C4 /* DetailesView.swift */; };
-		56EC3B0528B533D400C9F4C4 /* DetailesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0428B533D400C9F4C4 /* DetailesTableViewCell.swift */; };
 		56EC3B0928B534AC00C9F4C4 /* TestExperienceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0828B534AC00C9F4C4 /* TestExperienceCoordinator.swift */; };
 		56EC3B0B28B534CE00C9F4C4 /* TestExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0A28B534CE00C9F4C4 /* TestExperienceViewController.swift */; };
 		56EC3B0D28B5350500C9F4C4 /* TestExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0C28B5350500C9F4C4 /* TestExperienceViewModel.swift */; };
 		56EC3B0F28B5351900C9F4C4 /* TestExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B0E28B5351900C9F4C4 /* TestExperienceView.swift */; };
 		56EC3B1128B5353600C9F4C4 /* TypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1028B5353600C9F4C4 /* TypingView.swift */; };
+		56EC3B1528B5475F00C9F4C4 /* LabBooksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1428B5475F00C9F4C4 /* LabBooksCoordinator.swift */; };
+		56EC3B1728B5477100C9F4C4 /* LabBooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1628B5477100C9F4C4 /* LabBooksViewController.swift */; };
+		56EC3B1928B5479000C9F4C4 /* LabBooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1828B5479000C9F4C4 /* LabBooksViewModel.swift */; };
+		56EC3B1B28B547B400C9F4C4 /* LabBooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1A28B547B400C9F4C4 /* LabBooksView.swift */; };
+		56EC3B1D28B547DC00C9F4C4 /* LabBooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B1C28B547DC00C9F4C4 /* LabBooksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,16 +193,16 @@
 		565F8E7928A84D3300259852 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		565F8E7A28A84D3300259852 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		565F8E7D28A9107000259852 /* pdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf.png; sourceTree = "<group>"; };
-		568EED2328B5332F0054E850 /* DetailesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesCoordinator.swift; sourceTree = "<group>"; };
-		568EED2528B533500054E850 /* DetailesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesViewModel.swift; sourceTree = "<group>"; };
-		56EC3B0028B5338B00C9F4C4 /* DetailesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesViewController.swift; sourceTree = "<group>"; };
-		56EC3B0228B533B700C9F4C4 /* DetailesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesView.swift; sourceTree = "<group>"; };
-		56EC3B0428B533D400C9F4C4 /* DetailesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesTableViewCell.swift; sourceTree = "<group>"; };
 		56EC3B0828B534AC00C9F4C4 /* TestExperienceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExperienceCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B0A28B534CE00C9F4C4 /* TestExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExperienceViewController.swift; sourceTree = "<group>"; };
 		56EC3B0C28B5350500C9F4C4 /* TestExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExperienceViewModel.swift; sourceTree = "<group>"; };
 		56EC3B0E28B5351900C9F4C4 /* TestExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExperienceView.swift; sourceTree = "<group>"; };
 		56EC3B1028B5353600C9F4C4 /* TypingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingView.swift; sourceTree = "<group>"; };
+		56EC3B1428B5475F00C9F4C4 /* LabBooksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBooksCoordinator.swift; sourceTree = "<group>"; };
+		56EC3B1628B5477100C9F4C4 /* LabBooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBooksViewController.swift; sourceTree = "<group>"; };
+		56EC3B1828B5479000C9F4C4 /* LabBooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBooksViewModel.swift; sourceTree = "<group>"; };
+		56EC3B1A28B547B400C9F4C4 /* LabBooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBooksView.swift; sourceTree = "<group>"; };
+		56EC3B1C28B547DC00C9F4C4 /* LabBooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBooksTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +298,7 @@
 				565F8E5B28A7E9CF00259852 /* LabBook */,
 				565F8E6728A82ED000259852 /* Description */,
 				56EC3B0628B5348000C9F4C4 /* TestExperience */,
+				56EC3B1228B5473300C9F4C4 /* LabBooks */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -509,33 +510,12 @@
 		565F8E6728A82ED000259852 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				568EED2128B533020054E850 /* DetailesReservedExperiment */,
 				565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */,
 				565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */,
 				565F8E6D28A82F5E00259852 /* DescriptionViewController.swift */,
 				565F8E6F28A82F7600259852 /* DescriptionView.swift */,
 			);
 			path = Description;
-			sourceTree = "<group>";
-		};
-		568EED2128B533020054E850 /* DetailesReservedExperiment */ = {
-			isa = PBXGroup;
-			children = (
-				56EC3B0028B5338B00C9F4C4 /* DetailesViewController.swift */,
-				568EED2528B533500054E850 /* DetailesViewModel.swift */,
-				568EED2328B5332F0054E850 /* DetailesCoordinator.swift */,
-				568EED2228B533210054E850 /* Views */,
-			);
-			path = DetailesReservedExperiment;
-			sourceTree = "<group>";
-		};
-		568EED2228B533210054E850 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				56EC3B0228B533B700C9F4C4 /* DetailesView.swift */,
-				56EC3B0428B533D400C9F4C4 /* DetailesTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		56EC3B0628B5348000C9F4C4 /* TestExperience */ = {
@@ -554,6 +534,26 @@
 			children = (
 				56EC3B0E28B5351900C9F4C4 /* TestExperienceView.swift */,
 				56EC3B1028B5353600C9F4C4 /* TypingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		56EC3B1228B5473300C9F4C4 /* LabBooks */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B1428B5475F00C9F4C4 /* LabBooksCoordinator.swift */,
+				56EC3B1628B5477100C9F4C4 /* LabBooksViewController.swift */,
+				56EC3B1828B5479000C9F4C4 /* LabBooksViewModel.swift */,
+				56EC3B1328B5474D00C9F4C4 /* Views */,
+			);
+			path = LabBooks;
+			sourceTree = "<group>";
+		};
+		56EC3B1328B5474D00C9F4C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B1A28B547B400C9F4C4 /* LabBooksView.swift */,
+				56EC3B1C28B547DC00C9F4C4 /* LabBooksTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -715,7 +715,8 @@
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
-				56EC3B0328B533B700C9F4C4 /* DetailesView.swift in Sources */,
+				56EC3B1728B5477100C9F4C4 /* LabBooksViewController.swift in Sources */,
+				56EC3B1D28B547DC00C9F4C4 /* LabBooksTableViewCell.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
@@ -728,7 +729,6 @@
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
 				56EC3B0F28B5351900C9F4C4 /* TestExperienceView.swift in Sources */,
 				565F8E2A28A53D7F00259852 /* ReservedExperimentController.swift in Sources */,
-				568EED2628B533500054E850 /* DetailesViewModel.swift in Sources */,
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				56EC3B1128B5353600C9F4C4 /* TypingView.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,
@@ -736,12 +736,9 @@
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
 				565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */,
 				565F8E6228A7F0F800259852 /* LabBookViewController.swift in Sources */,
-				56EC3B0528B533D400C9F4C4 /* DetailesTableViewCell.swift in Sources */,
 				565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
 				565F8E6628A7F12300259852 /* LabBookViewCell.swift in Sources */,
-				568EED2428B5332F0054E850 /* DetailesCoordinator.swift in Sources */,
-				56EC3B0128B5338B00C9F4C4 /* DetailesViewController.swift in Sources */,
 				56EC3B0D28B5350500C9F4C4 /* TestExperienceViewModel.swift in Sources */,
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
 				565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */,
@@ -755,10 +752,13 @@
 				56EC3B0B28B534CE00C9F4C4 /* TestExperienceViewController.swift in Sources */,
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
 				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
+				56EC3B1528B5475F00C9F4C4 /* LabBooksCoordinator.swift in Sources */,
 				565F8E2328A53C2E00259852 /* UIButton.swift in Sources */,
+				56EC3B1928B5479000C9F4C4 /* LabBooksViewModel.swift in Sources */,
 				56EC3B0928B534AC00C9F4C4 /* TestExperienceCoordinator.swift in Sources */,
 				565F8E6A28A82F1F00259852 /* DescriptionCoordinator.swift in Sources */,
 				562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */,
+				56EC3B1B28B547B400C9F4C4 /* LabBooksView.swift in Sources */,
 				562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */,
 				565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */,
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,

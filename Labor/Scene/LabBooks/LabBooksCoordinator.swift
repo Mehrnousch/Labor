@@ -1,5 +1,5 @@
 //
-//  DetailesCoordinator.swift
+//  LabBooksCoordinator.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 23.08.22.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol DetailesCoordinatorDelegate {
+protocol LabBooksCoordinatorDelegate {
     func toTestExperience()
 }
 
-class DetailesCoordinator: BaseCoordinator {
+class LabBooksCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
-    let VC = DetailesViewController()
+    let VC = LabBooksViewController()
     private var testExperienceCoordinator: TestExperienceCoordinator!
     
     init(with navigationController: UINavigationController) {
@@ -28,7 +28,7 @@ class DetailesCoordinator: BaseCoordinator {
 }
 
 //MARK: - Delegate
-extension DetailesCoordinator: DetailesCoordinatorDelegate {
+extension LabBooksCoordinator: LabBooksCoordinatorDelegate {
     func toTestExperience() {
         testExperienceCoordinator = TestExperienceCoordinator(with: navigationController)
         testExperienceCoordinator?.start()

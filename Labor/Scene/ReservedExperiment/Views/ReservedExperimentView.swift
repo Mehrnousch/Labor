@@ -10,6 +10,8 @@ import UIKit
 
 class ReservedExperimentView: UIView {
     
+    var selectedCell: ()-> Void = {}
+
     var list: [String] = []
     let experimenteTableView: UITableView = {
         let tableView = UITableView()
@@ -68,5 +70,11 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
 //        let cellRow = list[indexPath.row]
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ReservedExperimentTableViewCell
+        cell.selectionStyle = .none
+        selectedCell()
     }
 }

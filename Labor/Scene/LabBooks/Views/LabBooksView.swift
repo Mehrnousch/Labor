@@ -1,5 +1,5 @@
 //
-//  DetailesView.swift
+//  LabBooksView.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 23.08.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailesView: UIView {
+class LabBooksView: UIView {
     
     var selectedCell: ()-> Void = {}
 
@@ -65,7 +65,7 @@ class DetailesView: UIView {
         .setImage("pdf")
         .build()
     
-    let DetailesTableView: UITableView = {
+    let LabBooksTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.contentInset = UIEdgeInsets(top: 14,left: 0,bottom: 0,right: 0)
@@ -77,7 +77,7 @@ class DetailesView: UIView {
         tableView.isScrollEnabled = true
         tableView.layer.masksToBounds = true
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(DetailesTableViewCell.self, forCellReuseIdentifier: "DetailesTableViewCell")
+        tableView.register(LabBooksTableViewCell.self, forCellReuseIdentifier: "LabBooksTableViewCell")
         return tableView
     }()
     
@@ -91,14 +91,14 @@ class DetailesView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         generalInformationView.shadow()
-        DetailesTableView.delegate = self
-        DetailesTableView.dataSource = self
+        LabBooksTableView.delegate = self
+        LabBooksTableView.dataSource = self
         
-        DetailesTableView.reloadData()
+        LabBooksTableView.reloadData()
     }
     
     func layout() {
-        addSubview(DetailesTableView)
+        addSubview(LabBooksTableView)
         addSubview(generalInformationView)
         generalInformationView.addSubview(responsiblePerson)
         generalInformationView.addSubview(firstResponsiblePerson)
@@ -175,10 +175,10 @@ class DetailesView: UIView {
             operatingInstructionPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
             operatingInstructionPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
             
-            DetailesTableView.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor),
-            DetailesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            DetailesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            DetailesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            LabBooksTableView.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor),
+            LabBooksTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            LabBooksTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            LabBooksTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
     
@@ -189,7 +189,7 @@ class DetailesView: UIView {
 
 
 //MARK: - Delegate & DataSource
-extension DetailesView: UITableViewDelegate, UITableViewDataSource {
+extension LabBooksView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -199,14 +199,14 @@ extension DetailesView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailesTableViewCell", for: indexPath) as! DetailesTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LabBooksTableViewCell", for: indexPath) as! LabBooksTableViewCell
 //        let cellRow = list[indexPath.row]
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! DetailesTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as! LabBooksTableViewCell
         cell.selectionStyle = .none
         selectedCell()
     }
