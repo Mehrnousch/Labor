@@ -21,6 +21,8 @@ class CalendarViewController: UIViewController {
     
     func navigtionBarConfigure() {
         title = "Calendar"
+        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
+
     }
     
     private func layout() {

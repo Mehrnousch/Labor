@@ -25,16 +25,9 @@ class LabBookViewController: UIViewController {
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
         navigationItem.rightBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Experimente",
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: #selector(leftHandAction))
-        navigationItem.leftBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
+        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
     }
-    @objc func leftHandAction() {
-        print("left bar button action")
-    }
-    
+
     
     @objc func rightHandAction() {
         self.coordinator?.toTestExperience()

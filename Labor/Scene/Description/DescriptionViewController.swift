@@ -21,6 +21,8 @@ class DescriptionViewController: UIViewController {
     
     func navigtionBarConfigure() {
         title = "Experiment Beschreibung"
+        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
+
     }
     
     private func layout() {
