@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol TestExperienceCoordinatorDelegate {
+protocol AddDescriptionCoordinatorDelegate {
     
 }
 
-class TestExperienceCoordinator: BaseCoordinator {
+class AddDescriptionCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
-    let VC = TestExperienceViewController()
+    let VC = AddDescriptionViewController()
     
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -27,6 +27,6 @@ class TestExperienceCoordinator: BaseCoordinator {
 }
 
 //MARK: - Delegate
-extension TestExperienceCoordinator: TestExperienceCoordinatorDelegate {
+extension AddDescriptionCoordinator: AddDescriptionCoordinatorDelegate {
 
 }

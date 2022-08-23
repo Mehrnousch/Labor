@@ -2,12 +2,11 @@
 //  LabBookViewController.swift
 //  Labor
 //
-//  Created by mehrnoush abdinian on 13.08.22.
+//  Created by mehrnoush abdinian on 23.08.22.
 //
 
-
 import UIKit
-import CoreTelephony
+
 class LabBookViewController: UIViewController {
     
     var coordinator: LabBookCoordinator?
@@ -16,24 +15,8 @@ class LabBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
-        actionButtons()
+        actionCell()
         layout()
-        
-        let networkInfo = CTTelephonyNetworkInfo()
-        if #available(iOS 12.0, *) {
-            let carrier = networkInfo.serviceSubscriberCellularProviders?.first?.value.mobileCountryCode
-            print("1-country code is = \(carrier)")
-            if carrier == "262" {
-                print("made in germani")
-            }
-            
-        } else {
-            let carrier = networkInfo.subscriberCellularProvider?.mobileCountryCode
-            print("2-country code is = \(carrier)")
-            if carrier == "262" {
-                print("made in germani")
-            }
-        }
     }
     
     func navigtionBarConfigure() {
@@ -41,27 +24,26 @@ class LabBookViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
-        navigationItem.rightBarButtonItem?.tintColor = .red
+        navigationItem.rightBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Experimente",
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(leftHandAction))
-        navigationItem.leftBarButtonItem?.tintColor = .red
-
+        navigationItem.leftBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
     }
-    
-    @objc func rightHandAction() {
-//        self.coordinator?.toAddDescription()
-        print("right bar button action")
-
-    }
-
     @objc func leftHandAction() {
         print("left bar button action")
     }
     
-    func actionButtons() {
-        
+    
+    @objc func rightHandAction() {
+        self.coordinator?.toTestExperience()
+    }
+    
+    func actionCell() {
+        self.baseView.selectedCell = {
+
+        }
     }
     
     func layout() {

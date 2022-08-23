@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestExperienceView: UIView {
+class AddDescriptionView: UIView {
     
     let galleryView = ViewBuilder()
         .build()

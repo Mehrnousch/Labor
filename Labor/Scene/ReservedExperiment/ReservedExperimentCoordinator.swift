@@ -10,7 +10,7 @@ import UIKit
 
 protocol ReservedExperimentCoordinatorDelegate {
     func toLabs()
-    func toLabBooks()
+    func toLabBook()
 }
 
 class ReservedExperimentCoordinator: BaseCoordinator {
@@ -18,7 +18,7 @@ class ReservedExperimentCoordinator: BaseCoordinator {
     var navigationController: UINavigationController
     let VC = ReservedExperimentViewController()
     private var labsCoordinator: LabsCoordinator!
-    private var labBooksCoordinator: LabBooksCoordinator!
+    private var labBookCoordinator: LabBookCoordinator!
     
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -38,9 +38,9 @@ extension ReservedExperimentCoordinator: ReservedExperimentCoordinatorDelegate {
         labsCoordinator?.start()
     }
     
-    func toLabBooks() {
-        labBooksCoordinator = LabBooksCoordinator(with: navigationController)
-        labBooksCoordinator?.start()
+    func toLabBook() {
+        labBookCoordinator = LabBookCoordinator(with: navigationController)
+        labBookCoordinator?.start()
     }
 }
 

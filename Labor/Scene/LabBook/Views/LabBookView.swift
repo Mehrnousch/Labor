@@ -2,17 +2,19 @@
 //  LabBookView.swift
 //  Labor
 //
-//  Created by mehrnoush abdinian on 13.08.22.
+//  Created by mehrnoush abdinian on 23.08.22.
 //
 
 import UIKit
 
 class LabBookView: UIView {
     
+    var selectedCell: ()-> Void = {}
+
     var list: [String] = []
-    let responsibleInfoView = ViewBuilder()
+    let generalInformationView = ViewBuilder()
         .setBackground(AppTheme.cell.light_gray_color)
-        .setCornerRadius(10)
+        .setCornerRadius(20, onlyTop: false, onlyBottom: true)
         .build()
     
     let responsiblePerson = LabelBuilder()
@@ -35,33 +37,38 @@ class LabBookView: UIView {
         .setText("m.abdinian1989@gmail.com", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
-    let pdfView = ViewBuilder()
-        .setBackground(AppTheme.cell.light_gray_color)
-        .setCornerRadius(10)
-        .build()
-    
     let pdfLabel = LabelBuilder()
         .setText("Betriebsanweisungen und notwendige Informationen für die Nutzung von Laboren:", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
+    
     let protocolPdf = ButtonBuilder()
-        .setCornerRadius(AppTheme.button.cornerRadius)
-        .setImage("pdf")
         .build()
-
-    let securityPdf = ButtonBuilder()
-        .setCornerRadius(AppTheme.button.cornerRadius)
+    
+    let protocolPdfImage = ImageBuilder()
         .setImage("pdf")
         .build()
     
-    let operatingInstructionPdf = ButtonBuilder()
+    
+    let securityPdf = ButtonBuilder()
+        .build()
+    
+    let securityPdfImage = ImageBuilder()
         .setImage("pdf")
-        .setCornerRadius(AppTheme.button.cornerRadius)
+        .build()
+    
+    
+    let operatingInstructionPdf = ButtonBuilder()
+        .build()
+    
+    let operatingInstructionPdfImage = ImageBuilder()
+        .setImage("pdf")
         .build()
     
     let LabBookTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.contentInset = UIEdgeInsets(top: 14,left: 0,bottom: 0,right: 0)
         tableView.backgroundColor = .white
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .singleLine
@@ -83,6 +90,7 @@ class LabBookView: UIView {
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
+        generalInformationView.shadow()
         LabBookTableView.delegate = self
         LabBookTableView.dataSource = self
         
@@ -90,71 +98,85 @@ class LabBookView: UIView {
     }
     
     func layout() {
-        addSubview(responsibleInfoView)
-        responsibleInfoView.addSubview(responsiblePerson)
-        responsibleInfoView.addSubview(firstResponsiblePerson)
-        responsibleInfoView.addSubview(firstResponsiblePersonEmail)
-        responsibleInfoView.addSubview(secondResponsiblePerson)
-        responsibleInfoView.addSubview(secondResponsiblePersonEmail)
-
-        addSubview(pdfView)
-        pdfView.addSubview(pdfLabel)
-        pdfView.addSubview(securityPdf)
-        pdfView.addSubview(protocolPdf)
-        pdfView.addSubview(operatingInstructionPdf)
-
         addSubview(LabBookTableView)
+        addSubview(generalInformationView)
+        generalInformationView.addSubview(responsiblePerson)
+        generalInformationView.addSubview(firstResponsiblePerson)
+        generalInformationView.addSubview(firstResponsiblePersonEmail)
+        generalInformationView.addSubview(secondResponsiblePerson)
+        generalInformationView.addSubview(secondResponsiblePersonEmail)
+        generalInformationView.addSubview(pdfLabel)
+        generalInformationView.addSubview(securityPdf)
+        securityPdf.addSubview(securityPdfImage)
+        generalInformationView.addSubview(protocolPdf)
+        protocolPdf.addSubview(protocolPdfImage)
+        generalInformationView.addSubview(operatingInstructionPdf)
+        operatingInstructionPdf.addSubview(operatingInstructionPdfImage)
         NSLayoutConstraint.activate([
+            generalInformationView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            generalInformationView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            generalInformationView.leadingAnchor.constraint(equalTo: leadingAnchor),
             
-            responsibleInfoView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            responsibleInfoView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            responsibleInfoView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            responsibleInfoView.heightAnchor.constraint(equalToConstant: 165),
-            
-            responsiblePerson.topAnchor.constraint(equalTo: responsibleInfoView.topAnchor, constant: 20),
-            responsiblePerson.leadingAnchor.constraint(equalTo: responsibleInfoView.leadingAnchor, constant: 20),
+            responsiblePerson.topAnchor.constraint(equalTo: generalInformationView.topAnchor, constant: 20),
+            responsiblePerson.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor, constant: 20),
+            responsiblePerson.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor, constant: -20),
             
             firstResponsiblePerson.topAnchor.constraint(equalTo: responsiblePerson.bottomAnchor, constant: 10),
-            firstResponsiblePerson.leadingAnchor.constraint(equalTo: responsibleInfoView.leadingAnchor, constant: 20),
-            
-            firstResponsiblePersonEmail.topAnchor.constraint(equalTo: firstResponsiblePerson.bottomAnchor, constant: 5),
-            firstResponsiblePersonEmail.leadingAnchor.constraint(equalTo: responsibleInfoView.leadingAnchor, constant: 20),
-            
-            secondResponsiblePerson.topAnchor.constraint(equalTo: firstResponsiblePersonEmail.bottomAnchor, constant: 10),
-            secondResponsiblePerson.leadingAnchor.constraint(equalTo: responsibleInfoView.leadingAnchor, constant: 20),
-            
-            secondResponsiblePersonEmail.topAnchor.constraint(equalTo: secondResponsiblePerson.bottomAnchor, constant: 5),
-            secondResponsiblePersonEmail.leadingAnchor.constraint(equalTo: responsibleInfoView.leadingAnchor, constant: 20),
-            
-            
-            
-            pdfView.topAnchor.constraint(equalTo: responsibleInfoView.bottomAnchor, constant: 10),
-            pdfView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            pdfView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            pdfView.heightAnchor.constraint(equalToConstant: 130),
-            
-            pdfLabel.topAnchor.constraint(equalTo: pdfView.topAnchor, constant: 20),
-            pdfLabel.leadingAnchor.constraint(equalTo: pdfView.leadingAnchor, constant: 20),
-            pdfLabel.trailingAnchor.constraint(equalTo: pdfView.trailingAnchor, constant: -20),
-            
-            
-            securityPdf.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 10),
-            securityPdf.leadingAnchor.constraint(equalTo: pdfView.leadingAnchor, constant: 20),
-            securityPdf.heightAnchor.constraint(equalToConstant: 44),
-            securityPdf.widthAnchor.constraint(equalToConstant: 44),
+            firstResponsiblePerson.leadingAnchor.constraint(equalTo: responsiblePerson.leadingAnchor),
+            firstResponsiblePerson.trailingAnchor.constraint(equalTo: responsiblePerson.trailingAnchor),
 
-            protocolPdf.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 10),
-            protocolPdf.centerXAnchor.constraint(equalTo: pdfView.centerXAnchor),
-            protocolPdf.heightAnchor.constraint(equalToConstant: 44),
-            protocolPdf.widthAnchor.constraint(equalToConstant: 44),
+            firstResponsiblePersonEmail.topAnchor.constraint(equalTo: firstResponsiblePerson.bottomAnchor, constant: 5),
+            firstResponsiblePersonEmail.leadingAnchor.constraint(equalTo: responsiblePerson.leadingAnchor),
+            firstResponsiblePersonEmail.trailingAnchor.constraint(equalTo: responsiblePerson.trailingAnchor),
+
+            secondResponsiblePerson.topAnchor.constraint(equalTo: firstResponsiblePersonEmail.bottomAnchor, constant: 10),
+            secondResponsiblePerson.leadingAnchor.constraint(equalTo: responsiblePerson.leadingAnchor),
+            secondResponsiblePerson.trailingAnchor.constraint(equalTo: responsiblePerson.trailingAnchor),
+
+            secondResponsiblePersonEmail.topAnchor.constraint(equalTo: secondResponsiblePerson.bottomAnchor, constant: 5),
+            secondResponsiblePersonEmail.leadingAnchor.constraint(equalTo: responsiblePerson.leadingAnchor),
+            secondResponsiblePersonEmail.trailingAnchor.constraint(equalTo: responsiblePerson.trailingAnchor),
             
-            operatingInstructionPdf.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 10),
-            operatingInstructionPdf.trailingAnchor.constraint(equalTo: pdfView.trailingAnchor, constant: -20),
-            operatingInstructionPdf.heightAnchor.constraint(equalToConstant: 44),
-            operatingInstructionPdf.widthAnchor.constraint(equalToConstant: 44),
+            pdfLabel.topAnchor.constraint(equalTo: secondResponsiblePersonEmail.topAnchor, constant: 50),
+            pdfLabel.leadingAnchor.constraint(equalTo: responsiblePerson.leadingAnchor),
+            pdfLabel.trailingAnchor.constraint(equalTo: responsiblePerson.trailingAnchor),
             
-            LabBookTableView.topAnchor.constraint(equalTo: pdfView.bottomAnchor, constant: 20),
-            LabBookTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            securityPdf.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 30),
+            securityPdf.bottomAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: -20),
+            securityPdf.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor),
+            securityPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            securityPdf.widthAnchor.constraint(equalToConstant: generalInformationView.bounds.width / 3),
+            
+            securityPdfImage.centerXAnchor.constraint(equalTo: securityPdf.centerXAnchor),
+            securityPdfImage.centerYAnchor.constraint(equalTo: securityPdf.centerYAnchor),
+            securityPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            securityPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+
+            protocolPdf.topAnchor.constraint(equalTo: securityPdf.topAnchor),
+            protocolPdf.bottomAnchor.constraint(equalTo: securityPdf.bottomAnchor),
+            protocolPdf.leadingAnchor.constraint(equalTo: securityPdf.trailingAnchor),
+            protocolPdf.trailingAnchor.constraint(equalTo: operatingInstructionPdf.leadingAnchor),
+            protocolPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            protocolPdf.widthAnchor.constraint(equalTo: securityPdf.widthAnchor, multiplier: 1),
+
+            protocolPdfImage.centerXAnchor.constraint(equalTo: protocolPdf.centerXAnchor),
+            protocolPdfImage.centerYAnchor.constraint(equalTo: protocolPdf.centerYAnchor),
+            protocolPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            protocolPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            
+            operatingInstructionPdf.topAnchor.constraint(equalTo: securityPdf.topAnchor),
+            operatingInstructionPdf.bottomAnchor.constraint(equalTo: securityPdf.bottomAnchor),
+            operatingInstructionPdf.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor),
+            operatingInstructionPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            operatingInstructionPdf.widthAnchor.constraint(equalTo: securityPdf.widthAnchor, multiplier: 1),
+            
+            operatingInstructionPdfImage.centerXAnchor.constraint(equalTo: operatingInstructionPdf.centerXAnchor),
+            operatingInstructionPdfImage.centerYAnchor.constraint(equalTo: operatingInstructionPdf.centerYAnchor),
+            operatingInstructionPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            operatingInstructionPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            
+            LabBookTableView.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor),
+            LabBookTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             LabBookTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             LabBookTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
@@ -182,5 +204,10 @@ extension LabBookView: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! LabBookTableViewCell
+        cell.selectionStyle = .none
+        selectedCell()
+    }
 }
-
