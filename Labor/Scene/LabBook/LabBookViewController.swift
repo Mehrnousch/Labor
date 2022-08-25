@@ -25,7 +25,7 @@ class LabBookViewController: UIViewController {
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
         navigationItem.rightBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
-        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
+       
     }
 
     

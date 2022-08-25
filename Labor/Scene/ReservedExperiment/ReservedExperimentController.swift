@@ -22,15 +22,14 @@ class ReservedExperimentViewController: UIViewController {
     
     func navigtionBarConfigure() {
         title = "Experimente"
+        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
-        navigationItem.rightBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
                                                                 style: .plain,
                                                                 target: self,
                                                                 action: #selector(leftHandAction))
-        navigationItem.leftBarButtonItem?.tintColor = AppTheme.navigationItem.red_color
     }
     
     @objc func rightHandAction() {

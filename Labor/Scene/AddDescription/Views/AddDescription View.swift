@@ -36,7 +36,7 @@ class AddDescriptionView: UIView {
         .build()
 
     let cameraLabel = LabelBuilder()
-        .setText("Mach ein Foto", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .setText("Machen Sie ein Foto", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
     let typingView = TypingView()

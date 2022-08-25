@@ -22,7 +22,7 @@ class LabsViewController: UIViewController {
     
     private func navigtionBarConfigure() {
         title = "Labs"
-        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
+       
 
     }
     

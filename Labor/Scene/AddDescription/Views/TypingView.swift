@@ -32,7 +32,8 @@ class TypingView: UIView {
         textViewMessage.layer.cornerRadius = AppTheme.view.cornerRadius
         textViewMessage.isEditable = true
         textViewMessage.isScrollEnabled = true
-        
+//        textViewMessage.sizeToFit()
+
         textViewMessage.delegate = self
         textViewMessage.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
 
