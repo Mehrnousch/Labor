@@ -6,3 +6,17 @@
 //
 
 import Foundation
+//import SwiftyJSON
+
+protocol RegisterViewModelDelegate {
+    func registerSuccess(successMessage: String)
+    func registerFailed()
+}
+
+class RegisterViewModel {
+    
+    var delegate: RegisterViewModelDelegate?
+//    let requestManager = RequestManager()
+    
+    
+}

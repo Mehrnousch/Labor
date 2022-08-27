@@ -45,9 +45,9 @@ class ButtonBuilder {
     }
     
     @discardableResult
-    func setBorder(borderWidth: CGFloat = AppTheme.button.borderWidth, borderColor: String = "normal_main_textField_border_color") -> ButtonBuilder {
+    func setBorder(borderWidth: CGFloat = AppTheme.button.borderWidth, borderColor: CGColor = UIColor.black.cgColor) -> ButtonBuilder {
         self.button.layer.borderWidth = borderWidth
-        self.button.layer.borderColor = UIColor(named: borderColor)?.cgColor
+        self.button.layer.borderColor = borderColor
         return self
     }
     
@@ -133,4 +133,3 @@ class ButtonBuilder {
         return button
     }
 }
-

@@ -6,57 +6,74 @@
 //
 
 
+import Foundation
 import UIKit
 
-class CalendarCollectionViewCell: UICollectionViewCell {
+class CalendarCollectionViewCell: UICollectionViewListCell {
     
-    let borderView = ViewBuilder()
-        .setCornerRadius(AppTheme.view.cornerRadius)
-        .setBorder(AppTheme.textField.borderColor)
-        .setBackground(.white)
+    let container = ViewBuilder()
+        .setCornerRadius(AppTheme.cell.corner)
+        .setBackground(AppTheme.cell.light_gray_color)
         .build()
+
     
-    let containerTimeView = ViewBuilder()
-        .setCornerRadius(AppTheme.view.cornerRadius)
-        .setBackground(AppTheme.view.backGround_blue_color)
-        .build()
     
-    let timeLabel = LabelBuilder()
-        .setText("08:00", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
+    let label = LabelBuilder()
+        .setText("09.10.2022", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
         .build()
     
     override init(frame: CGRect) {
-        super.init(frame: .zero)
-        cellStyle()
+        super.init(frame: frame)
+        contentViewStyle()
         layout()
     }
     
-    private func cellStyle()  {
-        translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .blue
+    
+    
+    func contentViewStyle() {
+        contentView.backgroundColor = .white
     }
     
-    private func layout() {
-        contentView.addSubview(borderView)
-        contentView.addSubview(containerTimeView)
-        containerTimeView.addSubview(timeLabel)
-        NSLayoutConstraint.activate([
-            borderView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            borderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            
-            containerTimeView.topAnchor.constraint(equalTo: borderView.topAnchor, constant: 10),
-            containerTimeView.bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: -10),
-            containerTimeView.trailingAnchor.constraint(equalTo: borderView.trailingAnchor, constant: -10),
-            containerTimeView.leadingAnchor.constraint(equalTo: borderView.leadingAnchor, constant: 10),
-            
-            timeLabel.centerXAnchor.constraint(equalTo: containerTimeView.centerXAnchor),
-            timeLabel.centerYAnchor.constraint(equalTo: containerTimeView.centerYAnchor)
-        ])
+    func setData() {
+        
     }
+    
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func layout() {
+        contentView.addSubview(container)
+        container.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            
+            
+            label.topAnchor.constraint(equalTo: container.topAnchor, constant: 5),
+            label.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -5),
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 5),
+            label.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -5),
+           
+        ])
+    }
+    
+    
 }
+
+// MARK: - data setup cell
+extension CalendarCollectionViewCell {
+    
+    func setupCell(data: String){
+        label.text = data
+       
+   }
+    
+}
+
+

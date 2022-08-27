@@ -9,42 +9,40 @@ import UIKit
 
 class AddDescriptionView: UIView {
     
+    let descriptionLabel = LabelBuilder()
+        .setText("Note :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
+        .build()
+    
+    let firstDescriptionLabel = DotLabelView()
+    let secondDescriptionLabel = DotLabelView()
+    let thirdDescriptionLabel = DotLabelView()
+    
     let galleryView = ViewBuilder()
         .build()
     
     let galleryButton = ButtonBuilder()
         .setCornerRadius(AppTheme.button.cornerRadius)
-        .setImage(UIImage(systemName: "photo")!)
-        .build()
-    
-    let galleryImage = ImageBuilder()
-        .build()
-    
-    let galleryLabel = LabelBuilder()
-        .setText("Galerie", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
-        .build()
+        .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)        .build()
     
     let cameraView = ViewBuilder()
         .build()
     
     let cameraButton = ButtonBuilder()
         .setCornerRadius(AppTheme.button.cornerRadius)
-        .setImage(UIImage(systemName: "camera")!)
+        .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)
         .build()
     
-    let cameraImage = ImageBuilder()
-        .build()
-
-    let cameraLabel = LabelBuilder()
-        .setText("Machen Sie ein Foto", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
-        .build()
-    
-    let typingView = TypingView()
-    
-    let sendMessageButton = ButtonBuilder()
-        .setBackground(AppTheme.button.backGround_color)
+    let descriptionButton = ButtonBuilder()
+        .setBackground(.clear)
+        .setBorder(borderWidth: 1, borderColor: AppTheme.view.backGround_red_color.cgColor)
         .setCornerRadius(AppTheme.view.cornerRadius)
-        .setTitle("Senden", color: .white)
+        .setTitle("Please enter your description", color: AppTheme.view.backGround_red_color)
+        .build()
+        
+    let saveButton = ButtonBuilder()
+        .setBackground(AppTheme.view.backGround_red_color)
+        .setCornerRadius(AppTheme.view.cornerRadius)
+        .setTitle("Save information", color: .white)
         .build()
 
     override init(frame: CGRect) {
@@ -62,30 +60,40 @@ class AddDescriptionView: UIView {
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-        typingView.layer.cornerRadius = AppTheme.view.cornerRadius
-        typingView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-        typingView.layer.shadowOpacity = 1
-        typingView.layer.shadowRadius = 20
-        typingView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        
+        firstDescriptionLabel.setData(label: "You can add photos of your experiment here.")
+        secondDescriptionLabel.setData(label: "Since you can only add two photos, please take the photos correctly and at the right angle.")
+        thirdDescriptionLabel.setData(label: "And by clicking on the add text option, you can write a report of your test.")
     }
     
     func layout() {
-        addSubview(typingView)
+        addSubview(descriptionLabel)
+        addSubview(firstDescriptionLabel)
+        addSubview(secondDescriptionLabel)
+        addSubview(thirdDescriptionLabel)
         addSubview(galleryView)
         galleryView.addSubview(galleryButton)
-        galleryButton.addSubview(galleryImage)
-        galleryButton.addSubview(galleryLabel)
         addSubview(cameraView)
         cameraView.addSubview(cameraButton)
-        cameraButton.addSubview(cameraImage)
-        cameraButton.addSubview(cameraLabel)
-        addSubview(sendMessageButton)
+        addSubview(descriptionButton)
+        addSubview(saveButton)
         NSLayoutConstraint.activate([
-            typingView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),
-            typingView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
-            typingView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            descriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             
-            galleryView.bottomAnchor.constraint(equalTo: sendMessageButton.topAnchor, constant: -40),
+            firstDescriptionLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4),
+            firstDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            firstDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            secondDescriptionLabel.topAnchor.constraint(equalTo: firstDescriptionLabel.bottomAnchor, constant: 4),
+            secondDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
+            secondDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
+
+            thirdDescriptionLabel.topAnchor.constraint(equalTo: secondDescriptionLabel.bottomAnchor, constant: 4),
+            thirdDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
+            thirdDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
+            
+            galleryView.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
             galleryView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             galleryView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
             galleryView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
@@ -95,13 +103,7 @@ class AddDescriptionView: UIView {
             galleryButton.centerXAnchor.constraint(equalTo: galleryView.centerXAnchor),
             galleryButton.centerYAnchor.constraint(equalTo: galleryView.centerYAnchor),
             
-            galleryImage.centerXAnchor.constraint(equalTo: galleryButton.centerXAnchor),
-            galleryImage.centerYAnchor.constraint(equalTo: galleryButton.centerYAnchor),
-
-            galleryLabel.topAnchor.constraint(equalTo: galleryImage.bottomAnchor, constant: 16),
-            galleryLabel.centerXAnchor.constraint(equalTo: galleryButton.centerXAnchor),
-            
-            cameraView.bottomAnchor.constraint(equalTo: galleryView.bottomAnchor),
+            cameraView.topAnchor.constraint(equalTo: galleryView.topAnchor),
             cameraView.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 15),
             cameraView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             cameraView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
@@ -111,16 +113,15 @@ class AddDescriptionView: UIView {
             cameraButton.centerXAnchor.constraint(equalTo: cameraView.centerXAnchor),
             cameraButton.centerYAnchor.constraint(equalTo: cameraView.centerYAnchor),
             
-            cameraImage.centerXAnchor.constraint(equalTo: cameraButton.centerXAnchor),
-            cameraImage.centerYAnchor.constraint(equalTo: cameraButton.centerYAnchor),
+            descriptionButton.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -10),
+            descriptionButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
+            descriptionButton.trailingAnchor.constraint(equalTo: saveButton.trailingAnchor),
+            descriptionButton.leadingAnchor.constraint(equalTo: saveButton.leadingAnchor),
             
-            cameraLabel.topAnchor.constraint(equalTo: cameraImage.bottomAnchor, constant: 16),
-            cameraLabel.centerXAnchor.constraint(equalTo: cameraButton.centerXAnchor),
-            
-            sendMessageButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            sendMessageButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
-            sendMessageButton.trailingAnchor.constraint(equalTo: typingView.trailingAnchor),
-            sendMessageButton.leadingAnchor.constraint(equalTo: typingView.leadingAnchor),
+            saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
+            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
         ])
     }
     

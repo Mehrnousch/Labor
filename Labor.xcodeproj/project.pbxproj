@@ -68,7 +68,6 @@
 		565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4628A6CAE700259852 /* CalendarViewModel.swift */; };
 		565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4828A6CB0A00259852 /* CalendarViewController.swift */; };
 		565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalenderView.swift */; };
-		565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
 		565F8E6A28A82F1F00259852 /* DescriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */; };
 		565F8E6C28A82F3E00259852 /* DescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */; };
@@ -88,6 +87,14 @@
 		56EC3B2528B5718C00C9F4C4 /* LabBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B2428B5718C00C9F4C4 /* LabBookViewModel.swift */; };
 		56EC3B2728B5719B00C9F4C4 /* LabBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B2628B5719B00C9F4C4 /* LabBookView.swift */; };
 		56EC3B2928B571AF00C9F4C4 /* LabBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B2828B571AF00C9F4C4 /* LabBookTableViewCell.swift */; };
+		56EC3B2B28B7C0D600C9F4C4 /* DotLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B2A28B7C0D600C9F4C4 /* DotLabelView.swift */; };
+		56EC3B2F28B7C27C00C9F4C4 /* icons8-new-moon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B2C28B7C27B00C9F4C4 /* icons8-new-moon-60.png */; };
+		56EC3B3028B7C27C00C9F4C4 /* icons8-new-moon-90.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B2D28B7C27B00C9F4C4 /* icons8-new-moon-90.png */; };
+		56EC3B3128B7C27C00C9F4C4 /* icons8-new-moon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B2E28B7C27C00C9F4C4 /* icons8-new-moon-30.png */; };
+		56EC3B3428B7C2B200C9F4C4 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B3228B7C2B200C9F4C4 /* Contents.json */; };
+		56EC3B3528B7C2B200C9F4C4 /* 2089052.svg in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B3328B7C2B200C9F4C4 /* 2089052.svg */; };
+		56EC3B3728B8000600C9F4C4 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B3628B8000600C9F4C4 /* image.xcassets */; };
+		56EC3B3928B97A5000C9F4C4 /* CalenderCollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B3828B97A5000C9F4C4 /* CalenderCollectionViewReusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,7 +179,6 @@
 		565F8E4628A6CAE700259852 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		565F8E4828A6CB0A00259852 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565F8E4A28A6CB3400259852 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
-		565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		565F8E6928A82F1F00259852 /* DescriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCoordinator.swift; sourceTree = "<group>"; };
 		565F8E6B28A82F3E00259852 /* DescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +197,14 @@
 		56EC3B2428B5718C00C9F4C4 /* LabBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewModel.swift; sourceTree = "<group>"; };
 		56EC3B2628B5719B00C9F4C4 /* LabBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookView.swift; sourceTree = "<group>"; };
 		56EC3B2828B571AF00C9F4C4 /* LabBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookTableViewCell.swift; sourceTree = "<group>"; };
+		56EC3B2A28B7C0D600C9F4C4 /* DotLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLabelView.swift; sourceTree = "<group>"; };
+		56EC3B2C28B7C27B00C9F4C4 /* icons8-new-moon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-new-moon-60.png"; sourceTree = "<group>"; };
+		56EC3B2D28B7C27B00C9F4C4 /* icons8-new-moon-90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-new-moon-90.png"; sourceTree = "<group>"; };
+		56EC3B2E28B7C27C00C9F4C4 /* icons8-new-moon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-new-moon-30.png"; sourceTree = "<group>"; };
+		56EC3B3228B7C2B200C9F4C4 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		56EC3B3328B7C2B200C9F4C4 /* 2089052.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2089052.svg; sourceTree = "<group>"; };
+		56EC3B3628B8000600C9F4C4 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
+		56EC3B3828B97A5000C9F4C4 /* CalenderCollectionViewReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCollectionViewReusable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +320,7 @@
 				562C114128A4E15900863C45 /* LoadingVC */,
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
+				56EC3B2A28B7C0D600C9F4C4 /* DotLabelView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -365,11 +380,17 @@
 				562C115F28A4E40A00863C45 /* AppTheme.swift */,
 				562C116128A4E44000863C45 /* Utility.swift */,
 				562C111628A4D26700863C45 /* Assets.xcassets */,
+				56EC3B3628B8000600C9F4C4 /* image.xcassets */,
+				56EC3B2E28B7C27C00C9F4C4 /* icons8-new-moon-30.png */,
 				565F8E7928A84D3300259852 /* 1.png */,
 				563E9ADA28AEBBCE004FEE4A /* Logo.png */,
 				565F8E7A28A84D3300259852 /* 2.jpg */,
 				565F8E7D28A9107000259852 /* pdf.png */,
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
+				56EC3B2C28B7C27B00C9F4C4 /* icons8-new-moon-60.png */,
+				56EC3B3328B7C2B200C9F4C4 /* 2089052.svg */,
+				56EC3B3228B7C2B200C9F4C4 /* Contents.json */,
+				56EC3B2D28B7C27B00C9F4C4 /* icons8-new-moon-90.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -468,8 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				565F8E4A28A6CB3400259852 /* CalenderView.swift */,
-				565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */,
 				565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */,
+				56EC3B3828B97A5000C9F4C4 /* CalenderCollectionViewReusable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -637,16 +658,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EC3B3028B7C27C00C9F4C4 /* icons8-new-moon-90.png in Resources */,
 				562C112828A4D53E00863C45 /* Roboto-Medium.ttf in Resources */,
 				565F8E7B28A84D3300259852 /* 1.png in Resources */,
 				562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */,
 				563E9ADB28AEBBCE004FEE4A /* Logo.png in Resources */,
 				565F8E7C28A84D3300259852 /* 2.jpg in Resources */,
+				56EC3B3528B7C2B200C9F4C4 /* 2089052.svg in Resources */,
 				562C111A28A4D26700863C45 /* LaunchScreen.storyboard in Resources */,
+				56EC3B2F28B7C27C00C9F4C4 /* icons8-new-moon-60.png in Resources */,
+				56EC3B3128B7C27C00C9F4C4 /* icons8-new-moon-30.png in Resources */,
 				565F8E7E28A9107000259852 /* pdf.png in Resources */,
 				562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */,
 				562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */,
+				56EC3B3728B8000600C9F4C4 /* image.xcassets in Resources */,
 				562C111728A4D26700863C45 /* Assets.xcassets in Resources */,
+				56EC3B3428B7C2B200C9F4C4 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +707,7 @@
 				56EC3B2928B571AF00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
 				56EC3B2728B5719B00C9F4C4 /* LabBookView.swift in Sources */,
+				56EC3B3928B97A5000C9F4C4 /* CalenderCollectionViewReusable.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
@@ -687,7 +715,6 @@
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
-				565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */,
 				565F8E7028A82F7600259852 /* DescriptionView.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				565F8E6C28A82F3E00259852 /* DescriptionViewModel.swift in Sources */,
@@ -709,6 +736,7 @@
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
 				565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */,
 				565F8E4528A6CAD300259852 /* CalendarCoordinator.swift in Sources */,
+				56EC3B2B28B7C0D600C9F4C4 /* DotLabelView.swift in Sources */,
 				565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
 				562C114F28A4E2A600863C45 /* String.swift in Sources */,

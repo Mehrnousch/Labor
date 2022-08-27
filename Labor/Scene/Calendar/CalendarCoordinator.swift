@@ -7,14 +7,15 @@
 import UIKit
 
 protocol CalendarCoordinatorDelegate {
-    
+    func toReservedExperiment()
 }
 
 class CalendarCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
     let VC = CalendarViewController()
-    
+    private var reservedExperimentCoordinator: ReservedExperimentCoordinator!
+
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -27,5 +28,8 @@ class CalendarCoordinator: BaseCoordinator {
 
 //MARK: - Delegate
 extension CalendarCoordinator: CalendarCoordinatorDelegate {
-
+    func toReservedExperiment() {
+        reservedExperimentCoordinator = ReservedExperimentCoordinator(with: navigationController)
+        reservedExperimentCoordinator?.start()
+    }
 }

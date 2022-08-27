@@ -8,15 +8,17 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, UICollectionViewDelegate {
     
     var coordinator: CalendarCoordinator?
     let baseView = CalendarView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
+//        actionForSelectedCell()
         layout()
+        
     }
     
     func navigtionBarConfigure() {

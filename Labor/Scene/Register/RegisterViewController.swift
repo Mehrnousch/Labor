@@ -10,11 +10,24 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var coordinator: RegisterCoordinator?
+    private lazy var viewModel: RegisterViewModel = {
+        let vm = RegisterViewModel()
+        vm.delegate = self
+        return vm
+    }()
     let baseView = RegisterView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
+        actionButtons()
+    }
+    
+    func actionButtons() {
+        baseView.registerButton.addAction { [weak self] in
+            guard let self = self else { return }
+            
+        }
     }
     
     func layout() {
@@ -28,3 +41,14 @@ class RegisterViewController: UIViewController {
     }
 }
 
+
+//MARK: - Delegate
+extension RegisterViewController: RegisterViewModelDelegate {
+    func registerSuccess(successMessage: String) {
+        print(successMessage)
+    }
+    
+    func registerFailed() {
+        
+    }
+}

@@ -23,7 +23,7 @@ class LabelBuilder {
     }
     
     @discardableResult
-    func setText(_ text: String = "", color: UIColor = .clear, fontSize: CGFloat = 16, fontWeight: FontWeight) -> LabelBuilder {
+    func setText(_ text: String = "", color: UIColor = .black, fontSize: CGFloat = AppTheme.label.minimumSize, fontWeight: FontWeight = .regular) -> LabelBuilder {
         label.font = UIFont.appPrimaryFontWith(size: fontSize, weight: fontWeight)
         label.textColor = color
         label.text = text
