@@ -70,6 +70,11 @@
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
+		56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4F28BB728500C9F4C4 /* LabBookCoordinator.swift */; };
+		56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5128BB72AA00C9F4C4 /* LabBookViewController.swift */; };
+		56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5328BB72BB00C9F4C4 /* LabBookViewModel.swift */; };
+		56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5528BB72CB00C9F4C4 /* LabBookView.swift */; };
+		56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5728BB731D00C9F4C4 /* LabBookTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +142,11 @@
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
+		56EC3B4F28BB728500C9F4C4 /* LabBookCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookCoordinator.swift; sourceTree = "<group>"; };
+		56EC3B5128BB72AA00C9F4C4 /* LabBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewController.swift; sourceTree = "<group>"; };
+		56EC3B5328BB72BB00C9F4C4 /* LabBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewModel.swift; sourceTree = "<group>"; };
+		56EC3B5528BB72CB00C9F4C4 /* LabBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookView.swift; sourceTree = "<group>"; };
+		56EC3B5728BB731D00C9F4C4 /* LabBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +220,7 @@
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
 				565F8E3428A6A98200259852 /* Labs */,
 				565F8E4228A6CAA800259852 /* Calendar */,
+				56EC3B4D28BB725100C9F4C4 /* LabBook */,
 				56EC3B4628BB712E00C9F4C4 /* TextPage */,
 			);
 			path = Scene;
@@ -389,6 +400,26 @@
 			path = TextPage;
 			sourceTree = "<group>";
 		};
+		56EC3B4D28BB725100C9F4C4 /* LabBook */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B4F28BB728500C9F4C4 /* LabBookCoordinator.swift */,
+				56EC3B5128BB72AA00C9F4C4 /* LabBookViewController.swift */,
+				56EC3B5328BB72BB00C9F4C4 /* LabBookViewModel.swift */,
+				56EC3B4E28BB727300C9F4C4 /* View */,
+			);
+			path = LabBook;
+			sourceTree = "<group>";
+		};
+		56EC3B4E28BB727300C9F4C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B5528BB72CB00C9F4C4 /* LabBookView.swift */,
+				56EC3B5728BB731D00C9F4C4 /* LabBookTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,10 +506,12 @@
 				565F8E3F28A6AB5400259852 /* labsTableViewCell.swift in Sources */,
 				565F8E3828A6A9B400259852 /* LabsViewModel.swift in Sources */,
 				562C113128A4DF9800863C45 /* BaseCoordinator.swift in Sources */,
+				56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
+				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
@@ -486,6 +519,7 @@
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
+				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
@@ -497,6 +531,7 @@
 				562C110B28A4D26600863C45 /* AppDelegate.swift in Sources */,
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
 				565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */,
+				56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
 				565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
@@ -504,6 +539,7 @@
 				565F8E4528A6CAD300259852 /* CalendarCoordinator.swift in Sources */,
 				565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
+				56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */,
 				562C114F28A4E2A600863C45 /* String.swift in Sources */,
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
 				565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */,
