@@ -75,6 +75,11 @@
 		56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5328BB72BB00C9F4C4 /* LabBookViewModel.swift */; };
 		56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5528BB72CB00C9F4C4 /* LabBookView.swift */; };
 		56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5728BB731D00C9F4C4 /* LabBookTableViewCell.swift */; };
+		56EC3B5C28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5B28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift */; };
+		56EC3B5E28BB749A00C9F4C4 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5D28BB749A00C9F4C4 /* AddDescriptionViewController.swift */; };
+		56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */; };
+		56EC3B6228BB755000C9F4C4 /* AddDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */; };
+		56EC3B6428BB759500C9F4C4 /* DotLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6328BB759500C9F4C4 /* DotLab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +152,11 @@
 		56EC3B5328BB72BB00C9F4C4 /* LabBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookViewModel.swift; sourceTree = "<group>"; };
 		56EC3B5528BB72CB00C9F4C4 /* LabBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookView.swift; sourceTree = "<group>"; };
 		56EC3B5728BB731D00C9F4C4 /* LabBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBookTableViewCell.swift; sourceTree = "<group>"; };
+		56EC3B5B28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionCoordinator.swift; sourceTree = "<group>"; };
+		56EC3B5D28BB749A00C9F4C4 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
+		56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewModel.swift; sourceTree = "<group>"; };
+		56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionView.swift; sourceTree = "<group>"; };
+		56EC3B6328BB759500C9F4C4 /* DotLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +225,7 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				56EC3B5928BB743D00C9F4C4 /* AddDescription */,
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
@@ -242,6 +253,7 @@
 				562C114128A4E15900863C45 /* LoadingVC */,
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
+				56EC3B6328BB759500C9F4C4 /* DotLab.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -420,6 +432,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		56EC3B5928BB743D00C9F4C4 /* AddDescription */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B5B28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift */,
+				56EC3B5D28BB749A00C9F4C4 /* AddDescriptionViewController.swift */,
+				56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */,
+				56EC3B5A28BB744800C9F4C4 /* Views */,
+			);
+			path = AddDescription;
+			sourceTree = "<group>";
+		};
+		56EC3B5A28BB744800C9F4C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,6 +540,7 @@
 				56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
+				56EC3B6428BB759500C9F4C4 /* DotLab.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
@@ -528,11 +560,14 @@
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,
+				56EC3B6228BB755000C9F4C4 /* AddDescriptionView.swift in Sources */,
+				56EC3B5E28BB749A00C9F4C4 /* AddDescriptionViewController.swift in Sources */,
 				562C110B28A4D26600863C45 /* AppDelegate.swift in Sources */,
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
 				565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */,
 				56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
 				565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */,
+				56EC3B5C28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
 				565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */,
@@ -544,6 +579,7 @@
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
 				565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */,
 				565F8E1F28A53ACA00259852 /* LoginViewController.swift in Sources */,
+				56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */,
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
 				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
 				565F8E2328A53C2E00259852 /* UIButton.swift in Sources */,
