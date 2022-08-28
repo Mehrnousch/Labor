@@ -64,9 +64,7 @@
 		565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4628A6CAE700259852 /* CalendarViewModel.swift */; };
 		565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4828A6CB0A00259852 /* CalendarViewController.swift */; };
 		565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalenderView.swift */; };
-		565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
-		565F8E5628A6DDAF00259852 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 565F8E5528A6DDAF00259852 /* Logo.png */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -79,7 +77,13 @@
 		56EC3B5E28BB749A00C9F4C4 /* AddDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5D28BB749A00C9F4C4 /* AddDescriptionViewController.swift */; };
 		56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */; };
 		56EC3B6228BB755000C9F4C4 /* AddDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */; };
-		56EC3B6428BB759500C9F4C4 /* DotLab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6328BB759500C9F4C4 /* DotLab.swift */; };
+		56EC3B6428BB759500C9F4C4 /* DotLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */; };
+		56EC3B6728BB76B500C9F4C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6628BB76B500C9F4C4 /* Kingfisher */; };
+		56EC3B6A28BB76D100C9F4C4 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6928BB76D100C9F4C4 /* CropViewController */; };
+		56EC3B6C28BB76D100C9F4C4 /* TOCropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */; };
+		56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */; };
+		56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */; };
+		56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,9 +145,7 @@
 		565F8E4628A6CAE700259852 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		565F8E4828A6CB0A00259852 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565F8E4A28A6CB3400259852 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
-		565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		565F8E5528A6DDAF00259852 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -156,7 +158,10 @@
 		56EC3B5D28BB749A00C9F4C4 /* AddDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewController.swift; sourceTree = "<group>"; };
 		56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewModel.swift; sourceTree = "<group>"; };
 		56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionView.swift; sourceTree = "<group>"; };
-		56EC3B6328BB759500C9F4C4 /* DotLab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLab.swift; sourceTree = "<group>"; };
+		56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLabelView.swift; sourceTree = "<group>"; };
+		56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeactionHeader.swift; sourceTree = "<group>"; };
+		56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +169,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EC3B6728BB76B500C9F4C4 /* Kingfisher in Frameworks */,
 				565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */,
+				56EC3B6C28BB76D100C9F4C4 /* TOCropViewController in Frameworks */,
+				56EC3B6A28BB76D100C9F4C4 /* CropViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,13 +233,13 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				56EC3B5928BB743D00C9F4C4 /* AddDescription */,
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
 				565F8E3428A6A98200259852 /* Labs */,
 				565F8E4228A6CAA800259852 /* Calendar */,
 				56EC3B4D28BB725100C9F4C4 /* LabBook */,
+				56EC3B5928BB743D00C9F4C4 /* AddDescription */,
 				56EC3B4628BB712E00C9F4C4 /* TextPage */,
 			);
 			path = Scene;
@@ -253,7 +261,8 @@
 				562C114128A4E15900863C45 /* LoadingVC */,
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
-				56EC3B6328BB759500C9F4C4 /* DotLab.swift */,
+				56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */,
+				56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -312,8 +321,8 @@
 				562C112328A4D4ED00863C45 /* Font */,
 				562C115F28A4E40A00863C45 /* AppTheme.swift */,
 				562C116128A4E44000863C45 /* Utility.swift */,
+				56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */,
 				562C111628A4D26700863C45 /* Assets.xcassets */,
-				565F8E5528A6DDAF00259852 /* Logo.png */,
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -396,8 +405,8 @@
 			isa = PBXGroup;
 			children = (
 				565F8E4A28A6CB3400259852 /* CalenderView.swift */,
-				565F8E4C28A6CB4800259852 /* CalendarTableViewCell.swift */,
 				565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */,
+				56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -469,6 +478,9 @@
 			name = Labor;
 			packageProductDependencies = (
 				565F8E3228A69AED00259852 /* IQKeyboardManagerSwift */,
+				56EC3B6628BB76B500C9F4C4 /* Kingfisher */,
+				56EC3B6928BB76D100C9F4C4 /* CropViewController */,
+				56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */,
 			);
 			productName = Labor;
 			productReference = 562C110728A4D26600863C45 /* Labor.app */;
@@ -500,6 +512,8 @@
 			mainGroup = 562C10FE28A4D26600863C45;
 			packageReferences = (
 				565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
 			);
 			productRefGroup = 562C110828A4D26600863C45 /* Products */;
 			projectDirPath = "";
@@ -517,9 +531,9 @@
 			files = (
 				562C112828A4D53E00863C45 /* Roboto-Medium.ttf in Resources */,
 				562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */,
-				565F8E5628A6DDAF00259852 /* Logo.png in Resources */,
 				562C111A28A4D26700863C45 /* LaunchScreen.storyboard in Resources */,
 				562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */,
+				56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */,
 				562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */,
 				562C111728A4D26700863C45 /* Assets.xcassets in Resources */,
 			);
@@ -540,16 +554,16 @@
 				56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
-				56EC3B6428BB759500C9F4C4 /* DotLab.swift in Sources */,
+				56EC3B6428BB759500C9F4C4 /* DotLabelView.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
+				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
-				565F8E4D28A6CB4800259852 /* CalendarTableViewCell.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
@@ -590,6 +604,7 @@
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
+				56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */,
 				562C113C28A4E0EE00863C45 /* ViewBuilder.swift in Sources */,
 				565F8E2828A53D6F00259852 /* ReservedExperimentViewModel.swift in Sources */,
 				565F8E2D28A53DC100259852 /* ReservedExperimentView.swift in Sources */,
@@ -814,6 +829,22 @@
 				kind = branch;
 			};
 		};
+		56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TimOliver/TOCropViewController";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -821,6 +852,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		56EC3B6628BB76B500C9F4C4 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		56EC3B6928BB76D100C9F4C4 /* CropViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
+			productName = CropViewController;
+		};
+		56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
+			productName = TOCropViewController;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -33,7 +33,11 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     private func cellStyle()  {
         translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .blue
+        contentView.backgroundColor = .clear
+    }
+    
+    func setupCell(data: String){
+        timeLabel.text = data
     }
     
     private func layout() {
@@ -41,10 +45,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(containerTimeView)
         containerTimeView.addSubview(timeLabel)
         NSLayoutConstraint.activate([
-            borderView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            borderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            borderView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            borderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppTheme.cell.paddingRight),
+            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppTheme.cell.paddingLeft),
             
             containerTimeView.topAnchor.constraint(equalTo: borderView.topAnchor, constant: 10),
             containerTimeView.bottomAnchor.constraint(equalTo: borderView.bottomAnchor, constant: -10),

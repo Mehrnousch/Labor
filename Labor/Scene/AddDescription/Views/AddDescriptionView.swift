@@ -17,19 +17,19 @@ class AddDescriptionView: UIView {
     let secondDescriptionLabel = DotLabelView()
     let thirdDescriptionLabel = DotLabelView()
     
-    let galleryView = ViewBuilder()
+    let leftPhotoView = ViewBuilder()
         .build()
     
-    let galleryButton = ButtonBuilder()
-        .setCornerRadius(AppTheme.button.cornerRadius)
+    let leftPhotoButton = ButtonBuilder()
+        .setCornerRadius(AppTheme.imagePicker.cornerRadius)
         .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)
         .build()
     
-    let cameraView = ViewBuilder()
+    let rightPhotoView = ViewBuilder()
         .build()
     
-    let cameraButton = ButtonBuilder()
-        .setCornerRadius(AppTheme.button.cornerRadius)
+    let rightPhotoButton = ButtonBuilder()
+        .setCornerRadius(AppTheme.imagePicker.cornerRadius)
         .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)
         .build()
     
@@ -54,14 +54,14 @@ class AddDescriptionView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        galleryView.addDashedBorder()
-        cameraView.addDashedBorder()
+        leftPhotoView.addDashedBorder()
+        rightPhotoView.addDashedBorder()
     }
     
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-        galleryView.isUserInteractionEnabled = true
+        leftPhotoView.isUserInteractionEnabled = true
         firstDescriptionLabel.setData(label: "You can add photos of your experiment here.")
         secondDescriptionLabel.setData(label: "Since you can only add two photos, please take the photos correctly and at the right angle.")
         thirdDescriptionLabel.setData(label: "And by clicking on the add text option, you can write a report of your test.")
@@ -72,10 +72,10 @@ class AddDescriptionView: UIView {
         addSubview(firstDescriptionLabel)
         addSubview(secondDescriptionLabel)
         addSubview(thirdDescriptionLabel)
-        addSubview(galleryView)
-        galleryView.addSubview(galleryButton)
-        addSubview(cameraView)
-        cameraView.addSubview(cameraButton)
+        addSubview(leftPhotoView)
+        leftPhotoView.addSubview(leftPhotoButton)
+        addSubview(rightPhotoView)
+        rightPhotoView.addSubview(rightPhotoButton)
         addSubview(descriptionButton)
         addSubview(saveButton)
         NSLayoutConstraint.activate([
@@ -94,25 +94,25 @@ class AddDescriptionView: UIView {
             thirdDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
             thirdDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
             
-            galleryView.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
-            galleryView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            galleryView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
-            galleryView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            leftPhotoView.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
+            leftPhotoView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            leftPhotoView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
+            leftPhotoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
             
-            galleryButton.heightAnchor.constraint(equalTo: galleryView.heightAnchor),
-            galleryButton.widthAnchor.constraint(equalTo: galleryView.widthAnchor),
-            galleryButton.centerXAnchor.constraint(equalTo: galleryView.centerXAnchor),
-            galleryButton.centerYAnchor.constraint(equalTo: galleryView.centerYAnchor),
+            leftPhotoButton.heightAnchor.constraint(equalTo: leftPhotoView.heightAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            leftPhotoButton.widthAnchor.constraint(equalTo: leftPhotoView.widthAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            leftPhotoButton.centerXAnchor.constraint(equalTo: leftPhotoView.centerXAnchor),
+            leftPhotoButton.centerYAnchor.constraint(equalTo: leftPhotoView.centerYAnchor),
             
-            cameraView.topAnchor.constraint(equalTo: galleryView.topAnchor),
-            cameraView.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 15),
-            cameraView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            cameraView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            rightPhotoView.topAnchor.constraint(equalTo: leftPhotoView.topAnchor),
+            rightPhotoView.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 15),
+            rightPhotoView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            rightPhotoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
             
-            cameraButton.heightAnchor.constraint(equalTo: cameraView.heightAnchor, multiplier: 0.8),
-            cameraButton.widthAnchor.constraint(equalTo: cameraView.widthAnchor, multiplier: 0.8),
-            cameraButton.centerXAnchor.constraint(equalTo: cameraView.centerXAnchor),
-            cameraButton.centerYAnchor.constraint(equalTo: cameraView.centerYAnchor),
+            rightPhotoButton.heightAnchor.constraint(equalTo: rightPhotoView.heightAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            rightPhotoButton.widthAnchor.constraint(equalTo: rightPhotoView.widthAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            rightPhotoButton.centerXAnchor.constraint(equalTo: rightPhotoView.centerXAnchor),
+            rightPhotoButton.centerYAnchor.constraint(equalTo: rightPhotoView.centerYAnchor),
             
             descriptionButton.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -10),
             descriptionButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),

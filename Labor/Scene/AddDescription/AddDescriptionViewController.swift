@@ -11,7 +11,9 @@ class AddDescriptionViewController: UIViewController {
     
     var coordinator: AddDescriptionCoordinator?
     let baseView = AddDescriptionView()
-
+    var chosenLeftPhotoPlace = false
+    var chosenRightPhotoPlace = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
@@ -30,23 +32,53 @@ class AddDescriptionViewController: UIViewController {
             self.coordinator?.toTextPage()
         }
         
-        baseView.cameraButton.addAction { [weak self] in
+        baseView.rightPhotoButton.addAction { [weak self] in
             guard let self = self else { return }
-            guard let topVC = self.navigationController?.topViewController else { return }
-            PhotoHandler.shared.camera(vc: topVC)
+            self.chosenRightPhotoPlace = true
+            self.chosenLeftPhotoPlace = false
+            self.allertHandler()
         }
         
-        baseView.galleryButton.addAction { [weak self] in
+        baseView.leftPhotoButton.addAction { [weak self] in
             guard let self = self else { return }
+            self.chosenRightPhotoPlace = false
+            self.chosenLeftPhotoPlace = true
+            self.allertHandler()
+        }
+    }
+    
+    func allertHandler() {
+        // create the alert
+        let alert = UIAlertController(title: "Post photo", message: "Choose one of the following.", preferredStyle: UIAlertController.Style.alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default, handler: { _ in
+            guard let topVC = self.navigationController?.topViewController else { return }
+            PhotoHandler.shared.camera(vc: topVC)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: UIAlertAction.Style.default, handler: { _ in
             guard let topVC = self.navigationController?.topViewController else { return }
             PhotoHandler.shared.photoLibrary(vc: topVC)
-        }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.destructive, handler: { _ in
+            self.dismiss(animated: true)
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     func setupPhoto() {
         
         PhotoHandler.shared.imagePickedBlock = { (image) in
-            self.baseView.galleryButton.setImage(image, for: .normal)
+            
+            if self.chosenLeftPhotoPlace {
+                self.baseView.leftPhotoButton.setImage(image, for: .normal)
+            } else {
+                self.baseView.rightPhotoButton.setImage(image, for: .normal)
+            }
         }
         
         PhotoHandler.shared.alertCmeraAccessNeeded = { [weak self] in

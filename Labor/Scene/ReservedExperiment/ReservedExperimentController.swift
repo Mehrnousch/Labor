@@ -16,12 +16,13 @@ class ReservedExperimentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
-        actionButtons()
+        actionCell()
         layout()
     }
     
     func navigtionBarConfigure() {
         title = "Tests gemacht"
+        self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
@@ -39,8 +40,10 @@ class ReservedExperimentViewController: UIViewController {
         print("left bar button action")
     }
     
-    func actionButtons() {
-        
+    func actionCell() {
+        self.baseView.selectedCell = {
+            self.coordinator?.toLabBook()
+        }
     }
     
     func layout() {

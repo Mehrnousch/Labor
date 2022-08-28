@@ -14,20 +14,26 @@ class CalendarView: UIView {
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
-    var list: [String] = []
-    let calendarTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .singleLine
-        tableView.allowsSelection = true
-        tableView.allowsMultipleSelection = false
-        tableView.isScrollEnabled = true
-        tableView.layer.masksToBounds = true
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(CalendarTableViewCell.self, forCellReuseIdentifier: "CalendarTableViewCell")
-        return tableView
+    let dateList = ["01.02.2022","02.02.2022","03.02.2022","04.02.2022","05.02.2022","06.02.2022","07.02.2022","08.02.2022","09.02.2022", "10.02.2022", "11.02.2022"]
+    let timeList = ["08:00","09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"]
+    private let calendarCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
+        //        layout.itemSize = CGSize.init(width: 100, height: 60)
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: "CalendarCollectionViewCell")
+        cv.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        cv.contentInset  = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        cv.allowsMultipleSelection = false
+        cv.allowsSelection = true
+        cv.isScrollEnabled = true
+        cv.showsVerticalScrollIndicator = false
+        cv.backgroundColor = .clear
+        return cv
     }()
     
     override init(frame: CGRect) {
@@ -35,28 +41,26 @@ class CalendarView: UIView {
         style()
         layout()
     }
-
+    
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-        calendarTableView.delegate = self
-        calendarTableView.dataSource = self
-        
-        calendarTableView.reloadData()
+        calendarCollectionView.delegate = self
+        calendarCollectionView.dataSource = self
     }
     
     private func layout() {
         addSubview(titleView)
-        addSubview(calendarTableView)
+        addSubview(calendarCollectionView)
         NSLayoutConstraint.activate([
             titleView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             titleView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            calendarTableView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 20),
-            calendarTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            calendarTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            calendarTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            calendarCollectionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 20),
+            calendarCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            calendarCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            calendarCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
     
@@ -67,21 +71,55 @@ class CalendarView: UIView {
 
 
 //MARK: - Delegate & DataSource
-extension CalendarView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if dateList.isEmpty {
+            return 0
+        } else {
+            return dateList.count
+        }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell", for: indexPath) as! CalendarTableViewCell
-//        let cellRow = list[indexPath.row]
-
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if timeList.isEmpty {
+            return 0
+        } else {
+            return timeList.count
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
+        let time = timeList[indexPath.row]
+        cell.setupCell(data: time)
+        cell.isSelected = false
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
+        cell.isSelected = true
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! CalendarTableViewCell
-        cell.selectionStyle = .none
-        
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
+            
+            let date = dateList[indexPath.row]
+            sectionHeader.setupCell(data: date)
+            
+            return sectionHeader
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 64)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
+    UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      let padding: CGFloat =  200
+      let collectionViewSize = calendarCollectionView.frame.size.width - padding
+        return CGSize(width: collectionViewSize/1.76, height: collectionViewSize/2.4)
     }
 }
