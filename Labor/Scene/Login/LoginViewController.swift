@@ -7,16 +7,31 @@
 
 
 import UIKit
+import Toast
 
 class LoginViewController: UIViewController {
     
     var coordinator: LoginCoordinator?
     let baseView = LoginView()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(showToastRegister), name: NSNotification.Name ("RegisterSuccessful"), object: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         actionButtons()
         layout()
+    }
+    
+    @objc func showToastRegister() {
+        let toast = Toast.default(
+            image: UIImage(named: "success")!,
+            title: "Register",
+            subtitle: "Register successfully."
+        )
+        toast.show()
     }
     
     func actionButtons() {

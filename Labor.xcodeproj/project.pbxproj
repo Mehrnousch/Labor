@@ -84,6 +84,12 @@
 		56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */; };
 		56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */; };
 		56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */; };
+		56EC3B7528BD204300C9F4C4 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7428BD204300C9F4C4 /* Toast */; };
+		56EC3B7828BD20B000C9F4C4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */; };
+		56EC3B7B28BD34EF00C9F4C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7A28BD34EF00C9F4C4 /* Alamofire */; };
+		56EC3B7E28BD372000C9F4C4 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */; };
+		56EC3B8028BD373C00C9F4C4 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B7F28BD373C00C9F4C4 /* RequestManager.swift */; };
+		56EC3B8328BD378900C9F4C4 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +168,9 @@
 		56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeactionHeader.swift; sourceTree = "<group>"; };
 		56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		56EC3B7F28BD373C00C9F4C4 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,9 +178,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EC3B7828BD20B000C9F4C4 /* SwiftyJSON in Frameworks */,
+				56EC3B7B28BD34EF00C9F4C4 /* Alamofire in Frameworks */,
 				56EC3B6728BB76B500C9F4C4 /* Kingfisher in Frameworks */,
 				565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */,
 				56EC3B6C28BB76D100C9F4C4 /* TOCropViewController in Frameworks */,
+				56EC3B7528BD204300C9F4C4 /* Toast in Frameworks */,
 				56EC3B6A28BB76D100C9F4C4 /* CropViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +260,8 @@
 		562C113228A4DFEE00863C45 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				56EC3B8128BD375D00C9F4C4 /* Storage */,
+				56EC3B7C28BD370E00C9F4C4 /* NetworkManager */,
 				562C114328A4E16200863C45 /* Extension */,
 				562C113428A4DFFA00863C45 /* Builder */,
 				562C113328A4DFF600863C45 /* Component */,
@@ -460,6 +474,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		56EC3B7C28BD370E00C9F4C4 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */,
+				56EC3B7F28BD373C00C9F4C4 /* RequestManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		56EC3B8128BD375D00C9F4C4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,6 +512,9 @@
 				56EC3B6628BB76B500C9F4C4 /* Kingfisher */,
 				56EC3B6928BB76D100C9F4C4 /* CropViewController */,
 				56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */,
+				56EC3B7428BD204300C9F4C4 /* Toast */,
+				56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */,
+				56EC3B7A28BD34EF00C9F4C4 /* Alamofire */,
 			);
 			productName = Labor;
 			productReference = 562C110728A4D26600863C45 /* Labor.app */;
@@ -514,6 +548,9 @@
 				565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
+				56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 562C110828A4D26600863C45 /* Products */;
 			projectDirPath = "";
@@ -556,6 +593,7 @@
 				562C113628A4E02F00863C45 /* ButtonBuilder.swift in Sources */,
 				56EC3B6428BB759500C9F4C4 /* DotLabelView.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
+				56EC3B8328BD378900C9F4C4 /* UserDefaultsStorage.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
@@ -580,6 +618,7 @@
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
 				565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */,
 				56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
+				56EC3B7E28BD372000C9F4C4 /* ApiConstants.swift in Sources */,
 				565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */,
 				56EC3B5C28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
@@ -596,6 +635,7 @@
 				56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */,
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
 				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
+				56EC3B8028BD373C00C9F4C4 /* RequestManager.swift in Sources */,
 				565F8E2328A53C2E00259852 /* UIButton.swift in Sources */,
 				562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */,
 				56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */,
@@ -845,6 +885,30 @@
 				kind = branch;
 			};
 		};
+		56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -867,6 +931,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
 			productName = TOCropViewController;
+		};
+		56EC3B7428BD204300C9F4C4 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		56EC3B7A28BD34EF00C9F4C4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 

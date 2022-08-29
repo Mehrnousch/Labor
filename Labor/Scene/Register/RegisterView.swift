@@ -15,7 +15,7 @@ class RegisterView: UIView {
         .build()
     
     let fixedBottomViewHeader = LabelBuilder()
-        .setText("Konto erstellen", color: .black, fontSize: 20, fontWeight: .bold)
+        .setText("Konto erstellen", color: .black, fontSize: AppTheme.label.maximumSize, fontWeight: .bold)
         .build()
     
     let nameTextField = TextFieldBuilder()
@@ -75,24 +75,24 @@ class RegisterView: UIView {
             
             nameTextField.topAnchor.constraint(equalTo: fixedBottomViewHeader.bottomAnchor, constant: 80),
             nameTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
-            nameTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            nameTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            nameTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            nameTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
             emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 30),
             emailTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
-            emailTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            emailTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            emailTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            emailTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
             passwordTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
-            passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
             registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
-            registerButton.bottomAnchor.constraint(equalTo: fixedBottomView.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            registerButton.bottomAnchor.constraint(equalTo: fixedBottomView.safeAreaLayoutGuide.bottomAnchor, constant: AppTheme.view.paddingBottom),
             registerButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
-            registerButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            registerButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            registerButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            registerButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
         ])
     }
     

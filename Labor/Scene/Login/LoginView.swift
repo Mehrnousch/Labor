@@ -9,22 +9,6 @@ import UIKit
 
 class LoginView: UIView {
     
-    let fixedTopView = ViewBuilder()
-        .setBackground(AppTheme.view.backGround_red_color)
-        .build()
-    
-    let logoImage = ImageBuilder()
-        .setImage("Logo")
-        .build()
-
-    let logoTopLabel = LabelBuilder()
-        .setText("Institut für Werkstoffwissenschaften und -technologien", color: .white, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
-        .build()
-    let logoBottomLabel = LabelBuilder()
-        .setText("Werkstofftechnik", color: .white, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
-        .build()
-    
-    
     let fixedBottomView = ViewBuilder()
         .setBackground(.white)
         .setCornerRadius(AppTheme.view.fixedBottomView_corner, onlyTop: true, onlyBottom: false)
@@ -70,10 +54,6 @@ class LoginView: UIView {
     }
     
     func layout() {
-        addSubview(fixedTopView)
-        fixedTopView.addSubview(logoImage)
-        fixedTopView.addSubview(logoTopLabel)
-        fixedTopView.addSubview(logoBottomLabel)
         addSubview(fixedBottomView)
         fixedBottomView.addSubview(fixedBottomViewHeader)
         fixedBottomView.addSubview(emailTextField)
@@ -81,28 +61,6 @@ class LoginView: UIView {
         fixedBottomView.addSubview(loginButton)
         fixedBottomView.addSubview(registerButton)
         NSLayoutConstraint.activate([
-            
-            fixedTopView.topAnchor.constraint(equalTo: topAnchor),
-            fixedTopView.bottomAnchor.constraint(equalTo: fixedBottomView.topAnchor),
-            fixedTopView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            fixedTopView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            logoImage.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
-            logoImage.topAnchor.constraint(equalTo: fixedTopView.topAnchor, constant: 70),
-            logoImage.heightAnchor.constraint(equalToConstant: 148),
-            logoImage.widthAnchor.constraint(equalToConstant: 199),
-            
-            logoTopLabel.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 20),
-            logoTopLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            logoBottomLabel.topAnchor.constraint(equalTo: logoTopLabel.bottomAnchor, constant: 5),
-            logoBottomLabel.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
-           
-            
-            
-            
-            
-            
             fixedBottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
             fixedBottomView.leadingAnchor.constraint(equalTo: leadingAnchor),
             fixedBottomView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -112,24 +70,24 @@ class LoginView: UIView {
             
             emailTextField.topAnchor.constraint(equalTo: fixedBottomViewHeader.bottomAnchor, constant: 80),
             emailTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
-            emailTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            emailTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            emailTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            emailTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
             passwordTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
-            passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             loginButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
-            loginButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            loginButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            loginButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            loginButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
             
-            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
-            registerButton.bottomAnchor.constraint(equalTo: fixedBottomView.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: AppTheme.view.paddingTop),
+            registerButton.bottomAnchor.constraint(equalTo: fixedBottomView.safeAreaLayoutGuide.bottomAnchor, constant: AppTheme.view.paddingBottom),
             registerButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
-            registerButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: 10),
-            registerButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: -10),
+            registerButton.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            registerButton.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
         ])
     }
     

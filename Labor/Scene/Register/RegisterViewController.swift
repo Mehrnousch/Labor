@@ -6,15 +6,36 @@
 //
 
 import UIKit
+import Toast
 
 class RegisterViewController: UIViewController {
     
     var coordinator: RegisterCoordinator?
+    private lazy var viewModel: RegisterViewModel = {
+        let vm = RegisterViewModel()
+        vm.delegate = self
+        return vm
+    }()
     let baseView = RegisterView()
-
+    var registerSuccessful = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
+        actionButtons()
+    }
+    
+    func actionButtons() {
+        baseView.registerButton.addAction { [weak self] in
+            guard let self = self else { return }
+            if let name = self.baseView.nameTextField.text, let email = self.baseView.emailTextField.text, let password = self.baseView.passwordTextField.text {
+                if name != "", email != "", password != "" {
+                    self.viewModel.register(fullName: name, email: email, password: password)
+                } else {
+                    Toast.text("Fill in all the items.").show()
+                }
+            }
+        }
     }
     
     func layout() {
@@ -26,5 +47,39 @@ class RegisterViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if registerSuccessful {
+            NotificationCenter.default.post(name: NSNotification.Name("RegisterSuccessful"), object: nil, userInfo: nil)
+        }
+    }
 }
 
+
+//MARK: - Delegate
+extension RegisterViewController: RegisterViewModelDelegate {
+    
+    func registerSuccess(successMessage: String) {
+        self.registerSuccessful = true
+        self.dismiss(animated: true)
+    }
+    
+    func registerFailed(errorMessages: [String]) {
+        if errorMessages.count == 1 {
+            let toast = Toast.default(
+                image: UIImage(named: "error")!,
+                title: "Register",
+                subtitle: errorMessages[0]
+            )
+            toast.show()
+        } else if errorMessages.count > 0 {
+            let toast = Toast.default(
+                image: UIImage(named: "error")!,
+                title: "Register",
+                subtitle: "You entered the wrong email or password."
+            )
+            toast.show()
+        }
+    }
+}
