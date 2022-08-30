@@ -10,6 +10,8 @@ import Toast
 
 class RegisterViewController: UIViewController {
     
+    private let notificationCenter = NotificationCenter.default
+
     var coordinator: RegisterCoordinator?
     private lazy var viewModel: RegisterViewModel = {
         let vm = RegisterViewModel()
@@ -18,7 +20,7 @@ class RegisterViewController: UIViewController {
     }()
     let baseView = RegisterView()
     var registerSuccessful = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
@@ -51,16 +53,22 @@ class RegisterViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if registerSuccessful {
-            NotificationCenter.default.post(name: NSNotification.Name("RegisterSuccessful"), object: nil, userInfo: nil)
+            //MARK: - Post Notification RegisterSuccessful
+            notificationCenter.post(name: NSNotification.Name("RegisterSuccessful"), object: nil, userInfo: nil)
         }
+    }
+    
+    //MARK: - Remove Notification RegisterSuccessful
+    deinit {
+        notificationCenter.removeObserver(self, name: NSNotification.Name("RegisterSuccessful"), object: nil)
     }
 }
 
 
-//MARK: - Delegate
+//MARK: - ViewModelDelegate
 extension RegisterViewController: RegisterViewModelDelegate {
     
-    func registerSuccess(successMessage: String) {
+    func registerSuccess() {
         self.registerSuccessful = true
         self.dismiss(animated: true)
     }

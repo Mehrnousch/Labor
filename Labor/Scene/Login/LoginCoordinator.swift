@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginCoordinatorDelegate {
     func toRegister()
+    func toReservedExperiment()
 }
 
 class LoginCoordinator: BaseCoordinator {
@@ -16,7 +17,8 @@ class LoginCoordinator: BaseCoordinator {
     var navigationController: UINavigationController
     let VC = LoginViewController()
     private var registerCoordinator: RegisterCoordinator?
-
+    private var reservedExperimentCoordinator: ReservedExperimentCoordinator?
+    
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -32,5 +34,10 @@ extension LoginCoordinator: LoginCoordinatorDelegate {
     func toRegister() {
         registerCoordinator = RegisterCoordinator(with: navigationController)
         registerCoordinator?.start()
+    }
+    
+    func toReservedExperiment() {
+        reservedExperimentCoordinator = ReservedExperimentCoordinator(with: navigationController)
+        reservedExperimentCoordinator?.start()
     }
 }

@@ -10,7 +10,7 @@ import SwiftyJSON
 import Alamofire
 
 protocol RegisterViewModelDelegate {
-    func registerSuccess(successMessage: String)
+    func registerSuccess()
     func registerFailed(errorMessages: [String])
 }
 
@@ -33,14 +33,13 @@ class RegisterViewModel {
                     
                     let myResponse = JSON(data)
                     let data = myResponse["data"]
-                    
+                    let errors = myResponse["errors"]
+
                     if !data.isEmpty {
                         //MARK: - Success
-                        let message = myResponse["message"]["text"].stringValue
-                        self.delegate?.registerSuccess(successMessage: message)
+                        self.delegate?.registerSuccess()
                     } else {
                         //MARK: - Failed
-                        let errors = myResponse["errors"]
                         var errorArray = [String]()
                         for message in errors {
                             for subItem in message.1 {
