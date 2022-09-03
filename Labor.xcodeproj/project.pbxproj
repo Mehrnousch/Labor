@@ -65,6 +65,10 @@
 		565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4828A6CB0A00259852 /* CalendarViewController.swift */; };
 		565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalenderView.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
+		5672BA0C28BEA7E600BB812A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5672BA0B28BEA7E600BB812A /* Toast */; };
+		5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1128C114F400BB812A /* KeyChainManager.swift */; };
+		5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1328C1151300BB812A /* KeyChainStorage.swift */; };
+		56D58ABB28BE7F9A00A48700 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56D58ABA28BE7F9A00A48700 /* Alamofire */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -84,15 +88,15 @@
 		56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */; };
 		56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */; };
 		56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */; };
-		56EC3B7528BD204300C9F4C4 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7428BD204300C9F4C4 /* Toast */; };
 		56EC3B7828BD20B000C9F4C4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */; };
-		56EC3B7B28BD34EF00C9F4C4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7A28BD34EF00C9F4C4 /* Alamofire */; };
 		56EC3B7E28BD372000C9F4C4 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */; };
 		56EC3B8028BD373C00C9F4C4 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B7F28BD373C00C9F4C4 /* RequestManager.swift */; };
 		56EC3B8328BD378900C9F4C4 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */; };
-		56EC3B8628BE673300C9F4C4 /* Labor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B8528BE673300C9F4C4 /* Labor+CoreDataClass.swift */; };
-		56EC3B8828BE674B00C9F4C4 /* Labor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B8728BE674B00C9F4C4 /* Labor+CoreDataProperties.swift */; };
-		56EC3B8A28BE675C00C9F4C4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B8928BE675C00C9F4C4 /* CoreDataStack.swift */; };
+		56ED46C828C1378B002E9EC7 /* FinalReserveCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED46C728C1378B002E9EC7 /* FinalReserveCoordinator.swift */; };
+		56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED46C928C1379C002E9EC7 /* FinalReserveViewController.swift */; };
+		56ED46CC28C137B1002E9EC7 /* FinalReserveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED46CB28C137B1002E9EC7 /* FinalReserveViewModel.swift */; };
+		56ED46CF28C13886002E9EC7 /* FinalReserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED46CE28C13886002E9EC7 /* FinalReserveView.swift */; };
+		56ED46D128C26BCA002E9EC7 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED46D028C26BCA002E9EC7 /* CheckBoxButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +159,8 @@
 		565F8E4828A6CB0A00259852 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565F8E4A28A6CB3400259852 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		5672BA1328C1151300BB812A /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -174,9 +180,11 @@
 		56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		56EC3B7F28BD373C00C9F4C4 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
-		56EC3B8528BE673300C9F4C4 /* Labor+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Labor+CoreDataClass.swift"; sourceTree = "<group>"; };
-		56EC3B8728BE674B00C9F4C4 /* Labor+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Labor+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		56EC3B8928BE675C00C9F4C4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		56ED46C728C1378B002E9EC7 /* FinalReserveCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReserveCoordinator.swift; sourceTree = "<group>"; };
+		56ED46C928C1379C002E9EC7 /* FinalReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReserveViewController.swift; sourceTree = "<group>"; };
+		56ED46CB28C137B1002E9EC7 /* FinalReserveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReserveViewModel.swift; sourceTree = "<group>"; };
+		56ED46CE28C13886002E9EC7 /* FinalReserveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReserveView.swift; sourceTree = "<group>"; };
+		56ED46D028C26BCA002E9EC7 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,11 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				56EC3B7828BD20B000C9F4C4 /* SwiftyJSON in Frameworks */,
-				56EC3B7B28BD34EF00C9F4C4 /* Alamofire in Frameworks */,
 				56EC3B6728BB76B500C9F4C4 /* Kingfisher in Frameworks */,
 				565F8E3328A69AED00259852 /* IQKeyboardManagerSwift in Frameworks */,
+				56D58ABB28BE7F9A00A48700 /* Alamofire in Frameworks */,
 				56EC3B6C28BB76D100C9F4C4 /* TOCropViewController in Frameworks */,
-				56EC3B7528BD204300C9F4C4 /* Toast in Frameworks */,
+				5672BA0C28BEA7E600BB812A /* Toast in Frameworks */,
 				56EC3B6A28BB76D100C9F4C4 /* CropViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +224,6 @@
 		562C110928A4D26600863C45 /* Labor */ = {
 			isa = PBXGroup;
 			children = (
-				56EC3B8428BE671600C9F4C4 /* CoreData */,
 				562C112C28A4DF0E00863C45 /* Base */,
 				562C112D28A4DF1A00863C45 /* Scene */,
 				562C113228A4DFEE00863C45 /* Application */,
@@ -257,6 +264,7 @@
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
 				565F8E3428A6A98200259852 /* Labs */,
 				565F8E4228A6CAA800259852 /* Calendar */,
+				56ED46C628C1375B002E9EC7 /* FinalReserve */,
 				56EC3B4D28BB725100C9F4C4 /* LabBook */,
 				56EC3B5928BB743D00C9F4C4 /* AddDescription */,
 				56EC3B4628BB712E00C9F4C4 /* TextPage */,
@@ -284,6 +292,7 @@
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
 				56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */,
 				56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */,
+				56ED46D028C26BCA002E9EC7 /* CheckBoxButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -494,18 +503,21 @@
 			isa = PBXGroup;
 			children = (
 				56EC3B8228BD378900C9F4C4 /* UserDefaultsStorage.swift */,
+				5672BA1128C114F400BB812A /* KeyChainManager.swift */,
+				5672BA1328C1151300BB812A /* KeyChainStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		56EC3B8428BE671600C9F4C4 /* CoreData */ = {
+		56ED46C628C1375B002E9EC7 /* FinalReserve */ = {
 			isa = PBXGroup;
 			children = (
-				56EC3B8528BE673300C9F4C4 /* Labor+CoreDataClass.swift */,
-				56EC3B8728BE674B00C9F4C4 /* Labor+CoreDataProperties.swift */,
-				56EC3B8928BE675C00C9F4C4 /* CoreDataStack.swift */,
+				56ED46C728C1378B002E9EC7 /* FinalReserveCoordinator.swift */,
+				56ED46C928C1379C002E9EC7 /* FinalReserveViewController.swift */,
+				56ED46CB28C137B1002E9EC7 /* FinalReserveViewModel.swift */,
+				56ED46CE28C13886002E9EC7 /* FinalReserveView.swift */,
 			);
-			path = CoreData;
+			path = FinalReserve;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,9 +541,9 @@
 				56EC3B6628BB76B500C9F4C4 /* Kingfisher */,
 				56EC3B6928BB76D100C9F4C4 /* CropViewController */,
 				56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */,
-				56EC3B7428BD204300C9F4C4 /* Toast */,
 				56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */,
-				56EC3B7A28BD34EF00C9F4C4 /* Alamofire */,
+				56D58ABA28BE7F9A00A48700 /* Alamofire */,
+				5672BA0B28BEA7E600BB812A /* Toast */,
 			);
 			productName = Labor;
 			productReference = 562C110728A4D26600863C45 /* Labor.app */;
@@ -565,9 +577,9 @@
 				565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */,
-				56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				56D58AB928BE7F9A00A48700 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5672BA0A28BEA7E600BB812A /* XCRemoteSwiftPackageReference "toast-swift" */,
 			);
 			productRefGroup = 562C110828A4D26600863C45 /* Products */;
 			projectDirPath = "";
@@ -611,6 +623,7 @@
 				56EC3B6428BB759500C9F4C4 /* DotLabelView.swift in Sources */,
 				562C113E28A4E11000863C45 /* TextFieldBuilder.swift in Sources */,
 				56EC3B8328BD378900C9F4C4 /* UserDefaultsStorage.swift in Sources */,
+				56ED46CF28C13886002E9EC7 /* FinalReserveView.swift in Sources */,
 				562C112F28A4DF7B00863C45 /* AppCoordinator.swift in Sources */,
 				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
@@ -618,20 +631,22 @@
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
+				56ED46C828C1378B002E9EC7 /* FinalReserveCoordinator.swift in Sources */,
+				56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
+				5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
-				56EC3B8628BE673300C9F4C4 /* Labor+CoreDataClass.swift in Sources */,
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
 				565F8E2A28A53D7F00259852 /* ReservedExperimentController.swift in Sources */,
-				56EC3B8828BE674B00C9F4C4 /* Labor+CoreDataProperties.swift in Sources */,
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,
 				56EC3B6228BB755000C9F4C4 /* AddDescriptionView.swift in Sources */,
+				56ED46D128C26BCA002E9EC7 /* CheckBoxButton.swift in Sources */,
 				56EC3B5E28BB749A00C9F4C4 /* AddDescriptionViewController.swift in Sources */,
 				562C110B28A4D26600863C45 /* AppDelegate.swift in Sources */,
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
@@ -639,7 +654,6 @@
 				56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
 				56EC3B7E28BD372000C9F4C4 /* ApiConstants.swift in Sources */,
 				565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */,
-				56EC3B8A28BE675C00C9F4C4 /* CoreDataStack.swift in Sources */,
 				56EC3B5C28BB747A00C9F4C4 /* AddDescriptionCoordinator.swift in Sources */,
 				565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */,
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
@@ -650,6 +664,7 @@
 				56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */,
 				562C114F28A4E2A600863C45 /* String.swift in Sources */,
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
+				5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */,
 				565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */,
 				565F8E1F28A53ACA00259852 /* LoginViewController.swift in Sources */,
 				56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */,
@@ -661,6 +676,7 @@
 				56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */,
 				562C115D28A4E3A700863C45 /* PaddingTextField.swift in Sources */,
 				565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */,
+				56ED46CC28C137B1002E9EC7 /* FinalReserveViewModel.swift in Sources */,
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
@@ -889,6 +905,22 @@
 				kind = branch;
 			};
 		};
+		5672BA0A28BEA7E600BB812A /* XCRemoteSwiftPackageReference "toast-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BastiaanJansen/toast-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		56D58AB928BE7F9A00A48700 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
 		56EC3B6528BB76B500C9F4C4 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -905,25 +937,9 @@
 				kind = branch;
 			};
 		};
-		56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -936,6 +952,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 565F8E3128A69AED00259852 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		5672BA0B28BEA7E600BB812A /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5672BA0A28BEA7E600BB812A /* XCRemoteSwiftPackageReference "toast-swift" */;
+			productName = Toast;
+		};
+		56D58ABA28BE7F9A00A48700 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56D58AB928BE7F9A00A48700 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		56EC3B6628BB76B500C9F4C4 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -952,20 +978,10 @@
 			package = 56EC3B6828BB76D100C9F4C4 /* XCRemoteSwiftPackageReference "TOCropViewController" */;
 			productName = TOCropViewController;
 		};
-		56EC3B7428BD204300C9F4C4 /* Toast */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 56EC3B7328BD204300C9F4C4 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
-		};
 		56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 56EC3B7628BD20B000C9F4C4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		56EC3B7A28BD34EF00C9F4C4 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 56EC3B7928BD34EF00C9F4C4 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 

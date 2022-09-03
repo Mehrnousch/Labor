@@ -12,7 +12,6 @@ import Toast
 class LoginViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var DB = [LaborItems]()
     
     var coordinator: LoginCoordinator?
     private lazy var viewModel: LoginViewModel = {
@@ -32,8 +31,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         actionButtons()
         layout()
-        getItems()
-        print("token = \(DB.last?.token)")
     }
     
     @objc func showToastRegister() {
@@ -63,38 +60,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //MARK: - Get DB
-    func getItems() {
-        do {
-            DB = try context.fetch(LaborItems.fetchRequest())
-        } catch {
-            
-        }
-    }
-    
-    //MARK: - Save in DB
-    func saveToken(token: String) {
-        let newItems = LaborItems(context: context)
-        newItems.token = token
-        
-        do {
-            try context.save()
-        } catch {
-            
-        }
-    }
-    
-    //MARK: - Update DB
-    func updateToken(item: LaborItems, newToken: String) {
-        item.token = newToken
-        
-        do {
-            try context.save()
-        } catch {
-            
-        }
-    }
-    
     func layout() {
         view.addSubview(baseView)
         NSLayoutConstraint.activate([
@@ -110,15 +75,8 @@ class LoginViewController: UIViewController {
 //MARK: - ViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     
-    func loginSuccess(newToken: String) {
-        
-        let lastToken = DB.last?.token
-        if lastToken == "" || lastToken?.isEmpty == true || lastToken == nil {
-            saveToken(token: newToken)
-        } else {
-            updateToken(item: DB.last!, newToken: newToken)
-        }
-        
+    func loginSuccess(token newToken: String) {
+        KeyChainStorage.save(token: newToken)
         self.coordinator?.toReservedExperiment()
     }
     

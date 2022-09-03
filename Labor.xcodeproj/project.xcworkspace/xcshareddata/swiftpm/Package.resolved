@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
-        "version" : "5.6.2"
+        "revision" : "747c8db8d57b68d5e35275f10c92d55f982adbd4",
+        "version" : "4.9.1"
       }
     },
     {
@@ -39,10 +39,10 @@
     {
       "identity" : "toast-swift",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/scalessec/Toast-Swift",
+      "location" : "https://github.com/BastiaanJansen/toast-swift",
       "state" : {
-        "revision" : "0c9493eeacb102cc614da385cfaaf475379f4ab4",
-        "version" : "5.0.1"
+        "revision" : "3435ac78bbcbc6ac066882191d7550415a03f53a",
+        "version" : "1.1.0"
       }
     },
     {

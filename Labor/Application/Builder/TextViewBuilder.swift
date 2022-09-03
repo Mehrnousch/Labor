@@ -35,7 +35,7 @@ class TextViewBuilder {
         textview.layer.shadowRadius = 24
         textview.layer.shadowOffset = CGSize(width: 0, height: 4)
         textview.layer.borderWidth = CGFloat(AppTheme.textField.borderWidth)
-        textview.layer.borderColor = UIColor(named: "normal_main_textField_border_color")?.cgColor
+        textview.layer.borderColor = AppTheme.textField.borderColor.cgColor
         return self
     }
     

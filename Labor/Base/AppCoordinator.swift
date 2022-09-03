@@ -13,6 +13,7 @@ class AppCoordinator: BaseCoordinator {
     private var window: UIWindow
     
     private var loginCoordinator: LoginCoordinator?
+    private var reservedExperimentCoordinator: FinalReserveCoordinator?
 
     init(in window: UIWindow) {
         self.navigationController = UINavigationController()
@@ -21,11 +22,29 @@ class AppCoordinator: BaseCoordinator {
         self.window.rootViewController = navigationController
         self.window.makeKeyAndVisible()
         
-        start()
+        let secondLaunch = UserDefaults.standard.bool(forKey: "First Launch")
+        if secondLaunch, KeyChainStorage.getToken() != ""  {
+            print("Second Launch.")
+            oldCustomer()
+        } else if !secondLaunch, KeyChainStorage.getToken() == "" {
+            print("First Launch.")
+            UserDefaults.standard.set(true, forKey: "First Launch")
+            newCustomer()
+        }
     }
     
-    func start() {
+    func newCustomer() {
         loginCoordinator = LoginCoordinator(with: navigationController)
         loginCoordinator?.start()
     }
+    
+    func oldCustomer() {
+        reservedExperimentCoordinator = FinalReserveCoordinator(with: navigationController)
+        reservedExperimentCoordinator?.start()
+    }
 }
+
+
+   
+                
+    

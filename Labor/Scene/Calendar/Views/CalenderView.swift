@@ -9,7 +9,8 @@
 import UIKit
 
 class CalendarView: UIView {
-    
+    var selectedCell: ()-> Void = {}
+
     let titleView = LabelBuilder()
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
@@ -122,4 +123,10 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
       let collectionViewSize = calendarCollectionView.frame.size.width - padding
         return CGSize(width: collectionViewSize/1.76, height: collectionViewSize/2.4)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       print("Hallo")
+        selectedCell()
+        
+        }
 }

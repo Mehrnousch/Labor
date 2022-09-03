@@ -11,7 +11,6 @@ class LabBookView: UIView {
     
     var selectedCell: ()-> Void = {}
 
-    var list: [String] = []
     let generalInformationView = ViewBuilder()
         .setBackground(AppTheme.cell.light_gray_color)
         .setCornerRadius(20, onlyTop: false, onlyBottom: true)
@@ -65,6 +64,7 @@ class LabBookView: UIView {
         .setImage("pdf")
         .build()
     
+    var list: [String] = []
     let DetailesTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
