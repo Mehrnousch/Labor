@@ -12,7 +12,8 @@ class TextFieldBuilder {
     let textfield: PaddingTextField
     
     var returnAction : ()-> Void = { }
-    
+    var iconClick = true
+
     init() {
         self.textfield = PaddingTextField()
         commonInit()
@@ -31,7 +32,7 @@ class TextFieldBuilder {
     }
     
     @discardableResult
-    func mainSetting(keyboardType: UIKeyboardType, radius: CGFloat = AppTheme.textField.cornerRadius, placeholder: String, textAlignment: NSTextAlignment, textColor: UIColor = .clear, backGroundColor: UIColor) -> TextFieldBuilder {
+    func mainSetting(keyboardType: UIKeyboardType, radius: CGFloat = AppTheme.textField.cornerRadius, placeholder: String, textAlignment: NSTextAlignment, textColor: UIColor = .black, backGroundColor: UIColor) -> TextFieldBuilder {
         self.textfield.layer.cornerRadius = radius
         self.textfield.keyboardType = keyboardType
         self.textfield.placeholder = placeholder
@@ -74,6 +75,10 @@ class TextFieldBuilder {
         textfield.padding = UIEdgeInsets(top: 0, left: 56, bottom: 0, right: 24)
         return self
     }
+    @discardableResult
+    func enablePasswordToggle() {
+        
+    }
     
     @discardableResult
     func setClear() -> TextFieldBuilder {
@@ -91,4 +96,6 @@ extension TextFieldBuilder {
         self.textfield.clearButtonMode = .always
         return self
     }
+    
+
 }

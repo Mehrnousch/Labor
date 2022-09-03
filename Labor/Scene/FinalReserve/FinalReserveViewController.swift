@@ -28,6 +28,11 @@ class FinalReserveViewController: UIViewController {
 
     }
     
+    
+    
+    
+    
+    
     func actionButtons() {
         baseView.agreeRulesButton.addAction { [weak self] in
             guard let self = self else { return }
@@ -38,7 +43,7 @@ class FinalReserveViewController: UIViewController {
             guard let self = self else { return }
             self.baseView.existenceManagerButton.setIconSelectButton()
         }
-    }
+            }
     
     func layout() {
         view.addSubview(baseView)

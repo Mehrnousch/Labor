@@ -7,10 +7,16 @@
 
 
 import UIKit
+import Toast
 
 class ReservedExperimentViewController: UIViewController {
     
     var coordinator: ReservedExperimentCoordinator?
+    private lazy var viewModel: ReservedExperimentViewModel = {
+        let vm = ReservedExperimentViewModel()
+        vm.delegate = self
+        return vm
+    }()
     let baseView = ReservedExperimentView()
 
     override func viewDidLoad() {
@@ -18,6 +24,31 @@ class ReservedExperimentViewController: UIViewController {
         navigtionBarConfigure()
         actionCell()
         layout()
+        
+        print("token = \(KeyChainStorage.getToken())")
+        viewModel.getReservedList()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NotFirst), name: NSNotification.Name ("NotFirstLaunch"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(FirstLaunch), name: NSNotification.Name ("FirstLaunch"), object: nil)
+    }
+    
+    @objc func NotFirst() {
+        let toast = Toast.default(
+            image: UIImage(named: "success")!,
+            title: "NotFirstLaunch",
+            subtitle: "NotFirstLaunch"
+        )
+        toast.show()
+    }
+    
+    @objc func FirstLaunch() {
+        let toast = Toast.default(
+            image: UIImage(named: "success")!,
+            title: "FirstLaunch",
+            subtitle: "FirstLaunch"
+        )
+        toast.show()
     }
     
     func navigtionBarConfigure() {
@@ -54,5 +85,17 @@ class ReservedExperimentViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: baseView.trailingAnchor),
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
+    }
+}
+
+
+//MARK: - ViewModelDelegate
+extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate {
+    func gettingReservedListSuccessful(newToken: String) {
+        
+    }
+    
+    func gettingReservedListFailed(errorMessages: [String]) {
+        
     }
 }

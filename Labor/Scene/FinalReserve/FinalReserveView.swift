@@ -17,14 +17,12 @@ class FinalReserveView: UIView {
         .setText("Betriebsanweisungen und notwendige Informationen für die Nutzung von Laboren:", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
-    
     let protocolPdf = ButtonBuilder()
         .build()
     
     let protocolPdfImage = ImageBuilder()
         .setImage("pdf")
         .build()
-    
     
     let securityPdf = ButtonBuilder()
         .build()
@@ -33,15 +31,12 @@ class FinalReserveView: UIView {
         .setImage("pdf")
         .build()
     
-    
     let operatingInstructionPdf = ButtonBuilder()
         .build()
     
     let operatingInstructionPdfImage = ImageBuilder()
         .setImage("pdf")
         .build()
-    
-    
     
     let experimentTitleLabel = LabelBuilder()
         .setText("Bitte geben Sie Ihren Experimenttitel ein:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
@@ -54,26 +49,15 @@ class FinalReserveView: UIView {
     let experimentInfoLabel = LabelBuilder()
         .setText("Benötigte Information:", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
-    let experimentInfoTextField = TextViewBuilder()
+    
+    let experimentInfoTextView = TextViewBuilder()
         .setBorder()
         .isSelectable(true)
         .build()
     
-    
-   
-    
-    
-   
-    let existenceManagerButton = CheckBoxButton()
     let agreeRulesButton = CheckBoxButton()
+    let existenceManagerButton = CheckBoxButton()
     
-   
-    
-   
-    
-    
-    
-        
     let saveButton = ButtonBuilder()
         .setBackground(AppTheme.view.backGround_red_color)
         .setCornerRadius(AppTheme.view.cornerRadius)
@@ -86,25 +70,16 @@ class FinalReserveView: UIView {
         layout()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-       
-    }
-    
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         agreeRulesButton.setLabel(label: "Ich habe die Protokolle und Sicherheitsinformationen gelesen und stimme ihnen zu.*")
         existenceManagerButton.setLabel(label: "Ich brauche die Unterstützung des Laborverantwortlichen.")
-        
-        
     }
     
     func layout() {
-        
         addSubview(generalInformationView)
         generalInformationView.shadow()
-
         generalInformationView.addSubview(pdfLabel)
         generalInformationView.addSubview(securityPdf)
         securityPdf.addSubview(securityPdfImage)
@@ -115,16 +90,15 @@ class FinalReserveView: UIView {
         addSubview(experimentTitleLabel)
         addSubview(experimentTitleTextField)
         addSubview(experimentInfoLabel)
-        addSubview(experimentInfoTextField)
+        addSubview(experimentInfoTextView)
         addSubview(existenceManagerButton)
         addSubview(agreeRulesButton)
-        
         addSubview(saveButton)
         NSLayoutConstraint.activate([
-            
             generalInformationView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             generalInformationView.trailingAnchor.constraint(equalTo: trailingAnchor),
             generalInformationView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            generalInformationView.heightAnchor.constraint(equalToConstant: 160),
             
             pdfLabel.topAnchor.constraint(equalTo: generalInformationView.topAnchor, constant: 20),
             pdfLabel.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor, constant: 20),
@@ -163,8 +137,10 @@ class FinalReserveView: UIView {
             operatingInstructionPdfImage.centerYAnchor.constraint(equalTo: operatingInstructionPdf.centerYAnchor),
             operatingInstructionPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
             operatingInstructionPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            
             experimentTitleLabel.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: 20),
             experimentTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            experimentTitleLabel.heightAnchor.constraint(equalToConstant: 20),
             
             experimentTitleTextField.topAnchor.constraint(equalTo: experimentTitleLabel.bottomAnchor, constant: 10),
             experimentTitleTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -173,17 +149,12 @@ class FinalReserveView: UIView {
             
             experimentInfoLabel.topAnchor.constraint(equalTo: experimentTitleTextField.bottomAnchor, constant: 20),
             experimentInfoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            
-            experimentInfoTextField.topAnchor.constraint(equalTo: experimentInfoLabel.bottomAnchor, constant: 10),
-            experimentInfoTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            experimentInfoTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            experimentInfoTextField.heightAnchor.constraint(equalToConstant: 88),
-            
-            
-            
-           
-           
-           
+            experimentInfoLabel.heightAnchor.constraint(equalToConstant: 20),
+
+            experimentInfoTextView.topAnchor.constraint(equalTo: experimentInfoLabel.bottomAnchor, constant: 10),
+            experimentInfoTextView.bottomAnchor.constraint(equalTo: agreeRulesButton.topAnchor, constant: -10),
+            experimentInfoTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            experimentInfoTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
             agreeRulesButton.bottomAnchor.constraint(equalTo: existenceManagerButton.topAnchor, constant: -10),
             agreeRulesButton.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -193,10 +164,6 @@ class FinalReserveView: UIView {
             existenceManagerButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             existenceManagerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
-           
-            
-            
-            
             saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: AppTheme.view.paddingBottom),
             saveButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
             saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),
@@ -208,6 +175,3 @@ class FinalReserveView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-
-

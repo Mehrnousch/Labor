@@ -12,4 +12,6 @@ class ApiConstants {
 
     static let register: URL = URL(string: ApiConstants.baseApiURL + "/user/register")!
     static let login: URL = URL(string: ApiConstants.baseApiURL + "/user/login")!
+    static let reservedList: URL = URL(string: ApiConstants.baseApiURL + "/user/reservation/list")!
+    static let Labs: URL = URL(string: ApiConstants.baseApiURL + "/laboratory/list")!
 }

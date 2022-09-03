@@ -11,6 +11,8 @@ import Toast
 
 class LoginViewController: UIViewController {
     
+    var chosenEyeSlash = false
+    var chosenEye = false
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var coordinator: LoginCoordinator?
@@ -58,8 +60,11 @@ class LoginViewController: UIViewController {
             guard let self = self else { return }
             self.coordinator?.toRegister()
         }
+        
+
     }
     
+
     func layout() {
         view.addSubview(baseView)
         NSLayoutConstraint.activate([
@@ -76,7 +81,17 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginViewModelDelegate {
     
     func loginSuccess(token newToken: String) {
+        
+//        let lastToken = DB.last?.token
+//        if lastToken == "" || lastToken?.isEmpty == true || lastToken == nil {
+////            saveToken(token: newToken)
+//            KeyChainStorage.save(token: newToken)
+//        } else {
+//            updateToken(item: DB.last!, newToken: newToken)
+//        }
+        
         KeyChainStorage.save(token: newToken)
+        
         self.coordinator?.toReservedExperiment()
     }
     
