@@ -10,7 +10,7 @@ import UIKit
 
 class ReservedExperimentView: UIView {
     
-    var selectedCell: (String, String)-> Void = {_ , _ in}
+    var selectedCell: (String)-> Void = {_ in}
 
     var reservations: [ReservedModel] = []
     let experimenteTableView: UITableView = {
@@ -44,8 +44,6 @@ class ReservedExperimentView: UIView {
         backgroundColor = .white
         experimenteTableView.delegate = self
         experimenteTableView.dataSource = self
-        
-        experimenteTableView.reloadData()
     }
     
     func layout() {
@@ -81,6 +79,6 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! ReservedExperimentTableViewCell
         cell.selectionStyle = .none
         let cellData = reservations[indexPath.row]
-        selectedCell(String(cellData.id), String(cellData.laboratory.id))
+        selectedCell(String(cellData.id))
     }
 }

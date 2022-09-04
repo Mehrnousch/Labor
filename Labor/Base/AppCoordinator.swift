@@ -13,7 +13,7 @@ class AppCoordinator: BaseCoordinator {
     private var window: UIWindow
     
     private var loginCoordinator: LoginCoordinator?
-    private var reservedExperimentCoordinator: AddDescriptionCoordinator?
+    private var reservedExperimentCoordinator: LoginCoordinator?
 
     init(in window: UIWindow) {
         self.navigationController = UINavigationController()
@@ -48,7 +48,7 @@ class AppCoordinator: BaseCoordinator {
     }
     
     func oldCustomer() {
-        reservedExperimentCoordinator = AddDescriptionCoordinator(with: navigationController)
+        reservedExperimentCoordinator = LoginCoordinator(with: navigationController)
         reservedExperimentCoordinator?.start()
     }
 }

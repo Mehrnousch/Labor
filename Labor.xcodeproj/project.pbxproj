@@ -72,6 +72,11 @@
 		56E85DCE28C3CCA700F32FB2 /* LabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DCD28C3CCA700F32FB2 /* LabModel.swift */; };
 		56E85DD028C3CCC300F32FB2 /* ReservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */; };
 		56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD228C486B800F32FB2 /* CalendarInformation.swift */; };
+		56E85DD528C4E60D00F32FB2 /* ExperimentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD428C4E60D00F32FB2 /* ExperimentsModel.swift */; };
+		56E85DD828C4E73900F32FB2 /* ShowExperimentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD728C4E73900F32FB2 /* ShowExperimentCoordinator.swift */; };
+		56E85DDA28C4E75500F32FB2 /* ShowExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */; };
+		56E85DDC28C4E76A00F32FB2 /* ShowExperimentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */; };
+		56E85DDE28C4E77A00F32FB2 /* ShowExperimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -167,6 +172,11 @@
 		56E85DCD28C3CCA700F32FB2 /* LabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabModel.swift; sourceTree = "<group>"; };
 		56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedModel.swift; sourceTree = "<group>"; };
 		56E85DD228C486B800F32FB2 /* CalendarInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInformation.swift; sourceTree = "<group>"; };
+		56E85DD428C4E60D00F32FB2 /* ExperimentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentsModel.swift; sourceTree = "<group>"; };
+		56E85DD728C4E73900F32FB2 /* ShowExperimentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentCoordinator.swift; sourceTree = "<group>"; };
+		56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewController.swift; sourceTree = "<group>"; };
+		56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewModel.swift; sourceTree = "<group>"; };
+		56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentView.swift; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -265,6 +275,7 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				56E85DD628C4E71100F32FB2 /* ShowExperiment */,
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
@@ -454,6 +465,7 @@
 			children = (
 				56E85DCD28C3CCA700F32FB2 /* LabModel.swift */,
 				56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */,
+				56E85DD428C4E60D00F32FB2 /* ExperimentsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +476,17 @@
 				56E85DD228C486B800F32FB2 /* CalendarInformation.swift */,
 			);
 			path = CalendarInformation;
+			sourceTree = "<group>";
+		};
+		56E85DD628C4E71100F32FB2 /* ShowExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				56E85DD728C4E73900F32FB2 /* ShowExperimentCoordinator.swift */,
+				56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */,
+				56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */,
+				56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */,
+			);
+			path = ShowExperiment;
 			sourceTree = "<group>";
 		};
 		56EC3B4628BB712E00C9F4C4 /* TextPage */ = {
@@ -656,9 +679,11 @@
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
+				56E85DD828C4E73900F32FB2 /* ShowExperimentCoordinator.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				56ED46C828C1378B002E9EC7 /* FinalReserveCoordinator.swift in Sources */,
 				56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */,
+				56E85DDC28C4E76A00F32FB2 /* ShowExperimentViewModel.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */,
@@ -695,6 +720,7 @@
 				5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */,
 				565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */,
 				565F8E1F28A53ACA00259852 /* LoginViewController.swift in Sources */,
+				56E85DDE28C4E77A00F32FB2 /* ShowExperimentView.swift in Sources */,
 				56EC3B6028BB74B000C9F4C4 /* AddDescriptionViewModel.swift in Sources */,
 				562C116228A4E44000863C45 /* Utility.swift in Sources */,
 				562C116528A4FD2100863C45 /* RegisterCoordinator.swift in Sources */,
@@ -707,12 +733,14 @@
 				56ED46CC28C137B1002E9EC7 /* FinalReserveViewModel.swift in Sources */,
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
+				56E85DD528C4E60D00F32FB2 /* ExperimentsModel.swift in Sources */,
 				562C114D28A4E28900863C45 /* Data.swift in Sources */,
 				56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */,
 				562C113C28A4E0EE00863C45 /* ViewBuilder.swift in Sources */,
 				565F8E2828A53D6F00259852 /* ReservedExperimentViewModel.swift in Sources */,
 				565F8E2D28A53DC100259852 /* ReservedExperimentView.swift in Sources */,
 				562C114528A4E1D600863C45 /* LoadingViewController.swift in Sources */,
+				56E85DDA28C4E75500F32FB2 /* ShowExperimentViewController.swift in Sources */,
 				562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */,
 				565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */,
 				562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */,

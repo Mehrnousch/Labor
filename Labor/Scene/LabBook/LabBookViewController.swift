@@ -16,21 +16,19 @@ class LabBookViewController: UIViewController {
         return vm
     }()
     let baseView = LabBookView()
+    private let loadingVC = LoadingViewController()
     var reservationId: String?
-    var experimentId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
-        if let reservationId = reservationId, let experimentId = experimentId {
-            if reservationId != "", experimentId != "" {
-                
-                print("!!@@ reservationId \(reservationId)")
-                print("!!@@ experimentId \(experimentId)")
-
-                viewModel.showExperiment(reservationId: Int(reservationId) ?? 0, experimentId: Int(experimentId) ?? 0)
+        if let reservationId = reservationId {
+            if reservationId != "" {
+                viewModel.showExperiment(reservationId: Int(reservationId) ?? 0)
             }
         }
+        
+        presentLoadingVC()
         actionCell()
         layout()
     }
@@ -61,16 +59,23 @@ class LabBookViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    private func presentLoadingVC() {
+        loadingVC.modalTransitionStyle = .crossDissolve
+        loadingVC.modalPresentationStyle = .overFullScreen
+        present(loadingVC, animated: false, completion: nil)
+    }
 }
 
 
 //MARK: - ViewModelDelegate
 extension LabBookViewController: LabBookViewModelDelegate {
-    func gettingReservedListSuccessful() {
-        
+    func gettingReservedListSuccessful(experiments: [ExperimentModel]) {
+        self.baseView.setData(experiments: experiments)
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
     
     func gettingReservedListFailed() {
-        
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
 }

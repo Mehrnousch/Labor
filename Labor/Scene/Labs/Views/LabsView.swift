@@ -12,7 +12,7 @@ class LabsView: UIView {
     
     var selectedCell: ()-> Void = {}
 
-    var list: [String] = []
+    var labs: [LabModel] = []
     let labsTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -33,14 +33,17 @@ class LabsView: UIView {
         style()
         layout()
     }
+    
+    func setData(labs: [LabModel]) {
+        self.labs = labs
+        labsTableView.reloadData()
+    }
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         labsTableView.delegate = self
         labsTableView.dataSource = self
-        
-        labsTableView.reloadData()
     }
     
     func layout() {
@@ -62,13 +65,13 @@ class LabsView: UIView {
 //MARK: - Delegate & DataSource
 extension LabsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return labs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labsTableViewCell", for: indexPath) as! labsTableViewCell
-//        let cellRow = list[indexPath.row]
-
+        let cellData = labs[indexPath.row]
+        cell.setData(lab: cellData)
         return cell
     }
     

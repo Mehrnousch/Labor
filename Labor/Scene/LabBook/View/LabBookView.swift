@@ -64,7 +64,7 @@ class LabBookView: UIView {
         .setImage("pdf")
         .build()
     
-    var list: [String] = []
+    var experiments: [ExperimentModel] = []
     let DetailesTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +86,11 @@ class LabBookView: UIView {
         style()
         layout()
     }
+    
+    func setData(experiments: [ExperimentModel]) {
+        self.experiments = experiments
+        DetailesTableView.reloadData()
+    }
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
@@ -93,8 +98,6 @@ class LabBookView: UIView {
         generalInformationView.shadow()
         DetailesTableView.delegate = self
         DetailesTableView.dataSource = self
-        
-        DetailesTableView.reloadData()
     }
     
     func layout() {
@@ -191,7 +194,7 @@ class LabBookView: UIView {
 //MARK: - Delegate & DataSource
 extension LabBookView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return experiments.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -200,8 +203,8 @@ extension LabBookView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabBookTableViewCell", for: indexPath) as! LabBookTableViewCell
-//        let cellRow = list[indexPath.row]
-
+        let cellRow = experiments[indexPath.row]
+        cell.setData(experiment: cellRow)
         return cell
     }
     
