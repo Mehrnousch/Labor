@@ -10,9 +10,9 @@ import UIKit
 
 class ReservedExperimentView: UIView {
     
-    var selectedCell: ()-> Void = {}
+    var selectedCell: (String, String)-> Void = {_ , _ in}
 
-    var list: [String] = []
+    var reservations: [ReservedModel] = []
     let experimenteTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -32,6 +32,11 @@ class ReservedExperimentView: UIView {
         super.init(frame: frame)
         style()
         layout()
+    }
+    
+    func setData(reservations: [ReservedModel]) {
+        self.reservations = reservations
+        experimenteTableView.reloadData()
     }
 
     func style() {
@@ -62,19 +67,20 @@ class ReservedExperimentView: UIView {
 //MARK: - Delegate & DataSource
 extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return reservations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReservedExperimentTableViewCell", for: indexPath) as! ReservedExperimentTableViewCell
-//        let cellRow = list[indexPath.row]
-
+        let cellData = reservations[indexPath.row]
+        cell.setData(reserved: cellData)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ReservedExperimentTableViewCell
         cell.selectionStyle = .none
-        selectedCell()
+        let cellData = reservations[indexPath.row]
+        selectedCell(String(cellData.id), String(cellData.laboratory.id))
     }
 }

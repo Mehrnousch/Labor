@@ -30,7 +30,7 @@ class AddDescriptionView: UIView {
     
     let rightPhotoButton = ButtonBuilder()
         .setCornerRadius(AppTheme.imagePicker.cornerRadius)
-        .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)
+        .setImage(UIImage.init(systemName: "gallery") ?? UIImage(named: "gallery")!)
         .build()
     
     let descriptionButton = ButtonBuilder()

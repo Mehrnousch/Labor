@@ -69,6 +69,9 @@
 		5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1128C114F400BB812A /* KeyChainManager.swift */; };
 		5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1328C1151300BB812A /* KeyChainStorage.swift */; };
 		56D58ABB28BE7F9A00A48700 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 56D58ABA28BE7F9A00A48700 /* Alamofire */; };
+		56E85DCE28C3CCA700F32FB2 /* LabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DCD28C3CCA700F32FB2 /* LabModel.swift */; };
+		56E85DD028C3CCC300F32FB2 /* ReservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */; };
+		56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD228C486B800F32FB2 /* CalendarInformation.swift */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -161,6 +164,9 @@
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		5672BA1328C1151300BB812A /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
+		56E85DCD28C3CCA700F32FB2 /* LabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabModel.swift; sourceTree = "<group>"; };
+		56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedModel.swift; sourceTree = "<group>"; };
+		56E85DD228C486B800F32FB2 /* CalendarInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInformation.swift; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 		562C113228A4DFEE00863C45 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				56E85DD128C486A300F32FB2 /* CalendarInformation */,
+				56E85DCC28C3CC8200F32FB2 /* Models */,
 				56EC3B8128BD375D00C9F4C4 /* Storage */,
 				56EC3B7C28BD370E00C9F4C4 /* NetworkManager */,
 				562C114328A4E16200863C45 /* Extension */,
@@ -439,6 +447,23 @@
 				56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		56E85DCC28C3CC8200F32FB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56E85DCD28C3CCA700F32FB2 /* LabModel.swift */,
+				56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56E85DD128C486A300F32FB2 /* CalendarInformation */ = {
+			isa = PBXGroup;
+			children = (
+				56E85DD228C486B800F32FB2 /* CalendarInformation.swift */,
+			);
+			path = CalendarInformation;
 			sourceTree = "<group>";
 		};
 		56EC3B4628BB712E00C9F4C4 /* TextPage */ = {
@@ -616,6 +641,7 @@
 				565F8E2628A53D5200259852 /* ReservedExperimentCoordinator.swift in Sources */,
 				565F8E3F28A6AB5400259852 /* labsTableViewCell.swift in Sources */,
 				565F8E3828A6A9B400259852 /* LabsViewModel.swift in Sources */,
+				56E85DCE28C3CCA700F32FB2 /* LabModel.swift in Sources */,
 				562C113128A4DF9800863C45 /* BaseCoordinator.swift in Sources */,
 				56EC3B5428BB72BB00C9F4C4 /* LabBookViewModel.swift in Sources */,
 				562C116028A4E40A00863C45 /* AppTheme.swift in Sources */,
@@ -635,6 +661,7 @@
 				56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
 				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
+				56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
@@ -642,6 +669,7 @@
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
 				565F8E2A28A53D7F00259852 /* ReservedExperimentViewController.swift in Sources */,
+				56E85DD028C3CCC300F32FB2 /* ReservedModel.swift in Sources */,
 				562C113A28A4E0CE00863C45 /* LabelBuilder.swift in Sources */,
 				56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */,
 				562C115928A4E36900863C45 /* SpinerLayer.swift in Sources */,

@@ -9,8 +9,7 @@
 import UIKit
 
 class CalendarView: UIView {
-    var selectedCell: ()-> Void = {}
-
+    
     let titleView = LabelBuilder()
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
@@ -75,10 +74,10 @@ class CalendarView: UIView {
 extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if dateList.isEmpty {
+        if CalendarInformation.shared.calendarDate.isEmpty {
             return 0
         } else {
-            return dateList.count
+            return CalendarInformation.shared.calendarDate.count
         }
     }
     
@@ -105,7 +104,7 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! SectionHeader
             
-            let date = dateList[indexPath.row]
+            let date = CalendarInformation.shared.calendarDate[indexPath.section]
             sectionHeader.setupCell(data: date)
             
             return sectionHeader
@@ -125,8 +124,12 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("Hallo")
-        selectedCell()
-        
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
+        cell.cellSelected(selected: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
+        cell.cellSelected(selected: false)
+    }
 }

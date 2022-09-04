@@ -21,8 +21,10 @@ class LabBookCoordinator: BaseCoordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(reservationId: String, experimentId: String) {
         VC.coordinator = self
+        VC.reservationId = reservationId
+        VC.experimentId = experimentId
         navigate(to: VC, with: .push)
     }
 }

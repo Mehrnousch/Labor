@@ -10,11 +10,27 @@ import UIKit
 class LabBookViewController: UIViewController {
     
     var coordinator: LabBookCoordinator?
+    private lazy var viewModel: LabBookViewModel = {
+        let vm = LabBookViewModel()
+        vm.delegate = self
+        return vm
+    }()
     let baseView = LabBookView()
-
+    var reservationId: String?
+    var experimentId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
+        if let reservationId = reservationId, let experimentId = experimentId {
+            if reservationId != "", experimentId != "" {
+                
+                print("!!@@ reservationId \(reservationId)")
+                print("!!@@ experimentId \(experimentId)")
+
+                viewModel.showExperiment(reservationId: Int(reservationId) ?? 0, experimentId: Int(experimentId) ?? 0)
+            }
+        }
         actionCell()
         layout()
     }
@@ -44,5 +60,17 @@ class LabBookViewController: UIViewController {
             view.trailingAnchor.constraint(equalTo: baseView.trailingAnchor),
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
+    }
+}
+
+
+//MARK: - ViewModelDelegate
+extension LabBookViewController: LabBookViewModelDelegate {
+    func gettingReservedListSuccessful() {
+        
+    }
+    
+    func gettingReservedListFailed() {
+        
     }
 }

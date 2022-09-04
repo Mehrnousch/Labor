@@ -165,4 +165,22 @@ class Utility {
         layer.shadowRadius = 2.0
         layer.masksToBounds = false
     }
+    
+    class func dateStringFromUnixTime(unixTime: Double) -> String {
+        let offsetInSeconds = 7200
+        let unixTimeBerlin = unixTime + Double(offsetInSeconds)
+        let date = NSDate(timeIntervalSince1970: unixTimeBerlin)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        return dateFormatter.string(from: date as Date)
+    }
+    
+    class func timeStringFromUnixTime(unixTime: Double) -> String {
+        let offsetInSeconds = 7200
+        let unixTimeBerlin = unixTime + Double(offsetInSeconds)
+        let date = NSDate(timeIntervalSince1970: unixTimeBerlin)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: date as Date)
+    }
 }

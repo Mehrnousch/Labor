@@ -18,6 +18,7 @@ class ReservedExperimentViewController: UIViewController {
         return vm
     }()
     let baseView = ReservedExperimentView()
+    private let loadingVC = LoadingViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,11 @@ class ReservedExperimentViewController: UIViewController {
         actionCell()
         layout()
         
-        print("token = \(KeyChainStorage.getToken())")
+        //MARK: - Get date for Calendar
+        CalendarInformation.shared.formaterCalendar()
+        print("calendarDate = \(CalendarInformation.shared.calendarDate)")
+
+        presentLoadingVC()
         viewModel.getReservedList()
         
         NotificationCenter.default.addObserver(self, selector: #selector(NotFirst), name: NSNotification.Name ("NotFirstLaunch"), object: nil)
@@ -72,8 +77,8 @@ class ReservedExperimentViewController: UIViewController {
     }
     
     func actionCell() {
-        self.baseView.selectedCell = {
-            self.coordinator?.toLabBook()
+        self.baseView.selectedCell = { reservationId, experimentId in
+            self.coordinator?.toLabBook(reservationId: reservationId, experimentId: experimentId)
         }
     }
     
@@ -86,16 +91,23 @@ class ReservedExperimentViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    private func presentLoadingVC() {
+        loadingVC.modalTransitionStyle = .crossDissolve
+        loadingVC.modalPresentationStyle = .overFullScreen
+        present(loadingVC, animated: false, completion: nil)
+    }
 }
 
 
 //MARK: - ViewModelDelegate
 extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate {
-    func gettingReservedListSuccessful(newToken: String) {
-        
+    func gettingReservedListSuccessful(reservations: [ReservedModel]) {
+        self.baseView.setData(reservations: reservations)
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
     
-    func gettingReservedListFailed(errorMessages: [String]) {
-        
+    func gettingReservedListFailed() {
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
 }

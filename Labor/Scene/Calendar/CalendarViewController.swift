@@ -16,20 +16,11 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         navigtionBarConfigure()
         layout()
-        actionForSelectedCell()
-
     }
     
     func navigtionBarConfigure() {
         title = "Calendar"
     }
-    
-    private func actionForSelectedCell() {
-        baseView.selectedCell = {
-            self.coordinator?.toReservationConfirmation()
-        }
-    }
-    
     
     private func layout() {
         view.addSubview(baseView)

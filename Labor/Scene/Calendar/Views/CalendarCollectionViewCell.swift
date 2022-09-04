@@ -40,6 +40,17 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         timeLabel.text = data
     }
     
+    func cellSelected(selected: Bool) {
+        if selected {
+            contentView.backgroundColor = .red
+            containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
+            timeLabel.textColor = .white
+        }else {
+            containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
+            timeLabel.textColor = .black
+        }
+    }
+    
     private func layout() {
         contentView.addSubview(borderView)
         contentView.addSubview(containerTimeView)
@@ -64,3 +75,4 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

@@ -10,8 +10,8 @@ import SwiftyJSON
 import Alamofire
 
 protocol ReservedExperimentViewModelDelegate {
-    func gettingReservedListSuccessful(newToken: String)
-    func gettingReservedListFailed(errorMessages: [String])
+    func gettingReservedListSuccessful(reservations: [ReservedModel])
+    func gettingReservedListFailed()
 }
 
 class ReservedExperimentViewModel {
@@ -32,17 +32,19 @@ class ReservedExperimentViewModel {
                     
                     let myResponse = JSON(data)
                     print("myResponse = \(myResponse)")
+                    let dataJson = ReservationsModel(json: myResponse["data"])
                     let data = myResponse["data"]
                     print("data = \(data)")
                     let errors = myResponse["errors"]
                     print("errors = \(errors)")
                     if !data.isEmpty {
                         //MARK: - Success
-                        
-                        
+                        if let reservations = dataJson.reservations {
+                            self.delegate?.gettingReservedListSuccessful(reservations: reservations)
+                        }
                     } else {
                         //MARK: - Failed
-                        
+                        self.delegate?.gettingReservedListFailed()
                     }
                     
                 case .failure(let error):
