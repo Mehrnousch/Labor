@@ -14,7 +14,6 @@ class CalendarView: UIView {
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
-    let dateList = ["01.02.2022","02.02.2022","03.02.2022","04.02.2022","05.02.2022","06.02.2022","07.02.2022","08.02.2022","09.02.2022", "10.02.2022", "11.02.2022"]
     let timeList = ["08:00","09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"]
     private let calendarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -35,6 +34,8 @@ class CalendarView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
+    
+    var selectedCell: (String, String)-> Void = {_, _ in}
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -93,9 +94,9 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
         let time = timeList[indexPath.row]
         cell.setupCell(data: time)
-        cell.isSelected = false
+//        cell.isSelected = false
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
-        cell.isSelected = true
+//        cell.isSelected = true
         
         return cell
     }
@@ -123,9 +124,37 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         return CGSize(width: collectionViewSize/1.76, height: collectionViewSize/2.4)
     }
     
+    func createUnixTimestamp(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) -> Double {
+        
+        let monthCumulativeCount = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365]
+        
+        if year > 1969, month > 0, month < 13, day > 0, day < 32, hour > -1, hour < 24, minute > -1, minute < 60, second > -1, second < 60 {
+            let yearsCount = year - 1970
+            let leapDaysCount = floor(Double(yearsCount / 4))
+            let daysCount = (yearsCount * 365) + Int(leapDaysCount) + monthCumulativeCount[month - 1] + (day - 1)
+            let timestamp = (daysCount * 24 * 60 * 60) + (hour * 60 * 60) + (minute * 60) + second
+            return Double(timestamp)
+        }
+        
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
         cell.cellSelected(selected: true)
+        let time = timeList[indexPath.row]
+        let date = CalendarInformation.shared.calendarDate[indexPath.section]
+        print("\(time)+\(date)")
+        
+        guard let month = Int(date.components(separatedBy: ".")[1]) else { return }
+        guard let day = Int(date.components(separatedBy: ".")[0]) else { return }
+        guard let hour = Int(time.replacingOccurrences(of: "0", with: "").replacingOccurrences(of: ":", with: "")) else { return }
+
+        let startTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour, minute: 0, second: 0)
+        let endTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
+
+        UserDefaultsStorage.shared.startExperiment = String(startTime)
+        UserDefaultsStorage.shared.endExperiment = String(endTime)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

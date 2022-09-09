@@ -22,6 +22,7 @@ class CheckBoxButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        icon.isUserInteractionEnabled = false
         layout()
     }
     

@@ -65,6 +65,13 @@
 		565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4828A6CB0A00259852 /* CalendarViewController.swift */; };
 		565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalenderView.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
+		56655A6928CA448F002F5861 /* PDFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A6828CA448F002F5861 /* PDFButton.swift */; };
+		56655A6B28CA44B6002F5861 /* PDFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A6A28CA44B6002F5861 /* PDFsView.swift */; };
+		56655A6D28CA4577002F5861 /* security.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6C28CA4577002F5861 /* security.pdf */; };
+		56655A7028CA4599002F5861 /* protocol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6E28CA4599002F5861 /* protocol.pdf */; };
+		56655A7128CA4599002F5861 /* clean.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6F28CA4599002F5861 /* clean.pdf */; };
+		56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7328CA47B8002F5861 /* PDFCoordinator.swift */; };
+		56655A7628CA47F6002F5861 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7528CA47F6002F5861 /* PDFViewController.swift */; };
 		5672BA0C28BEA7E600BB812A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5672BA0B28BEA7E600BB812A /* Toast */; };
 		5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1128C114F400BB812A /* KeyChainManager.swift */; };
 		5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1328C1151300BB812A /* KeyChainStorage.swift */; };
@@ -77,6 +84,8 @@
 		56E85DDA28C4E75500F32FB2 /* ShowExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */; };
 		56E85DDC28C4E76A00F32FB2 /* ShowExperimentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */; };
 		56E85DDE28C4E77A00F32FB2 /* ShowExperimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */; };
+		56E85DE128C5454F00F32FB2 /* LaborItems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */; };
+		56E85DE328C5456900F32FB2 /* LaborItems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -167,6 +176,13 @@
 		565F8E4828A6CB0A00259852 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565F8E4A28A6CB3400259852 /* CalenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		56655A6828CA448F002F5861 /* PDFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButton.swift; sourceTree = "<group>"; };
+		56655A6A28CA44B6002F5861 /* PDFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFsView.swift; sourceTree = "<group>"; };
+		56655A6C28CA4577002F5861 /* security.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = security.pdf; sourceTree = "<group>"; };
+		56655A6E28CA4599002F5861 /* protocol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = protocol.pdf; sourceTree = "<group>"; };
+		56655A6F28CA4599002F5861 /* clean.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clean.pdf; sourceTree = "<group>"; };
+		56655A7328CA47B8002F5861 /* PDFCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCoordinator.swift; sourceTree = "<group>"; };
+		56655A7528CA47F6002F5861 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		5672BA1328C1151300BB812A /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		56E85DCD28C3CCA700F32FB2 /* LabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabModel.swift; sourceTree = "<group>"; };
@@ -177,6 +193,8 @@
 		56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewController.swift; sourceTree = "<group>"; };
 		56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewModel.swift; sourceTree = "<group>"; };
 		56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentView.swift; sourceTree = "<group>"; };
+		56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaborItems+CoreDataClass.swift"; sourceTree = "<group>"; };
+		56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaborItems+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -240,6 +258,7 @@
 		562C110928A4D26600863C45 /* Labor */ = {
 			isa = PBXGroup;
 			children = (
+				56E85DDF28C5454000F32FB2 /* CoreData */,
 				562C112C28A4DF0E00863C45 /* Base */,
 				562C112D28A4DF1A00863C45 /* Scene */,
 				562C113228A4DFEE00863C45 /* Application */,
@@ -275,6 +294,7 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				56655A7228CA47A3002F5861 /* PDF */,
 				56E85DD628C4E71100F32FB2 /* ShowExperiment */,
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
@@ -306,6 +326,7 @@
 		562C113328A4DFF600863C45 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				56655A6728CA4478002F5861 /* PDF */,
 				562C114128A4E15900863C45 /* LoadingVC */,
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
@@ -370,6 +391,9 @@
 				562C112328A4D4ED00863C45 /* Font */,
 				562C115F28A4E40A00863C45 /* AppTheme.swift */,
 				562C116128A4E44000863C45 /* Utility.swift */,
+				56655A6C28CA4577002F5861 /* security.pdf */,
+				56655A6F28CA4599002F5861 /* clean.pdf */,
+				56655A6E28CA4599002F5861 /* protocol.pdf */,
 				56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */,
 				562C111628A4D26700863C45 /* Assets.xcassets */,
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
@@ -460,6 +484,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		56655A6728CA4478002F5861 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				56655A6828CA448F002F5861 /* PDFButton.swift */,
+				56655A6A28CA44B6002F5861 /* PDFsView.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		56655A7228CA47A3002F5861 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				56655A7328CA47B8002F5861 /* PDFCoordinator.swift */,
+				56655A7528CA47F6002F5861 /* PDFViewController.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
 		56E85DCC28C3CC8200F32FB2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +529,15 @@
 				56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */,
 			);
 			path = ShowExperiment;
+			sourceTree = "<group>";
+		};
+		56E85DDF28C5454000F32FB2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */,
+				56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		56EC3B4628BB712E00C9F4C4 /* TextPage */ = {
@@ -645,8 +696,11 @@
 			files = (
 				562C112828A4D53E00863C45 /* Roboto-Medium.ttf in Resources */,
 				562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */,
+				56655A7128CA4599002F5861 /* clean.pdf in Resources */,
 				562C111A28A4D26700863C45 /* LaunchScreen.storyboard in Resources */,
 				562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */,
+				56655A6D28CA4577002F5861 /* security.pdf in Resources */,
+				56655A7028CA4599002F5861 /* protocol.pdf in Resources */,
 				56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */,
 				562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */,
 				562C111728A4D26700863C45 /* Assets.xcassets in Resources */,
@@ -689,9 +743,12 @@
 				56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */,
+				56E85DE328C5456900F32FB2 /* LaborItems+CoreDataProperties.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
+				56E85DE128C5454F00F32FB2 /* LaborItems+CoreDataClass.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
+				56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */,
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,
 				565F8E2A28A53D7F00259852 /* ReservedExperimentViewController.swift in Sources */,
 				56E85DD028C3CCC300F32FB2 /* ReservedModel.swift in Sources */,
@@ -702,6 +759,7 @@
 				56ED46D128C26BCA002E9EC7 /* CheckBoxButton.swift in Sources */,
 				56EC3B5E28BB749A00C9F4C4 /* AddDescriptionViewController.swift in Sources */,
 				562C110B28A4D26600863C45 /* AppDelegate.swift in Sources */,
+				56655A7628CA47F6002F5861 /* PDFViewController.swift in Sources */,
 				562C114028A4E13300863C45 /* TextViewBuilder.swift in Sources */,
 				565F8E2F28A53DDE00259852 /* ReservedExperimentTableViewCell.swift in Sources */,
 				56EC3B5828BB731D00C9F4C4 /* LabBookTableViewCell.swift in Sources */,
@@ -715,6 +773,7 @@
 				565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
 				56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */,
+				56655A6B28CA44B6002F5861 /* PDFsView.swift in Sources */,
 				562C114F28A4E2A600863C45 /* String.swift in Sources */,
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
 				5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */,
@@ -744,6 +803,7 @@
 				562C113828A4E06800863C45 /* ImageBuilder.swift in Sources */,
 				565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */,
 				562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */,
+				56655A6928CA448F002F5861 /* PDFButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

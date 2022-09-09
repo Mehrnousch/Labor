@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LabsCoordinatorDelegate {
-    func toCalendar()
+    func toCalendar(laborId: Int)
 }
 
 class LabsCoordinator: BaseCoordinator {
@@ -30,8 +30,8 @@ class LabsCoordinator: BaseCoordinator {
 
 //MARK: - Delegate
 extension LabsCoordinator: LabsCoordinatorDelegate {
-    func toCalendar() {
+    func toCalendar(laborId: Int) {
         calendarCoordinator = CalendarCoordinator(with: navigationController)
-        calendarCoordinator?.start()
+        calendarCoordinator?.start(laborId: laborId)
     }
 }

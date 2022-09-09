@@ -8,34 +8,30 @@
 import UIKit
 
 protocol FinalReserveCoordinatorDelegate {
-    func toReservedExperiment()
+    func toPDF(pdfName: String)
 }
 
 class FinalReserveCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
     let VC = FinalReserveViewController()
-    private var reservedExperimentCoordinator: ReservedExperimentCoordinator!
+    private var pdfCoordinator: PDFCoordinator!
     
     init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(laborId: Int) {
         VC.coordinator = self
+        VC.laborId = laborId
         navigate(to: VC, with: .push)
     }
 }
 
 //MARK: - Delegate
 extension FinalReserveCoordinator: FinalReserveCoordinatorDelegate {
-    func toReservedExperiment() {
-        reservedExperimentCoordinator = ReservedExperimentCoordinator(with: navigationController)
-        reservedExperimentCoordinator?.start()
+    func toPDF(pdfName: String) {
+        pdfCoordinator = PDFCoordinator(with: navigationController)
+        pdfCoordinator?.start(pdfName: pdfName)
     }
 }
-
-
-
-
-

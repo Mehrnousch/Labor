@@ -11,10 +11,22 @@ class UserDefaultsStorage {
     
     static let shared: UserDefaultsStorage = UserDefaultsStorage()
     private let token = "token"
+    private let calendarStartExperiment = "startTime"
+    private let calendarEndExperiment = "endTime"
 
     var accountToken: String? {
         get { return getString(token) }
         set { setString(token, value: newValue) }
+    }
+    
+    var startExperiment: String? {
+        get { return getString(calendarStartExperiment) }
+        set { setString(calendarStartExperiment, value: newValue) }
+    }
+    
+    var endExperiment: String? {
+        get { return getString(calendarEndExperiment) }
+        set { setString(calendarEndExperiment, value: newValue) }
     }
     
     private func getString(_ name: String) -> String? {

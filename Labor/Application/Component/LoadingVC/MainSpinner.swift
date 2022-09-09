@@ -56,7 +56,7 @@ class MainSpinner: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setup(with: UIColor(named: "Color") ?? UIColor.white, tintColor: UIColor(named: "select_main_textField_border_color") ?? .systemPink)
+        self.setup(with: UIColor.white, tintColor: AppTheme.view.backGround_red_color)
     }
     
     required public init?(coder aDecoder: NSCoder) {

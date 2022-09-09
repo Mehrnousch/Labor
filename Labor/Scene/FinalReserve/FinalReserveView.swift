@@ -8,39 +8,13 @@
 import UIKit
 
 class FinalReserveView: UIView {
-    let generalInformationView = ViewBuilder()
-        .setBackground(AppTheme.cell.light_gray_color)
-        .setCornerRadius(20, onlyTop: false, onlyBottom: true)
-        .build()
     
-    let pdfLabel = LabelBuilder()
-        .setText("Betriebsanweisungen und notwendige Informationen für die Nutzung von Laboren:", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
-        .build()
-    
-    let protocolPdf = ButtonBuilder()
-        .build()
-    
-    let protocolPdfImage = ImageBuilder()
-        .setImage("pdf")
-        .build()
-    
-    let securityPdf = ButtonBuilder()
-        .build()
-    
-    let securityPdfImage = ImageBuilder()
-        .setImage("pdf")
-        .build()
-    
-    let operatingInstructionPdf = ButtonBuilder()
-        .build()
-    
-    let operatingInstructionPdfImage = ImageBuilder()
-        .setImage("pdf")
-        .build()
+    let pdfsView = PDFsView()
     
     let experimentTitleLabel = LabelBuilder()
         .setText("Bitte geben Sie Ihren Experimenttitel ein:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
+    
     let experimentTitleTextField = TextFieldBuilder()
         .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Title", textAlignment: .left, backGroundColor: .white)
         .setBorderDeselected()
@@ -78,15 +52,7 @@ class FinalReserveView: UIView {
     }
     
     func layout() {
-        addSubview(generalInformationView)
-        generalInformationView.shadow()
-        generalInformationView.addSubview(pdfLabel)
-        generalInformationView.addSubview(securityPdf)
-        securityPdf.addSubview(securityPdfImage)
-        generalInformationView.addSubview(protocolPdf)
-        protocolPdf.addSubview(protocolPdfImage)
-        generalInformationView.addSubview(operatingInstructionPdf)
-        operatingInstructionPdf.addSubview(operatingInstructionPdfImage)
+        addSubview(pdfsView)
         addSubview(experimentTitleLabel)
         addSubview(experimentTitleTextField)
         addSubview(experimentInfoLabel)
@@ -95,50 +61,11 @@ class FinalReserveView: UIView {
         addSubview(agreeRulesButton)
         addSubview(saveButton)
         NSLayoutConstraint.activate([
-            generalInformationView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            generalInformationView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            generalInformationView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            generalInformationView.heightAnchor.constraint(equalToConstant: 160),
+            pdfsView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            pdfsView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            pdfsView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            pdfLabel.topAnchor.constraint(equalTo: generalInformationView.topAnchor, constant: 20),
-            pdfLabel.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor, constant: 20),
-            pdfLabel.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor, constant: -20),
-            
-            securityPdf.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 30),
-            securityPdf.bottomAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: -20),
-            securityPdf.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor),
-            securityPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            securityPdf.widthAnchor.constraint(equalToConstant: generalInformationView.bounds.width / 3),
-            
-            securityPdfImage.centerXAnchor.constraint(equalTo: securityPdf.centerXAnchor),
-            securityPdfImage.centerYAnchor.constraint(equalTo: securityPdf.centerYAnchor),
-            securityPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            securityPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-
-            protocolPdf.topAnchor.constraint(equalTo: securityPdf.topAnchor),
-            protocolPdf.bottomAnchor.constraint(equalTo: securityPdf.bottomAnchor),
-            protocolPdf.leadingAnchor.constraint(equalTo: securityPdf.trailingAnchor),
-            protocolPdf.trailingAnchor.constraint(equalTo: operatingInstructionPdf.leadingAnchor),
-            protocolPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            protocolPdf.widthAnchor.constraint(equalTo: securityPdf.widthAnchor, multiplier: 1),
-
-            protocolPdfImage.centerXAnchor.constraint(equalTo: protocolPdf.centerXAnchor),
-            protocolPdfImage.centerYAnchor.constraint(equalTo: protocolPdf.centerYAnchor),
-            protocolPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            protocolPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            
-            operatingInstructionPdf.topAnchor.constraint(equalTo: securityPdf.topAnchor),
-            operatingInstructionPdf.bottomAnchor.constraint(equalTo: securityPdf.bottomAnchor),
-            operatingInstructionPdf.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor),
-            operatingInstructionPdf.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            operatingInstructionPdf.widthAnchor.constraint(equalTo: securityPdf.widthAnchor, multiplier: 1),
-            
-            operatingInstructionPdfImage.centerXAnchor.constraint(equalTo: operatingInstructionPdf.centerXAnchor),
-            operatingInstructionPdfImage.centerYAnchor.constraint(equalTo: operatingInstructionPdf.centerYAnchor),
-            operatingInstructionPdfImage.widthAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            operatingInstructionPdfImage.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
-            
-            experimentTitleLabel.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: 20),
+            experimentTitleLabel.topAnchor.constraint(equalTo: pdfsView.bottomAnchor, constant: 20),
             experimentTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             experimentTitleLabel.heightAnchor.constraint(equalToConstant: 20),
             
@@ -152,18 +79,18 @@ class FinalReserveView: UIView {
             experimentInfoLabel.heightAnchor.constraint(equalToConstant: 20),
 
             experimentInfoTextView.topAnchor.constraint(equalTo: experimentInfoLabel.bottomAnchor, constant: 10),
-            experimentInfoTextView.bottomAnchor.constraint(equalTo: agreeRulesButton.topAnchor, constant: -10),
             experimentInfoTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             experimentInfoTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            agreeRulesButton.bottomAnchor.constraint(equalTo: existenceManagerButton.topAnchor, constant: -10),
+            agreeRulesButton.topAnchor.constraint(equalTo: experimentInfoTextView.bottomAnchor, constant: 10),
             agreeRulesButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             agreeRulesButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            existenceManagerButton.bottomAnchor.constraint(equalTo: saveButton.topAnchor, constant: -20),
+            existenceManagerButton.topAnchor.constraint(equalTo: agreeRulesButton.bottomAnchor, constant: 20),
             existenceManagerButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             existenceManagerButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 
+            saveButton.topAnchor.constraint(equalTo: existenceManagerButton.bottomAnchor, constant: 10),
             saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: AppTheme.view.paddingBottom),
             saveButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
             saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),

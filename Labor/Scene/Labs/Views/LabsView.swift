@@ -10,7 +10,7 @@ import UIKit
 
 class LabsView: UIView {
     
-    var selectedCell: ()-> Void = {}
+    var selectedCell: (Int)-> Void = {_ in}
 
     var labs: [LabModel] = []
     let labsTableView: UITableView = {
@@ -78,6 +78,7 @@ extension LabsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! labsTableViewCell
         cell.selectionStyle = .none
-        selectedCell()
+        let cellData = labs[indexPath.row]
+        selectedCell(cellData.id)
     }
 }

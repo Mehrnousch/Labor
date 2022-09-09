@@ -10,6 +10,12 @@ import UIKit
 public enum AppTheme {
     static var primary_font = "Roboto"
     
+    enum pdfName {
+        static let protocolPdf: String = "Protocol"
+        static let securityPdf: String = "Security"
+        static let cleanPdf: String = "Clean"
+    }
+    
     enum label {
         static let placeHolder_textView: String = "Write a description of the test experience"
         static let link_text_color: UIColor = UIColor(red: 0, green: 119/255, blue: 204/255, alpha: 1)
@@ -51,7 +57,7 @@ public enum AppTheme {
         static let height: CGFloat = 52
         static let borderWidth: CGFloat = 1
         static let cornerRadius: CGFloat = 12
-        static let hight_width_PdfButton: CGFloat = 44
+        static let hight_width_PdfButton: CGFloat = 55
         static let textView_send: UIColor = .init(red: 110/255, green: 182/255, blue: 196/255, alpha: 1)
     }
     

@@ -7,7 +7,7 @@
 import UIKit
 
 protocol CalendarCoordinatorDelegate {
-    func toReservationConfirmation()
+    func toFinalReserved(laborId: Int)
 }
 
 class CalendarCoordinator: BaseCoordinator {
@@ -20,16 +20,17 @@ class CalendarCoordinator: BaseCoordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(laborId: Int) {
         VC.coordinator = self
+        VC.laborId = laborId
         navigate(to: VC, with: .push)
     }
 }
 
 //MARK: - Delegate
 extension CalendarCoordinator: CalendarCoordinatorDelegate {
-    func toReservationConfirmation() {
+    func toFinalReserved(laborId: Int) {
         finalReserveCoordinator = FinalReserveCoordinator(with: navigationController)
-        finalReserveCoordinator?.start()
+        finalReserveCoordinator?.start(laborId: laborId)
     }
 }

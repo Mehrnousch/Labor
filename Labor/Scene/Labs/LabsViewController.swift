@@ -33,8 +33,8 @@ class LabsViewController: UIViewController {
     }
     
     private func actionForSelectedCell() {
-        baseView.selectedCell = {
-            self.coordinator?.toCalendar()
+        baseView.selectedCell = { laborId in
+            self.coordinator?.toCalendar(laborId: laborId)
         }
     }
     
