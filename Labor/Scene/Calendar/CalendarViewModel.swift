@@ -10,7 +10,7 @@ import SwiftyJSON
 import Alamofire
 
 protocol CalendarViewModelDelegate {
-    func gettingReservedTimeSuccessful()
+    func gettingReservedTimeSuccessful(reservations: [ReservedModel])
     func gettingReservedTimeFailed()
 }
 
@@ -27,26 +27,31 @@ class CalendarViewModel {
                 
         Alamofire.request(ApiConstants.reservedationTime(laborId: laborId), method: .get, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
-                switch response.result {
+                switch response.result { //MARK: - Fix
                 case .success(let data):
-                    
                     let myResponse = JSON(data)
-                    print("myResponse = \(myResponse)")
-                    let dataJson = ReservationsModel(json: myResponse["data"])
+                    
                     let data = myResponse["data"]
-                    print("data = \(data)")
                     let errors = myResponse["errors"]
-                    print("errors = \(errors)")
-                    if !data.isEmpty {
-                        //MARK: - Success
-                        self.delegate?.gettingReservedTimeSuccessful()
-                    } else {
-                        //MARK: - Failed
+                    let message = MessageModel(json: myResponse["message"])
+                    print("!!@@ data = \(data)")
+                    print("!!@@ errors = \(errors)")
+                    print("!!@@ message = \(message)")
+                    
+                    let statusCode = message.code
+                    
+                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
                         self.delegate?.gettingReservedTimeFailed()
+                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
+                        let reservations = ReservationsModel(json: data)
+                        if let reservations = reservations.reservations {
+                            self.delegate?.gettingReservedTimeSuccessful(reservations: reservations)
+                        }
                     }
                     
                 case .failure(let error):
                     print("!Error = ", error)
+                    self.delegate?.gettingReservedTimeFailed()
                 }
             }
     }

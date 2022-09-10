@@ -11,6 +11,8 @@ import Toast
 
 class FinalReserveViewController: UIViewController {
     
+    private let notificationCenter = NotificationCenter.default
+
     var coordinator: FinalReserveCoordinator?
     private lazy var viewModel: FinalReserveViewModel = {
         let vm = FinalReserveViewModel()
@@ -32,23 +34,18 @@ class FinalReserveViewController: UIViewController {
         title = "Final reserve"
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-    }
-    
     func actionButtons() {
-        baseView.pdfsView.protocolPdfButton.addAction { [weak self] in
+        baseView.protocolPdfButton.addAction { [weak self] in
             guard let self = self else { return }
             self.coordinator?.toPDF(pdfName: AppTheme.pdfName.protocolPdf)
         }
 
-        baseView.pdfsView.securityPdfButton.addAction { [weak self] in
+        baseView.securityPdfButton.addAction { [weak self] in
             guard let self = self else { return }
             self.coordinator?.toPDF(pdfName: AppTheme.pdfName.securityPdf)
         }
 
-        baseView.pdfsView.cleanPdfButton.addAction { [weak self] in
+        baseView.cleanPdfButton.addAction { [weak self] in
             guard let self = self else { return }
             self.coordinator?.toPDF(pdfName: AppTheme.pdfName.cleanPdf)
         }
@@ -82,17 +79,16 @@ class FinalReserveViewController: UIViewController {
                 existenceManagerValue = 0
             }
             
-            if let startAt = UserDefaultsStorage.shared.startExperiment,
-               let endAt = UserDefaultsStorage.shared.endExperiment,
-               let title = self.baseView.experimentTitleTextField.text,
+            if let title = self.baseView.experimentTitleTextField.text,
                let description = self.baseView.experimentInfoTextView.text {
                 
-                if startAt != "",
-                   endAt != "",
+                let startAt = UserDefaultsStorage.shared.startExperiment
+                let endAt = UserDefaultsStorage.shared.endExperiment
+                if startAt != 0.0,
+                   endAt != 0.0,
                    title != "",
                    description != "",
                    agreeRulesValue > 0,
-                   existenceManagerValue > 0,
                    self.laborId > 0
                 {
                     self.viewModel.finalReserve(laborId: self.laborId, startAt: startAt, endAt: endAt, supervisorNeeded: existenceManagerValue, title: title, description: description)
@@ -112,16 +108,29 @@ class FinalReserveViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    //MARK: - Remove Notification ReserveSuccessful
+    deinit {
+        notificationCenter.removeObserver(self, name: NSNotification.Name("ReserveSuccessful"), object: nil)
+    }
 }
 
 
 //MARK: - ViewModelDelegate
 extension FinalReserveViewController: FinalReserveViewModelDelegate {
     func reserveSuccess() {
+        self.navigationController?.popToRootViewController(animated: true)
         
+        //MARK: - Post Notification ReserveSuccessful
+        notificationCenter.post(name: NSNotification.Name("ReserveSuccessful"), object: nil, userInfo: nil)
     }
     
-    func reserveFailed() {
-        
+    func reserveFailed(error: String) {
+        let toast = Toast.default(
+            image: UIImage(named: "error")!,
+            title: "Error",
+            subtitle: error
+        )
+        toast.show()
     }
 }

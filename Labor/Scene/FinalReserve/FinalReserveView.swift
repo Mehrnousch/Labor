@@ -9,7 +9,19 @@ import UIKit
 
 class FinalReserveView: UIView {
     
-    let pdfsView = PDFsView()
+    let generalInformationView = ViewBuilder()
+        .setBackground(AppTheme.cell.light_gray_color)
+        .setCornerRadius(20, onlyTop: false, onlyBottom: true)
+        .build()
+
+    let pdfLabel = LabelBuilder()
+        .setText("Betriebsanweisungen und notwendige Informationen für die Nutzung von Laboren:", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .build()
+    
+    let securityPdfButton = PDFButton()
+    let protocolPdfButton = PDFButton()
+    let cleanPdfButton = PDFButton()
+    
     
     let experimentTitleLabel = LabelBuilder()
         .setText("Bitte geben Sie Ihren Experimenttitel ein:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
@@ -47,12 +59,22 @@ class FinalReserveView: UIView {
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-        agreeRulesButton.setLabel(label: "Ich habe die Protokolle und Sicherheitsinformationen gelesen und stimme ihnen zu.*")
-        existenceManagerButton.setLabel(label: "Ich brauche die Unterstützung des Laborverantwortlichen.")
+        
+        securityPdfButton.setLabel(label: "Security")
+        protocolPdfButton.setLabel(label: "Protocol")
+        cleanPdfButton.setLabel(label: "Clean")
+        
+        agreeRulesButton.setLabel(label: "I read all the rules and agree with them.")
+        existenceManagerButton.setLabel(label: "I need the support of the laboratory manager.")
     }
     
     func layout() {
-        addSubview(pdfsView)
+        addSubview(generalInformationView)
+        generalInformationView.shadow()
+        generalInformationView.addSubview(pdfLabel)
+        generalInformationView.addSubview(securityPdfButton)
+        generalInformationView.addSubview(protocolPdfButton)
+        generalInformationView.addSubview(cleanPdfButton)
         addSubview(experimentTitleLabel)
         addSubview(experimentTitleTextField)
         addSubview(experimentInfoLabel)
@@ -61,11 +83,36 @@ class FinalReserveView: UIView {
         addSubview(agreeRulesButton)
         addSubview(saveButton)
         NSLayoutConstraint.activate([
-            pdfsView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            pdfsView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            pdfsView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            generalInformationView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            generalInformationView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            generalInformationView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            generalInformationView.heightAnchor.constraint(equalToConstant: 160),
             
-            experimentTitleLabel.topAnchor.constraint(equalTo: pdfsView.bottomAnchor, constant: 20),
+            pdfLabel.topAnchor.constraint(equalTo: generalInformationView.topAnchor, constant: 20),
+            pdfLabel.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor, constant: 20),
+            pdfLabel.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor, constant: -20),
+            
+            securityPdfButton.topAnchor.constraint(equalTo: pdfLabel.bottomAnchor, constant: 30),
+            securityPdfButton.bottomAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: -20),
+            securityPdfButton.leadingAnchor.constraint(equalTo: generalInformationView.leadingAnchor),
+            securityPdfButton.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            securityPdfButton.widthAnchor.constraint(equalToConstant: generalInformationView.bounds.width / 3),
+            
+            protocolPdfButton.topAnchor.constraint(equalTo: securityPdfButton.topAnchor),
+            protocolPdfButton.bottomAnchor.constraint(equalTo: securityPdfButton.bottomAnchor),
+            protocolPdfButton.leadingAnchor.constraint(equalTo: securityPdfButton.trailingAnchor),
+            protocolPdfButton.trailingAnchor.constraint(equalTo: cleanPdfButton.leadingAnchor),
+            protocolPdfButton.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            protocolPdfButton.widthAnchor.constraint(equalTo: securityPdfButton.widthAnchor, multiplier: 1),
+            
+            cleanPdfButton.topAnchor.constraint(equalTo: securityPdfButton.topAnchor),
+            cleanPdfButton.bottomAnchor.constraint(equalTo: securityPdfButton.bottomAnchor),
+            cleanPdfButton.trailingAnchor.constraint(equalTo: generalInformationView.trailingAnchor),
+            cleanPdfButton.heightAnchor.constraint(equalToConstant: AppTheme.button.hight_width_PdfButton),
+            cleanPdfButton.widthAnchor.constraint(equalTo: securityPdfButton.widthAnchor, multiplier: 1),
+            
+            
+            experimentTitleLabel.topAnchor.constraint(equalTo: generalInformationView.bottomAnchor, constant: 20),
             experimentTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             experimentTitleLabel.heightAnchor.constraint(equalToConstant: 20),
             

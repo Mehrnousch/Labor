@@ -11,19 +11,19 @@ import Alamofire
 
 protocol FinalReserveViewModelDelegate {
     func reserveSuccess()
-    func reserveFailed()
+    func reserveFailed(error: String)
 }
 
 class FinalReserveViewModel {
     
     var delegate: FinalReserveViewModelDelegate?
     
-    func finalReserve(laborId: Int, startAt: String, endAt: String, supervisorNeeded: Int, title: String, description: String) {
+    func finalReserve(laborId: Int, startAt: Double, endAt: Double, supervisorNeeded: Int, title: String, description: String) {
         
         let parameters: [String: Any] = [
-            "start_at": 1662720099, //startAt,
-            "end_at": 1662720100, //endAt,
-            "supervisor_needed": 1,
+            "start_at": startAt,
+            "end_at": endAt,
+            "supervisor_needed": supervisorNeeded,
             "title": title,
             "description": description
         ]
@@ -36,27 +36,28 @@ class FinalReserveViewModel {
         
         Alamofire.request(ApiConstants.finalReserve(laborId: laborId), method: .post, parameters: parameters, encoding: URLEncoding(destination: .httpBody), headers: headers)
             .responseJSON { response in
-                
-                print("response = \(response)")
-                
-                switch response.result {
+                switch response.result { //MARK: - Fix
                 case .success(let data):
-                    
                     let myResponse = JSON(data)
-                    print(myResponse)
+                    
                     let data = myResponse["data"]
                     let errors = myResponse["errors"]
-                    print("errors = \(errors)")
-                    if !data.isEmpty {
-                        //MARK: - Success
+                    let message = MessageModel(json: myResponse["message"])
+                    print("!!@@ data = \(data)")
+                    print("!!@@ errors = \(errors)")
+                    print("!!@@ message = \(message)")
+                    
+                    let statusCode = message.code
+                    
+                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
+                        self.delegate?.reserveFailed(error: message.text)
+                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
                         self.delegate?.reserveSuccess()
-                    } else {
-                        //MARK: - Failed
-                        self.delegate?.reserveFailed()
                     }
                     
                 case .failure(let error):
                     print("!Error = ", error)
+                    self.delegate?.reserveFailed(error: "Error = \(error)")
                 }
             }
     }

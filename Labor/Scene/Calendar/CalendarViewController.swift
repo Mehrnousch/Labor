@@ -4,7 +4,6 @@
 //
 //  Created by mehrnoush abdinian on 12.08.22.
 //
-
 import UIKit
 import Toast
 
@@ -19,12 +18,14 @@ class CalendarViewController: UIViewController {
     let baseView = CalendarView()
     var laborId = 0
     
+    var allReservations = [Int]()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UserDefaultsStorage.shared.startExperiment = "0"
-        UserDefaultsStorage.shared.endExperiment = "0"
+        UserDefaultsStorage.shared.startExperiment = 0.0
+        UserDefaultsStorage.shared.endExperiment = 0.0
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
@@ -43,17 +44,34 @@ class CalendarViewController: UIViewController {
     }
     
     @objc func rightHandAction() {
-        if let startTimeExpirment = Double(UserDefaultsStorage.shared.startExperiment ?? "") {
-            if startTimeExpirment > 0 {
+        let startTimeExpirment = UserDefaultsStorage.shared.startExperiment
+        let currentTimestamp = NSDate().timeIntervalSince1970
+        
+        if allReservations.contains(Int(startTimeExpirment)) {
+            let toast = Toast.default(
+                image: UIImage(named: "error")!,
+                title: "Time reservation",
+                subtitle: "The desired time is already reserved."
+            )
+            toast.show()
+        } else if startTimeExpirment > 0 {
+            if startTimeExpirment > currentTimestamp {
                 self.coordinator?.toFinalReserved(laborId: laborId)
             } else {
                 let toast = Toast.default(
                     image: UIImage(named: "error")!,
                     title: "Time reservation",
-                    subtitle: "You have not specified a time for booking"
+                    subtitle: "The selected time has passed"
                 )
                 toast.show()
             }
+        } else {
+            let toast = Toast.default(
+                image: UIImage(named: "error")!,
+                title: "Time reservation",
+                subtitle: "You have not specified a time for experiment"
+            )
+            toast.show()
         }
     }
     
@@ -71,8 +89,13 @@ class CalendarViewController: UIViewController {
 
 //MARK: - ViewModelDelegate
 extension CalendarViewController: CalendarViewModelDelegate {
-    func gettingReservedTimeSuccessful() {
+    func gettingReservedTimeSuccessful(reservations: [ReservedModel]) {
+        print(reservations)
+        for item in 0 ..< reservations.count {
+            allReservations.append(Int(reservations[item].startDate_Time))
+        }
         
+        print("allReservations = \(allReservations)")
     }
     
     func gettingReservedTimeFailed() {

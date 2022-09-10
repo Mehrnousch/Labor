@@ -34,9 +34,7 @@ class CalendarView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
-    
-    var selectedCell: (String, String)-> Void = {_, _ in}
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         style()
@@ -153,8 +151,8 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let startTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour, minute: 0, second: 0)
         let endTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
 
-        UserDefaultsStorage.shared.startExperiment = String(startTime)
-        UserDefaultsStorage.shared.endExperiment = String(endTime)
+        UserDefaultsStorage.shared.startExperiment = startTime
+        UserDefaultsStorage.shared.endExperiment = endTime
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

@@ -10,6 +10,11 @@ import UIKit
 public enum AppTheme {
     static var primary_font = "Roboto"
     
+    enum statusCode {
+        static let error: String = "E"
+        static let success: String = "S"
+    }
+    
     enum pdfName {
         static let protocolPdf: String = "Protocol"
         static let securityPdf: String = "Security"

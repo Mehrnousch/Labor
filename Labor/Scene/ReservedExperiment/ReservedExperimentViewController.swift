@@ -19,6 +19,13 @@ class ReservedExperimentViewController: UIViewController {
     }()
     let baseView = ReservedExperimentView()
     private let loadingVC = LoadingViewController()
+    private var pullToRefresh = UIRefreshControl()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //MARK: - Get Notification RegisterSuccessful
+        NotificationCenter.default.addObserver(self, selector: #selector(reserveSuccessful), name: NSNotification.Name ("ReserveSuccessful"), object: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +35,24 @@ class ReservedExperimentViewController: UIViewController {
         
         //MARK: - Get date for Calendar
         CalendarInformation.shared.formaterCalendar()
-        print("calendarDate = \(CalendarInformation.shared.calendarDate)")
 
         presentLoadingVC()
         viewModel.getReservedList()
+                
+        pullToRefresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+    }
+    
+    @objc func reserveSuccessful() {
+        let toast = Toast.default(
+            image: UIImage(named: "success")!,
+            title: "Reservation",
+            subtitle: "The reservation was successfully registered."
+        )
+        toast.show()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(NotFirst), name: NSNotification.Name ("NotFirstLaunch"), object: nil)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstLaunch), name: NSNotification.Name ("FirstLaunch"), object: nil)
-    }
-    
-    @objc func NotFirst() {
-        let toast = Toast.default(
-            image: UIImage(named: "success")!,
-            title: "NotFirstLaunch",
-            subtitle: "NotFirstLaunch"
-        )
-        toast.show()
-    }
-    
-    @objc func FirstLaunch() {
-        let toast = Toast.default(
-            image: UIImage(named: "success")!,
-            title: "FirstLaunch",
-            subtitle: "FirstLaunch"
-        )
-        toast.show()
+        self.baseView.reservations = []
+        self.viewModel.getReservedList()
+        self.baseView.experimenteTableView.reloadData()
     }
     
     func navigtionBarConfigure() {
@@ -82,8 +81,16 @@ class ReservedExperimentViewController: UIViewController {
         }
     }
     
+    @objc func refresh(_ sender: AnyObject) {
+        self.pullToRefresh.beginRefreshing()
+        self.baseView.reservations = []
+        self.viewModel.getReservedList()
+        self.baseView.experimenteTableView.reloadData()
+    }
+    
     func layout() {
         view.addSubview(baseView)
+        baseView.experimenteTableView.addSubview(pullToRefresh)
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: baseView.topAnchor),
             view.bottomAnchor.constraint(equalTo: baseView.bottomAnchor),
@@ -105,9 +112,18 @@ extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate 
     func gettingReservedListSuccessful(reservations: [ReservedModel]) {
         self.baseView.setData(reservations: reservations)
         self.loadingVC.dismiss(animated: true, completion: nil)
+        self.pullToRefresh.endRefreshing()
     }
     
-    func gettingReservedListFailed() {
+    func gettingReservedListFailed(error: String) {
         self.loadingVC.dismiss(animated: true, completion: nil)
+        self.pullToRefresh.endRefreshing()
+        
+        let toast = Toast.default(
+            image: UIImage(named: "error")!,
+            title: "Reservations",
+            subtitle: error
+        )
+        toast.show()
     }
 }

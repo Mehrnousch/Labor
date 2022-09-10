@@ -27,29 +27,35 @@ class LabBookViewModel {
 
         Alamofire.request(ApiConstants.experimentList(reservationId: reservationId), method: .get, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
-                switch response.result {
+                switch response.result { //MARK: - Fix
                 case .success(let data):
-                    
                     let myResponse = JSON(data)
-                    print("myResponse = \(myResponse)")
-                    let dataJson = ExperimentsModel(json: myResponse["data"])
+                    
                     let data = myResponse["data"]
-                    print("data = \(data)")
                     let errors = myResponse["errors"]
-                    print("errors = \(errors)")
-                    if !data.isEmpty {
-                        //MARK: - Success
-                        if let experiments = dataJson.experiments {
-                            self.delegate?.gettingReservedListSuccessful(experiments: experiments)
+                    let message = MessageModel(json: myResponse["message"])
+                    print("!!@@ data = \(data)")
+                    print("!!@@ errors = \(errors)")
+                    print("!!@@ message = \(message)")
+                    
+                    let statusCode = message.code
+                    
+                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
+                        self.delegate?.gettingReservedListFailed()
+                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
+                        if !data.isEmpty { //MARK: - Not empty list
+                            let dataJson = ExperimentsModel(json: myResponse["data"])
+                            if let experiments = dataJson.experiments {
+                                self.delegate?.gettingReservedListSuccessful(experiments: experiments)
+                            }
+                        } else { //MARK: - Empty list
+                            self.delegate?.gettingReservedListSuccessful(experiments: [])
                         }
-                        
-                    } else {
-                        //MARK: - Failed
-                        
                     }
                     
-                case .failure(let error):
+                case .failure(let error): //MARK: - Failed
                     print("!Error = ", error)
+                    self.delegate?.gettingReservedListFailed()
                 }
             }
     }
