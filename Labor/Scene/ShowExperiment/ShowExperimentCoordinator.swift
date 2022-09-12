@@ -21,7 +21,7 @@ class ShowExperimentCoordinator: BaseCoordinator {
         self.navigationController = navigationController
     }
     
-    func start(reservationId: String, experimentId: String) {
+    func start(reservationId: Int, experimentId: Int) {
         VC.coordinator = self
         VC.reservationId = reservationId
         VC.experimentId = experimentId

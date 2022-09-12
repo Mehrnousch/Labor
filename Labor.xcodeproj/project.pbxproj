@@ -43,7 +43,6 @@
 		562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116628A4FDB500863C45 /* RegisterViewModel.swift */; };
 		562C116928A4FDC800863C45 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116828A4FDC800863C45 /* RegisterViewController.swift */; };
 		562C116B28A4FDF400863C45 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C116A28A4FDF400863C45 /* RegisterView.swift */; };
-		564B3E2D28CC566100629066 /* ReservationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B3E2C28CC566100629066 /* ReservationsModel.swift */; };
 		564B3E2F28CC5BF000629066 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564B3E2E28CC5BF000629066 /* MessageModel.swift */; };
 		565F8E1B28A53A9500259852 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E1A28A53A9500259852 /* LoginCoordinator.swift */; };
 		565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E1C28A53AB900259852 /* LoginViewModel.swift */; };
@@ -74,6 +73,7 @@
 		56655A7128CA4599002F5861 /* clean.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6F28CA4599002F5861 /* clean.pdf */; };
 		56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7328CA47B8002F5861 /* PDFCoordinator.swift */; };
 		56655A7628CA47F6002F5861 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7528CA47F6002F5861 /* PDFViewController.swift */; };
+		566F06BC28CDCE6F000174EE /* DetailExperimentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */; };
 		5672BA0C28BEA7E600BB812A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5672BA0B28BEA7E600BB812A /* Toast */; };
 		5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1128C114F400BB812A /* KeyChainManager.swift */; };
 		5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1328C1151300BB812A /* KeyChainStorage.swift */; };
@@ -157,7 +157,6 @@
 		562C116628A4FDB500863C45 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		562C116828A4FDC800863C45 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		562C116A28A4FDF400863C45 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		564B3E2C28CC566100629066 /* ReservationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsModel.swift; sourceTree = "<group>"; };
 		564B3E2E28CC5BF000629066 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		565F8E1A28A53A9500259852 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		565F8E1C28A53AB900259852 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +186,7 @@
 		56655A6F28CA4599002F5861 /* clean.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = clean.pdf; sourceTree = "<group>"; };
 		56655A7328CA47B8002F5861 /* PDFCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCoordinator.swift; sourceTree = "<group>"; };
 		56655A7528CA47F6002F5861 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExperimentModel.swift; sourceTree = "<group>"; };
 		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		5672BA1328C1151300BB812A /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		56E85DCD28C3CCA700F32FB2 /* LabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabModel.swift; sourceTree = "<group>"; };
@@ -298,8 +298,6 @@
 		562C112D28A4DF1A00863C45 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				56655A7228CA47A3002F5861 /* PDF */,
-				56E85DD628C4E71100F32FB2 /* ShowExperiment */,
 				562C116328A4FCF500863C45 /* Register */,
 				565F8E1928A53A7400259852 /* Login */,
 				565F8E2428A53D3A00259852 /* ReservedExperiment */,
@@ -307,8 +305,10 @@
 				565F8E4228A6CAA800259852 /* Calendar */,
 				56ED46C628C1375B002E9EC7 /* FinalReserve */,
 				56EC3B4D28BB725100C9F4C4 /* LabBook */,
+				56E85DD628C4E71100F32FB2 /* ShowExperiment */,
 				56EC3B5928BB743D00C9F4C4 /* AddDescription */,
 				56EC3B4628BB712E00C9F4C4 /* TextPage */,
+				56655A7228CA47A3002F5861 /* PDF */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -512,8 +512,8 @@
 				56E85DCD28C3CCA700F32FB2 /* LabModel.swift */,
 				56E85DCF28C3CCC300F32FB2 /* ReservedModel.swift */,
 				56E85DD428C4E60D00F32FB2 /* ExperimentsModel.swift */,
-				564B3E2C28CC566100629066 /* ReservationsModel.swift */,
 				564B3E2E28CC5BF000629066 /* MessageModel.swift */,
+				566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -740,6 +740,7 @@
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
 				56E85DD828C4E73900F32FB2 /* ShowExperimentCoordinator.swift in Sources */,
+				566F06BC28CDCE6F000174EE /* DetailExperimentModel.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
 				56ED46C828C1378B002E9EC7 /* FinalReserveCoordinator.swift in Sources */,
 				56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */,
@@ -776,7 +777,6 @@
 				562C111528A4D26600863C45 /* Labor.xcdatamodeld in Sources */,
 				565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */,
 				565F8E4528A6CAD300259852 /* CalendarCoordinator.swift in Sources */,
-				564B3E2D28CC566100629066 /* ReservationsModel.swift in Sources */,
 				565F8E4B28A6CB3400259852 /* CalenderView.swift in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
 				56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */,

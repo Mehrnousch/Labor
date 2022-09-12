@@ -21,8 +21,10 @@ class AddDescriptionCoordinator: BaseCoordinator {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(reservationId: Int, labName: String) {
         VC.coordinator = self
+        VC.reservationId = reservationId
+        VC.labName = labName
         navigate(to: VC, with: .push)
     }
 }

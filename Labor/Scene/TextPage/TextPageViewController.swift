@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class TextPageViewContoller: UIViewController {
     
@@ -14,17 +15,22 @@ class TextPageViewContoller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigtionBarConfigure()
+        actionButtons()
         layout()
     }
     
-    func navigtionBarConfigure() {
-        title = "Add description"
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
+    func actionButtons() {
+        self.baseView.saveButton.addAction { [weak self] in
+            guard let self = self else { return }
+            if let description = self.baseView.textBox.text {
+                if description != "" {
+                    UserDefaultsStorage.shared.descriptionExperiment = description
+                    self.dismiss(animated: true)
+                } else {
+                    Toast.text("Please enter the description").show()
+                }
+            }
+        }
     }
     
     func layout() {

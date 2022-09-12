@@ -17,6 +17,9 @@ class ApiConstants {
     class func experimentList(reservationId: Int)-> URL {
         return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservationId)/experiment/list")!
     }
+    class func experimentSave(reservationId: Int)-> URL {
+        return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservationId)/experiment/save")!
+    }
     class func showExperiment(reservationId: Int, experimentId: Int)-> URL {
         return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservationId)/experiment/\(experimentId)/")!
     }

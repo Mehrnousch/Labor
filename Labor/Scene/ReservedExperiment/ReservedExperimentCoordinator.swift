@@ -10,7 +10,7 @@ import UIKit
 
 protocol ReservedExperimentCoordinatorDelegate {
     func toLabs()
-    func toLabBook(reservationId: String)
+    func toLabBook(reservationId: Int, labName: String)
 }
 
 class ReservedExperimentCoordinator: BaseCoordinator {
@@ -32,14 +32,13 @@ class ReservedExperimentCoordinator: BaseCoordinator {
 
 //MARK: - Delegate
 extension ReservedExperimentCoordinator: ReservedExperimentCoordinatorDelegate {
-    
     func toLabs() {
         labsCoordinator = LabsCoordinator(with: navigationController)
         labsCoordinator?.start()
     }
     
-    func toLabBook(reservationId: String) {
+    func toLabBook(reservationId: Int, labName: String) {
         labBookCoordinator = LabBookCoordinator(with: navigationController)
-        labBookCoordinator?.start(reservationId: reservationId)
+        labBookCoordinator?.start(reservationId: reservationId, labName: labName)
     }
 }

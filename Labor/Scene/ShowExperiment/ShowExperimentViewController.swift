@@ -16,26 +16,29 @@ class ShowExperimentViewController: UIViewController {
         return vm
     }()
     let baseView = ShowExperimentView()
-    var reservationId: String?
-    var experimentId: String?
+    private let loadingVC = LoadingViewController()
+    var reservationId: Int?
+    var experimentId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigtionBarConfigure()
+        presentLoadingVC()
+
         if let reservationId = reservationId, let experimentId = experimentId {
-            if reservationId != "", experimentId != "" {
+            if reservationId != 0, experimentId != 0 {
                 
                 print("!!@@ reservationId \(reservationId)")
                 print("!!@@ experimentId \(experimentId)")
 
-                viewModel.showExperiment(reservationId: Int(reservationId) ?? 0, experimentId: Int(experimentId) ?? 0)
+                viewModel.showExperiment(reservationId: reservationId, experimentId: experimentId)
             }
         }
         layout()
     }
     
     func navigtionBarConfigure() {
-        title = "Lab Book"
+        title = "Experiment"
     }
     
     func layout() {
@@ -47,16 +50,23 @@ class ShowExperimentViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    private func presentLoadingVC() {
+        loadingVC.modalTransitionStyle = .crossDissolve
+        loadingVC.modalPresentationStyle = .overFullScreen
+        present(loadingVC, animated: false, completion: nil)
+    }
 }
 
 
 //MARK: - ViewModelDelegate
 extension ShowExperimentViewController: ShowExperimentViewModelDelegate {
-    func showExperimentSuccessful() {
-        
+    func showExperimentSuccessful(result: DetailsEexperimentModel) {
+        self.baseView.setData(result: result)
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
     
     func showExperimentFailed() {
-        
+        self.loadingVC.dismiss(animated: true, completion: nil)
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import Toast
 
 class PDFViewController: UIViewController {
     
@@ -36,10 +37,22 @@ class PDFViewController: UIViewController {
             }
             catch {
                 print("failed to open pdf")
+                let toast = Toast.default(
+                    image: UIImage(named: "error")!,
+                    title: "Register",
+                    subtitle: "Failed to open pdf"
+                )
+                toast.show()
             }
             return
         }
         print("pdf file doesn't exist")
+        let toast = Toast.default(
+            image: UIImage(named: "error")!,
+            title: "Register",
+            subtitle: "PDF file doesn't exist"
+        )
+        toast.show()
     }
     
     private func layout() {
@@ -52,3 +65,4 @@ class PDFViewController: UIViewController {
         ])
     }
 }
+

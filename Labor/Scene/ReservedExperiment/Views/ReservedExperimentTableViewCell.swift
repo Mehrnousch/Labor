@@ -47,7 +47,6 @@ class ReservedExperimentTableViewCell: UITableViewCell {
         let date = Utility.dateStringFromUnixTime(unixTime: Double(reserved.startDate_Time))
         let startTime = Utility.timeStringFromUnixTime(unixTime: Double(reserved.startDate_Time))
         let endTime = Utility.timeStringFromUnixTime(unixTime: Double(reserved.endDate_Time))
-        
         dateExperiment.text = "\("\(date)  \(startTime) - \(endTime)")"
     }
     

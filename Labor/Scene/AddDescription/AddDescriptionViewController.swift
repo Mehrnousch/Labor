@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import Toast
 
 class AddDescriptionViewController: UIViewController {
     
     var coordinator: AddDescriptionCoordinator?
+    private lazy var viewModel: AddDescriptionViewModel = {
+        let vm = AddDescriptionViewModel()
+        vm.delegate = self
+        return vm
+    }()
     let baseView = AddDescriptionView()
     var chosenLeftPhotoPlace = false
     var chosenRightPhotoPlace = false
+    
+    var labName: String?
+    var reservationId: Int?
+    var firstImageStr: String?
+    var secondImageStr: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +56,25 @@ class AddDescriptionViewController: UIViewController {
             self.chosenLeftPhotoPlace = true
             self.allertHandler()
         }
+        
+        baseView.saveButton.addAction { [weak self] in
+            guard let self = self else { return }
+            
+            print("!!@! labName \(self.labName)")
+            print("!!@! reservationId \(self.reservationId)")
+            print("!!@! firstImageStr \(self.firstImageStr)")
+            print("!!@! secondImageStr \(self.secondImageStr)")
+            print("!!@! description \(UserDefaultsStorage.shared.descriptionExperiment)")
+
+            
+            if let reservationId = self.reservationId, let labName = self.labName, let description = UserDefaultsStorage.shared.descriptionExperiment, let firstImage = self.firstImageStr, let secondImage = self.secondImageStr {
+                if reservationId > 0, labName != "", description != "", firstImage != "", secondImage != "" {
+                    self.viewModel.addDescription(reservationId: reservationId, name: labName, description: description, firstPhoto: firstImage, secondPhoto: secondImage)
+                } else {
+                    Toast.text("Fill in all the items.").show()
+                }
+            }
+        }
     }
     
     func allertHandler() {
@@ -73,11 +103,23 @@ class AddDescriptionViewController: UIViewController {
     func setupPhoto() {
         
         PhotoHandler.shared.imagePickedBlock = { (image) in
-            
             if self.chosenLeftPhotoPlace {
                 self.baseView.leftPhotoButton.setImage(image, for: .normal)
+//                if let jpegImage = image.jpegData(compressionQuality: 1.0) {
+//                    let strImage: String = jpegImage.base64EncodedString()
+//                    self.firstImageStr = strImage
+//                    print("strImage = \(strImage)")
+//                }
+                
+                let jpegImage = image.jpegData(compressionQuality: 1.0)
+                let strBase64 = jpegImage?.base64EncodedString(options: .lineLength64Characters)
+                print("strImage = \(strBase64)")
             } else {
                 self.baseView.rightPhotoButton.setImage(image, for: .normal)
+                if let jpegImage = image.jpegData(compressionQuality: 1.0) {
+                    let strImage: String = jpegImage.base64EncodedString()
+                    self.secondImageStr = strImage
+                }
             }
         }
         
@@ -127,9 +169,20 @@ class AddDescriptionViewController: UIViewController {
             view.leadingAnchor.constraint(equalTo: baseView.leadingAnchor),
         ])
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UserDefaultsStorage.shared.descriptionExperiment = ""
+    }
 }
 
 
-extension AddDescriptionViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
+extension AddDescriptionViewController: AddDescriptionViewModelDelegate  {
+    func reserveSuccess() {
+        
+    }
     
+    func reserveFailed(error: String) {
+        
+    }
 }

@@ -76,8 +76,8 @@ class ReservedExperimentViewController: UIViewController {
     }
     
     func actionCell() {
-        self.baseView.selectedCell = { reservationId in
-            self.coordinator?.toLabBook(reservationId: reservationId)
+        self.baseView.selectedCell = { reservationId, labName in
+            self.coordinator?.toLabBook(reservationId: reservationId, labName: labName)
         }
     }
     

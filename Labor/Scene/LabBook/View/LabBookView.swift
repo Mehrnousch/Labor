@@ -9,10 +9,14 @@ import UIKit
 
 class LabBookView: UIView {
     
-    var selectedCell: ()-> Void = {}
+    let emptyList = LabelBuilder()
+        .setText("There is no experiment for this reservation please press the plus button above to add your experiment.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
+        .build()
+    
+    var selectedCell: (Int)-> Void = {_ in}
 
     var experiments: [ExperimentModel] = []
-    let DetailesTableView: UITableView = {
+    let detailesTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.contentInset = UIEdgeInsets(top: 14,left: 0,bottom: 0,right: 0)
@@ -35,24 +39,36 @@ class LabBookView: UIView {
     }
     
     func setData(experiments: [ExperimentModel]) {
-        self.experiments = experiments
-        DetailesTableView.reloadData()
+        if experiments.count > 0 {
+            detailesTableView.isHidden = false
+            emptyList.isHidden = true
+            self.experiments = experiments
+            detailesTableView.reloadData()
+        } else {
+            detailesTableView.isHidden = true
+            emptyList.isHidden = false
+        }
     }
 
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-        DetailesTableView.delegate = self
-        DetailesTableView.dataSource = self
+        detailesTableView.delegate = self
+        detailesTableView.dataSource = self
     }
     
     func layout() {
-        addSubview(DetailesTableView)
+        addSubview(emptyList)
+        addSubview(detailesTableView)
         NSLayoutConstraint.activate([
-            DetailesTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            DetailesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            DetailesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            DetailesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyList.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+            emptyList.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            emptyList.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            detailesTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            detailesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            detailesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            detailesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
         ])
     }
     
@@ -69,7 +85,7 @@ extension LabBookView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 160
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,6 +98,7 @@ extension LabBookView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! LabBookTableViewCell
         cell.selectionStyle = .none
-        selectedCell()
+        let cellRow = experiments[indexPath.row]
+        selectedCell(cellRow.id)
     }
 }

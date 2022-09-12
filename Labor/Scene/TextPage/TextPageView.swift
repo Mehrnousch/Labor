@@ -70,10 +70,8 @@ class TextPageView: UIView {
 
 
 //MARK: - UITextViewDelegate
-
 extension TextPageView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         placeHolderLabel.isHidden = !textView.text.isEmpty
     }
 }
-

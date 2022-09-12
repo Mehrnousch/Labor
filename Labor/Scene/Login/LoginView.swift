@@ -14,15 +14,17 @@ class LoginView: UIView {
         .build()
     
     let logoImage = ImageBuilder()
-        .setImage("Logo-TU")
+        .setImage("logo")
         .build()
 
     let logoTopLabel = LabelBuilder()
         .setText("Institut für Werkstoffwissenschaften und -technologien", color: .white, fontSize: AppTheme.label.minimumSize, fontWeight: .bold)
         .build()
+    
     let logoBottomLabel = LabelBuilder()
         .setText("Werkstofftechnik", color: .white, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
         .build()
+    
     let fixedBottomView = ViewBuilder()
         .setBackground(.white)
         .setCornerRadius(AppTheme.view.fixedBottomView_corner, onlyTop: true, onlyBottom: false)
@@ -79,7 +81,6 @@ class LoginView: UIView {
         fixedBottomView.addSubview(loginButton)
         fixedBottomView.addSubview(registerButton)
         NSLayoutConstraint.activate([
-            
             fixedTopView.topAnchor.constraint(equalTo: topAnchor),
             fixedTopView.bottomAnchor.constraint(equalTo: fixedBottomView.topAnchor),
             fixedTopView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -96,8 +97,6 @@ class LoginView: UIView {
             logoBottomLabel.bottomAnchor.constraint(equalTo: fixedBottomView.topAnchor, constant: -20),
             logoBottomLabel.centerXAnchor.constraint(equalTo: fixedTopView.centerXAnchor),
            
-            
-            
             fixedBottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
             fixedBottomView.leadingAnchor.constraint(equalTo: leadingAnchor),
             fixedBottomView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -105,7 +104,7 @@ class LoginView: UIView {
             fixedBottomViewHeader.centerXAnchor.constraint(equalTo: fixedBottomView.centerXAnchor),
             fixedBottomViewHeader.topAnchor.constraint(equalTo: fixedBottomView.topAnchor, constant: 30),
             
-            emailTextField.topAnchor.constraint(equalTo: fixedBottomViewHeader.bottomAnchor, constant: 80),
+            emailTextField.topAnchor.constraint(equalTo: fixedBottomViewHeader.bottomAnchor, constant: 50),
             emailTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
             emailTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
             emailTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),

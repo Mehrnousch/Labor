@@ -18,7 +18,7 @@ class LabBookViewModel {
     
     var delegate: LabBookViewModelDelegate?
     
-    func showExperiment(reservationId: Int) {
+    func experimentList(reservationId: Int) {
         
         let headers = [
             "Authorization": "Bearer \(KeyChainStorage.getToken())",

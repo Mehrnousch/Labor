@@ -10,7 +10,11 @@ import UIKit
 
 class ReservedExperimentView: UIView {
     
-    var selectedCell: (String)-> Void = {_ in}
+    let emptyList = LabelBuilder()
+        .setText("No laboratory has been reserved please press the plus button above to reserve the desired laboratory.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
+        .build()
+    
+    var selectedCell: (Int, String)-> Void = {_, _ in}
 
     var reservations: [ReservedModel] = []
     let experimenteTableView: UITableView = {
@@ -35,8 +39,15 @@ class ReservedExperimentView: UIView {
     }
     
     func setData(reservations: [ReservedModel]) {
-        self.reservations = reservations
-        experimenteTableView.reloadData()
+        if reservations.count > 0 {
+            experimenteTableView.isHidden = false
+            emptyList.isHidden = true
+            self.reservations = reservations
+            experimenteTableView.reloadData()
+        } else {
+            experimenteTableView.isHidden = true
+            emptyList.isHidden = false
+        }
     }
 
     func style() {
@@ -47,9 +58,14 @@ class ReservedExperimentView: UIView {
     }
     
     func layout() {
+        addSubview(emptyList)
         addSubview(experimenteTableView)
         NSLayoutConstraint.activate([
-            experimenteTableView.topAnchor.constraint(equalTo: topAnchor),
+            emptyList.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+            emptyList.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            emptyList.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            experimenteTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             experimenteTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             experimenteTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             experimenteTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -79,6 +95,6 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! ReservedExperimentTableViewCell
         cell.selectionStyle = .none
         let cellData = reservations[indexPath.row]
-        selectedCell(String(cellData.id))
+        selectedCell(cellData.id, cellData.laboratory.name)
     }
 }

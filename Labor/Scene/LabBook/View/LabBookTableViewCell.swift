@@ -14,8 +14,16 @@ class LabBookTableViewCell: UITableViewCell {
         .setBackground(AppTheme.cell.light_gray_color)
         .build()
     
+    let experimentNameTitle = LabelBuilder()
+        .setText("Experiment name :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .build()
+    
     let experimentName = LabelBuilder()
-        .setText("The title of the experiment: ", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .setText("", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .build()
+    
+    let experimentDescriptionTitle = LabelBuilder()
+        .setText("Experiment description :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let experimentDescription = LabelBuilder()
@@ -30,16 +38,25 @@ class LabBookTableViewCell: UITableViewCell {
     
     func contentViewStyle() {
         contentView.backgroundColor = .white
+        experimentName.numberOfLines = 1
+        experimentDescription.numberOfLines = 1
     }
     
     func setData(experiment: ExperimentModel) {
-        experimentName.text = "The title of the experiment: \(experiment.name)"
-        experimentDescription.text = experiment.dascription
+        experimentName.text = experiment.name
+        let dascription = experiment.dascription
+        if dascription != "" {
+            experimentDescription.text = experiment.dascription
+        } else {
+            experimentDescription.text = "There is no description of the experiment."
+        }
     }
     
     func layout() {
         contentView.addSubview(containerView)
+        containerView.addSubview(experimentNameTitle)
         containerView.addSubview(experimentName)
+        containerView.addSubview(experimentDescriptionTitle)
         containerView.addSubview(experimentDescription)
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -47,14 +64,22 @@ class LabBookTableViewCell: UITableViewCell {
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             
-            experimentName.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 20),
-            experimentName.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 40),
-            experimentName.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -40),
-
-            experimentDescription.topAnchor.constraint(equalTo: experimentName.bottomAnchor, constant: 20),
-            experimentDescription.leadingAnchor.constraint(equalTo: experimentName.leadingAnchor),
-            experimentDescription.trailingAnchor.constraint(equalTo: experimentName.trailingAnchor),
-            experimentDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -20),
+            experimentNameTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
+            experimentNameTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: AppTheme.view.paddingLeft),
+            experimentNameTitle.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: AppTheme.view.paddingRight),
+            
+            experimentName.topAnchor.constraint(equalTo: experimentNameTitle.bottomAnchor, constant: 2),
+            experimentName.leadingAnchor.constraint(equalTo: experimentNameTitle.leadingAnchor),
+            experimentName.trailingAnchor.constraint(equalTo: experimentNameTitle.trailingAnchor),
+            
+            experimentDescriptionTitle.topAnchor.constraint(equalTo: experimentName.bottomAnchor, constant: 22),
+            experimentDescriptionTitle.leadingAnchor.constraint(equalTo: experimentNameTitle.leadingAnchor),
+            experimentDescriptionTitle.trailingAnchor.constraint(equalTo: experimentNameTitle.trailingAnchor),
+            
+            experimentDescription.topAnchor.constraint(equalTo: experimentDescriptionTitle.bottomAnchor, constant: 6),
+            experimentDescription.leadingAnchor.constraint(equalTo: experimentNameTitle.leadingAnchor),
+            experimentDescription.trailingAnchor.constraint(equalTo: experimentNameTitle.trailingAnchor),
+            experimentDescription.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -12),
         ])
     }
     

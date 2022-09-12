@@ -27,4 +27,3 @@ struct ExperimentModel {
         dascription = json["dascription"].stringValue
     }
 }
-

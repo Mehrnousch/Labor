@@ -10,7 +10,7 @@ import SwiftyJSON
 import Alamofire
 
 protocol LoginViewModelDelegate {
-    func loginSuccess(token: String)
+    func loginSuccess(newToken: String)
     func loginFailed(errorMessages: [String])
 }
 
@@ -32,13 +32,15 @@ class LoginViewModel {
                 case .success(let data):
                     
                     let myResponse = JSON(data)
+                    print(myResponse)
                     let data = myResponse["data"]
                     let errors = myResponse["errors"]
                     print("errors = \(errors)")
                     if !data.isEmpty {
                         //MARK: - Success
                         let token = data["access token"]["token"].stringValue
-                        self.delegate?.loginSuccess(token: token)
+                        self.delegate?.loginSuccess(newToken: token)
+                        
                     } else {
                         //MARK: - Failed
                         var errorArray = [String]()

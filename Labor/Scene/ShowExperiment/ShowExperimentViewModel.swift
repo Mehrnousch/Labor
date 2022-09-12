@@ -10,7 +10,7 @@ import SwiftyJSON
 import Alamofire
 
 protocol ShowExperimentViewModelDelegate {
-    func showExperimentSuccessful()
+    func showExperimentSuccessful(result: DetailsEexperimentModel)
     func showExperimentFailed()
 }
 
@@ -43,7 +43,8 @@ class ShowExperimentViewModel {
                     if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
                         self.delegate?.showExperimentFailed()
                     } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
-                        self.delegate?.showExperimentSuccessful()
+                        let experiment = DetailsEexperimentModel(json: data["experiment"])
+                        self.delegate?.showExperimentSuccessful(result: experiment)
                     }
                     
                 case .failure(let error):

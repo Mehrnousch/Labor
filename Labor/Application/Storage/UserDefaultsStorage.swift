@@ -13,6 +13,7 @@ class UserDefaultsStorage {
     private let token = "token"
     private let calendarStartExperiment = "startTime"
     private let calendarEndExperiment = "endTime"
+    private let description = "description"
 
     var accountToken: String? {
         get { return getString(token) }
@@ -27,6 +28,11 @@ class UserDefaultsStorage {
     var endExperiment: Double {
         get { return double(for: calendarEndExperiment) }
         set { set(newValue, for: calendarEndExperiment) }
+    }
+    
+    var descriptionExperiment: String? {
+        get { return getString(description) }
+        set { setString(description, value: newValue) }
     }
     
     private func getString(_ name: String) -> String? {

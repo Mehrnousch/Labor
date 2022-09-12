@@ -47,6 +47,8 @@ public enum AppTheme {
         static let corner: CGFloat = 12
         static let paddingLeft: CGFloat = 10
         static let paddingRight: CGFloat = -10
+        static let cornerRadius: CGFloat = 5
+
     }
     
     enum textField {

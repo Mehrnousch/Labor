@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
             if let email = self.baseView.emailTextField.text, let password = self.baseView.passwordTextField.text, let deviceName = UIDevice.current.identifierForVendor?.uuidString {
                 if email != "", password != "", deviceName != "" {
                     self.viewModel.login(email: email, password: password, deviceName: deviceName)
+                    print("deviceName = \(deviceName)")
                 } else {
                     Toast.text("Fill in all the items.").show()
                 }
@@ -80,7 +81,7 @@ class LoginViewController: UIViewController {
 //MARK: - ViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     
-    func loginSuccess(token newToken: String) {
+    func loginSuccess(newToken: String) {
         
 //        let lastToken = DB.last?.token
 //        if lastToken == "" || lastToken?.isEmpty == true || lastToken == nil {
