@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ShowExperimentViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class ShowExperimentViewController: UIViewController {
     private let loadingVC = LoadingViewController()
     var reservationId: Int?
     var experimentId: Int?
+    var photosDetailes = [PhotoModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class ShowExperimentViewController: UIViewController {
                 
                 print("!!@@ reservationId \(reservationId)")
                 print("!!@@ experimentId \(experimentId)")
-
+                downloadImage()
                 viewModel.showExperiment(reservationId: reservationId, experimentId: experimentId)
             }
         }
@@ -39,6 +41,35 @@ class ShowExperimentViewController: UIViewController {
     
     func navigtionBarConfigure() {
         title = "Experiment"
+    }
+    
+    func downloadImage() {
+        let modifier = AnyModifier { request in
+            var r = request
+            r.setValue("Bearer " + (KeyChainStorage.getToken()), forHTTPHeaderField:"Authorization")
+            return r
+        }
+        
+        let url = ApiConstants.downloadFile(id: 7)
+        baseView.experimentFirstImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+        
+        let url2 = ApiConstants.downloadFile(id: 6)
+        baseView.experimentSecoundImage.kf.setImage(with: url2, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+
+//        if !photosDetailes.isEmpty {
+//            for id in 0..<photosDetailes.count {
+//                switch id {
+//                case 0:
+//                    let url = ApiConstants.downloadFile(id: 7)
+//                    baseView.experimentFirstImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+//                case 1:
+//                    let url = ApiConstants.downloadFile(id: 6)
+//                    baseView.experimentSecoundImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+//                default:
+//                    break
+//                }
+//            }
+//        }
     }
     
     func layout() {
@@ -64,6 +95,10 @@ extension ShowExperimentViewController: ShowExperimentViewModelDelegate {
     func showExperimentSuccessful(result: DetailsEexperimentModel) {
         self.baseView.setData(result: result)
         self.loadingVC.dismiss(animated: true, completion: nil)
+    }
+    
+    func photosId(photoModel: [PhotoModel]) {
+        self.photosDetailes = photoModel
     }
     
     func showExperimentFailed() {

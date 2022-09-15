@@ -119,8 +119,12 @@ class FinalReserveViewController: UIViewController {
 //MARK: - ViewModelDelegate
 extension FinalReserveViewController: FinalReserveViewModelDelegate {
     func reserveSuccess() {
-        self.navigationController?.popToRootViewController(animated: true)
-        
+        let viewController = self.navigationController?.viewControllers.first { $0 is ReservedExperimentViewController }
+                   guard let destinationVC = viewController else {
+                    self.navigationController?.popViewController(animated: true)
+                       return
+                        }
+                self.navigationController?.popToViewController(destinationVC, animated: true); dismiss(animated: true)
         //MARK: - Post Notification ReserveSuccessful
         notificationCenter.post(name: NSNotification.Name("ReserveSuccessful"), object: nil, userInfo: nil)
     }

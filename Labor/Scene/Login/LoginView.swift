@@ -14,7 +14,7 @@ class LoginView: UIView {
         .build()
     
     let logoImage = ImageBuilder()
-        .setImage("logo")
+        .setImage("Logo-TU")
         .build()
 
     let logoTopLabel = LabelBuilder()

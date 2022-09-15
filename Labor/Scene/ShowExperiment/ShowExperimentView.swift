@@ -38,7 +38,14 @@ class ShowExperimentView: UIView {
         .setText("", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
+    let experimentFirstView = ViewBuilder()
+        .build()
+    
     let experimentFirstImage = ImageBuilder()
+        .setBackground(.blue)
+        .build()
+    
+    let experimentSecoundView = ViewBuilder()
         .build()
     
     let experimentSecoundImage = ImageBuilder()
@@ -69,8 +76,10 @@ class ShowExperimentView: UIView {
         addSubview(experimentDescriptionViewLabel)
         addSubview(experimentDescriptionView)
         experimentDescriptionView.addSubview(experimentDescription)
-        addSubview(experimentFirstImage)
-        addSubview(experimentSecoundImage)
+        addSubview(experimentFirstView)
+        experimentFirstView.addSubview(experimentFirstImage)
+        addSubview(experimentSecoundView)
+        experimentSecoundView.addSubview(experimentSecoundImage)
         NSLayoutConstraint.activate([
             labNameTitle.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             labNameTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
@@ -100,6 +109,25 @@ class ShowExperimentView: UIView {
             experimentDescription.leadingAnchor.constraint(equalTo: experimentDescriptionView.leadingAnchor, constant: 10),
             experimentDescription.trailingAnchor.constraint(equalTo: experimentDescriptionView.trailingAnchor, constant: -10),
 
+            experimentFirstView.topAnchor.constraint(equalTo: experimentDescriptionView.bottomAnchor, constant: 20),
+            experimentFirstView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            experimentFirstView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
+            experimentFirstView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            
+            experimentFirstImage.heightAnchor.constraint(equalTo: experimentFirstView.heightAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            experimentFirstImage.widthAnchor.constraint(equalTo: experimentFirstView.widthAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            experimentFirstImage.centerXAnchor.constraint(equalTo: experimentFirstView.centerXAnchor),
+            experimentFirstImage.centerYAnchor.constraint(equalTo: experimentFirstView.centerYAnchor),
+            
+            experimentSecoundView.topAnchor.constraint(equalTo: experimentFirstView.topAnchor),
+            experimentSecoundView.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 15),
+            experimentSecoundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            experimentSecoundView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),
+            
+            experimentSecoundImage.heightAnchor.constraint(equalTo: experimentSecoundView.heightAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            experimentSecoundImage.widthAnchor.constraint(equalTo: experimentSecoundView.widthAnchor, multiplier: AppTheme.imagePicker.hight_width),
+            experimentSecoundImage.centerXAnchor.constraint(equalTo: experimentSecoundView.centerXAnchor),
+            experimentSecoundImage.centerYAnchor.constraint(equalTo: experimentSecoundView.centerYAnchor),
         ])
     }
     

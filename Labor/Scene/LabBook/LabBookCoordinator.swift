@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LabBookCoordinatorDelegate {
-    func toAddExperiment(reservationId: Int, labName: String)
+    func toAddExperiment(reservationId: Int)
     func toShowExperiment(reservationId: Int, experimentId: Int)
 }
 
@@ -23,19 +23,18 @@ class LabBookCoordinator: BaseCoordinator {
         self.navigationController = navigationController
     }
     
-    func start(reservationId: Int, labName: String) {
+    func start(reservationId: Int) {
         VC.coordinator = self
         VC.reservationId = reservationId
-        VC.labName = labName
         navigate(to: VC, with: .push)
     }
 }
 
 //MARK: - Delegate
 extension LabBookCoordinator: LabBookCoordinatorDelegate {
-    func toAddExperiment(reservationId: Int, labName: String) {
+    func toAddExperiment(reservationId: Int) {
         addDescriptionCoordinator = AddDescriptionCoordinator(with: navigationController)
-        addDescriptionCoordinator?.start(reservationId: reservationId, labName: labName)
+        addDescriptionCoordinator?.start(reservationId: reservationId)
     }
     
     func toShowExperiment(reservationId: Int, experimentId: Int) {

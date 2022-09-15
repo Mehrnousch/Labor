@@ -74,6 +74,7 @@
 		56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7328CA47B8002F5861 /* PDFCoordinator.swift */; };
 		56655A7628CA47F6002F5861 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7528CA47F6002F5861 /* PDFViewController.swift */; };
 		566F06BC28CDCE6F000174EE /* DetailExperimentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */; };
+		566F06BE28CF9BCD000174EE /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F06BD28CF9BCD000174EE /* PhotosModel.swift */; };
 		5672BA0C28BEA7E600BB812A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5672BA0B28BEA7E600BB812A /* Toast */; };
 		5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1128C114F400BB812A /* KeyChainManager.swift */; };
 		5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672BA1328C1151300BB812A /* KeyChainStorage.swift */; };
@@ -187,6 +188,7 @@
 		56655A7328CA47B8002F5861 /* PDFCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCoordinator.swift; sourceTree = "<group>"; };
 		56655A7528CA47F6002F5861 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExperimentModel.swift; sourceTree = "<group>"; };
+		566F06BD28CF9BCD000174EE /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		5672BA1328C1151300BB812A /* KeyChainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStorage.swift; sourceTree = "<group>"; };
 		56E85DCD28C3CCA700F32FB2 /* LabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabModel.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				56E85DD428C4E60D00F32FB2 /* ExperimentsModel.swift */,
 				564B3E2E28CC5BF000629066 /* MessageModel.swift */,
 				566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */,
+				566F06BD28CF9BCD000174EE /* PhotosModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				56EC3B5028BB728500C9F4C4 /* LabBookCoordinator.swift in Sources */,
 				562C115728A4E33800863C45 /* LoadingButton.swift in Sources */,
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
+				566F06BE28CF9BCD000174EE /* PhotosModel.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
 				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
 				56E85DD828C4E73900F32FB2 /* ShowExperimentCoordinator.swift in Sources */,

@@ -17,3 +17,4 @@ struct MessageModel {
         text = json["text"].stringValue
     }
 }
+

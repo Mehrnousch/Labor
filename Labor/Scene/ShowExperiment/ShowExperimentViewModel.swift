@@ -11,6 +11,7 @@ import Alamofire
 
 protocol ShowExperimentViewModelDelegate {
     func showExperimentSuccessful(result: DetailsEexperimentModel)
+    func photosId(photoModel: [PhotoModel])
     func showExperimentFailed()
 }
 
@@ -34,10 +35,12 @@ class ShowExperimentViewModel {
                     let data = myResponse["data"]
                     let errors = myResponse["errors"]
                     let message = MessageModel(json: myResponse["message"])
+                    let photos = myResponse["experiment"]["photos"]
                     print("!!@@ data = \(data)")
                     print("!!@@ errors = \(errors)")
                     print("!!@@ message = \(message)")
-                    
+                    print("!!@@ photos = \(photos)")
+
                     let statusCode = message.code
                     
                     if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
@@ -45,6 +48,13 @@ class ShowExperimentViewModel {
                     } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
                         let experiment = DetailsEexperimentModel(json: data["experiment"])
                         self.delegate?.showExperimentSuccessful(result: experiment)
+                        
+                        let dataJson = PhotosModel(json: myResponse)
+                        print("!!@@ dataJson = \(dataJson)")
+                        if let photos = dataJson.photos {
+                            self.delegate?.photosId(photoModel: photos)
+                        }
+                        
                     }
                     
                 case .failure(let error):

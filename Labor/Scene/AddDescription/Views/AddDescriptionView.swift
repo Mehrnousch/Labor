@@ -33,6 +33,11 @@ class AddDescriptionView: UIView {
         .setImage(UIImage.init(systemName: "camera") ?? UIImage(named: "camera")!)
         .build()
     
+    let nameExperimentTextField = TextFieldBuilder()
+        .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Experiment name", textAlignment: .left, backGroundColor: .white)
+        .setBorderDeselected()
+        .build()
+    
     let descriptionButton = ButtonBuilder()
         .setBackground(.clear)
         .setBorder(borderWidth: 1, borderColor: AppTheme.view.backGround_red_color.cgColor)
@@ -72,6 +77,7 @@ class AddDescriptionView: UIView {
         addSubview(firstDescriptionLabel)
         addSubview(secondDescriptionLabel)
         addSubview(thirdDescriptionLabel)
+        addSubview(nameExperimentTextField)
         addSubview(leftPhotoView)
         leftPhotoView.addSubview(leftPhotoButton)
         addSubview(rightPhotoView)
@@ -94,7 +100,12 @@ class AddDescriptionView: UIView {
             thirdDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
             thirdDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
             
-            leftPhotoView.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
+            nameExperimentTextField.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
+            nameExperimentTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),
+            nameExperimentTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
+            nameExperimentTextField.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
+            
+            leftPhotoView.topAnchor.constraint(equalTo: nameExperimentTextField.bottomAnchor, constant: 20),
             leftPhotoView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             leftPhotoView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
             leftPhotoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),

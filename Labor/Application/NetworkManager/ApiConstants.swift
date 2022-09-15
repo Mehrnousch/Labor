@@ -29,4 +29,7 @@ class ApiConstants {
     class func finalReserve(laborId: Int)-> URL {
         return URL(string: ApiConstants.baseApiURL + "/laboratory/\(laborId)/reservation/save")!
     }
+    class func downloadFile(id: Int)-> URL {
+        return URL(string: ApiConstants.baseApiURL + "/user/file/\(id)")!
+    }
 }

@@ -14,7 +14,7 @@ class ReservedExperimentView: UIView {
         .setText("No laboratory has been reserved please press the plus button above to reserve the desired laboratory.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
         .build()
     
-    var selectedCell: (Int, String)-> Void = {_, _ in}
+    var selectedCell: (Int)-> Void = {_ in}
 
     var reservations: [ReservedModel] = []
     let experimenteTableView: UITableView = {
@@ -95,6 +95,6 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! ReservedExperimentTableViewCell
         cell.selectionStyle = .none
         let cellData = reservations[indexPath.row]
-        selectedCell(cellData.id, cellData.laboratory.name)
+        selectedCell(cellData.id)
     }
 }

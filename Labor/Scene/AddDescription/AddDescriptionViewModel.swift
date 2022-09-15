@@ -11,112 +11,100 @@ import Alamofire
 
 protocol AddDescriptionViewModelDelegate {
     func reserveSuccess()
-    func reserveFailed(error: String)
+    func reserveFailed()
 }
 
 class AddDescriptionViewModel {
     
     var delegate: AddDescriptionViewModelDelegate?
     
-    func addDescription(reservationId: Int, name: String, description: String, firstPhoto: String, secondPhoto: String) {
-        
-        let parameters: [String: Any] = [
-            "name": name,
-            "description": description,
-            "photos[0]": firstPhoto,
-            "photos[1]": secondPhoto,
-        ]
+    func addDescription(reservationId: Int, name: String, description: String, firstPhoto: Data, secondPhoto: Data) {
         
         let headers = [
             "Authorization": "Bearer \(KeyChainStorage.getToken())",
-//            "Content-Type": "application/x-www-form-urlencoded",
             "Content-Type": "multipart/form-data",
             "Accept": "application/json"
         ]
         
-        Alamofire.request(ApiConstants.experimentSave(reservationId: reservationId), method: .post, parameters: parameters, encoding: URLEncoding(destination: .httpBody), headers: headers)
-            .responseJSON { response in
-                switch response.result { //MARK: - Fix
-                case .success(let data):
-                    let myResponse = JSON(data)
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+//            for (key, value) in parameters {
+//                multipartFormData.append(value.data(using: .utf8)!, withName: "photos[0]")
+//            }
+                multipartFormData.append(firstPhoto, withName: "photos[0]", fileName: "user41.jpg", mimeType: "image/jpeg")
+                multipartFormData.append(secondPhoto, withName: "photos[1]", fileName: "user31.jpg", mimeType: "image/jpeg")
+                multipartFormData.append(name.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName :"name")
+                multipartFormData.append(description.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName :"description")
+
+            }, to: ApiConstants.experimentSave(reservationId: reservationId), method: .post, headers: headers, encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, let url):
                     
-                    let data = myResponse["data"]
-                    let errors = myResponse["errors"]
-                    let message = MessageModel(json: myResponse["message"])
-                    print("!!@@ data = \(data)")
-                    print("!!@@ errors = \(errors)")
-                    print("!!@@ message = \(message)")
-                    
-                    let statusCode = message.code
-                    
-                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
-                        self.delegate?.reserveFailed(error: message.text)
-                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
-                        self.delegate?.reserveSuccess()
+                    upload.responseJSON { data in
+                        let myResponse = JSON(data.result.value)
+
+                        let data = myResponse["data"]
+                        let errors = myResponse["errors"]
+                        let message = MessageModel(json: myResponse["message"])
+                        print("!!@@ data = \(data)")
+                        print("!!@@ errors = \(errors)")
+                        print("!!@@ message = \(message)")
+                        
+                        let statusCode = message.code
+                        
+                        if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
+                            self.delegate?.reserveFailed()
+                        } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
+                            self.delegate?.reserveSuccess()
+                        }
                     }
                     
-                case .failure(let error):
-                    print("!Error = ", error)
-                    self.delegate?.reserveFailed(error: "Error = \(error)")
+                    upload.uploadProgress { progress in
+                        //call progress callback here if you need it
+                    }
+                case .failure(let encodingError):
+                    print("multipart upload encodingError: \(encodingError)")
+                    self.delegate?.reserveFailed()
                 }
-            }
+            })
     }
     
     
     
-    
-//    func uploadImageAndData(){
-//        //parameters
-//        let gender    = "M"
-//        let firstName = "firstName"
-//        let lastName  = "lastName"
-//        let dob       = "11-Jan-2000"
-//        let aboutme   = "aboutme"
-//        let token     = "token"
+//    let parameters: [String: Any] = [
+//        "name": name,
+//        "description": description,
+//        "photos[0]": firstPhoto,
+//        "photos[1]": secondPhoto,
+//    ]
+        
+//        Alamofire.uplo(ApiConstants.experimentSave(reservationId: reservationId), method: .post, parameters: parameters, encoding: URLEncoding(destination: .httpBody), headers: headers)
+//            .responseJSON { response in
+//                switch response.result { //MARK: - Fix
+//                case .success(let data):
+//                    let myResponse = JSON(data)
+//                    print("!!@@ myResponse = \(myResponse)")
 //
-//        var parameters = [String:AnyObject]()
-//        parameters = ["gender":gender,
-//                      "firstName":firstName,
-//                      "dob":dob,
-//                      "aboutme":about,
-//                      "token":token,
-//                      "lastName":lastName]
+//                    let data = myResponse["data"]
+//                    let errors = myResponse["errors"]
+//                    let message = MessageModel(json: myResponse["message"])
+//                    print("!!@@ data = \(data)")
+//                    print("!!@@ errors = \(errors)")
+//                    print("!!@@ message = \(message)")
 //
-//        let URL = "http://yourserviceurl/"
-//        let image = UIImage(named: "image.png")
+//                    let statusCode = message.code
 //
-//        Alamofire.upload(<#T##data: Data##Data#>, to: <#T##URLConvertible#>)
-//        Alamofire.upload(.POST, URL, multipartFormData: {
-//            multipartFormData in
-//
-//            if let imageData = UIImageJPEGRepresentation(image, 0.6) {
-//                multipartFormData.appendBodyPart(data: imageData, name: "image", fileName: "file.png", mimeType: "image/png")
-//            }
-//
-//            for (key, value) in parameters {
-//                multipartFormData.appendBodyPart(data: value.dataUsingEncoding(NSUTF8StringEncoding)!, name: key)
-//            }
-//        }, encodingCompletion: {
-//            encodingResult in
-//
-//            switch encodingResult {
-//            case .Success(let upload, _, _):
-//                print("s")
-//                upload.responseJSON {
-//                    response in
-//                    print(response.request)  // original URL request
-//                    print(response.response) // URL response
-//                    print(response.data)     // server data
-//                    print(response.result)   // result of response serialization
-//
-//                    if let JSON = response.result.value {
-//                        print("JSON: \(JSON)")
+//                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
+//                        self.delegate?.reserveFailed(error: message.text)
+//                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
+//                        self.delegate?.reserveSuccess()
 //                    }
+//
+//                case .failure(let error):
+//                    print("!Error = ", error)
+//                    self.delegate?.reserveFailed(error: "Error = \(error)")
 //                }
-//            case .Failure(let encodingError):
-//                print(encodingError)
 //            }
-//        })
 //    }
 }
 

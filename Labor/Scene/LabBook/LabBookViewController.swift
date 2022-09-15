@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 class LabBookViewController: UIViewController {
     
@@ -20,7 +21,29 @@ class LabBookViewController: UIViewController {
     private var pullToRefresh = UIRefreshControl()
     
     var reservationId: Int?
-    var labName: String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //MARK: - Get Notification SaveResult
+        NotificationCenter.default.addObserver(self, selector: #selector(allertForSaveResult), name: NSNotification.Name ("SaveResult"), object: nil)
+    }
+    
+    @objc func allertForSaveResult() {
+        self.baseView.experiments = []
+        if let reservationId = reservationId {
+            if reservationId != 0 {
+                viewModel.experimentList(reservationId: reservationId)
+            }
+        }
+        self.baseView.detailesTableView.reloadData()
+        
+        let toast = Toast.default(
+            image: UIImage(named: "success")!,
+            title: "Experiment result",
+            subtitle: "Save result successfully."
+        )
+        toast.show()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +69,9 @@ class LabBookViewController: UIViewController {
     }
     
     @objc func rightHandAction() {
-        if let reservationId = reservationId, let labName = labName {
-            if reservationId != 0, labName != "" {
-                self.coordinator?.toAddExperiment(reservationId: reservationId, labName: labName)
+        if let reservationId = reservationId {
+            if reservationId != 0 {
+                self.coordinator?.toAddExperiment(reservationId: reservationId)
             }
         }
     }

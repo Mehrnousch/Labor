@@ -22,4 +22,3 @@ class PaddingTextField: UITextField {
         return bounds.inset(by: padding)
     }
 }
-

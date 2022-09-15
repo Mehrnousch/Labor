@@ -10,6 +10,8 @@ import Toast
 
 class AddDescriptionViewController: UIViewController {
     
+    private let notificationCenter = NotificationCenter.default
+
     var coordinator: AddDescriptionCoordinator?
     private lazy var viewModel: AddDescriptionViewModel = {
         let vm = AddDescriptionViewModel()
@@ -20,10 +22,9 @@ class AddDescriptionViewController: UIViewController {
     var chosenLeftPhotoPlace = false
     var chosenRightPhotoPlace = false
     
-    var labName: String?
     var reservationId: Int?
-    var firstImageStr: String?
-    var secondImageStr: String?
+    var firstImageStr: Data?
+    var secondImageStr: Data?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +61,8 @@ class AddDescriptionViewController: UIViewController {
         baseView.saveButton.addAction { [weak self] in
             guard let self = self else { return }
             
-            print("!!@! labName \(self.labName)")
-            print("!!@! reservationId \(self.reservationId)")
-            print("!!@! firstImageStr \(self.firstImageStr)")
-            print("!!@! secondImageStr \(self.secondImageStr)")
-            print("!!@! description \(UserDefaultsStorage.shared.descriptionExperiment)")
-
-            
-            if let reservationId = self.reservationId, let labName = self.labName, let description = UserDefaultsStorage.shared.descriptionExperiment, let firstImage = self.firstImageStr, let secondImage = self.secondImageStr {
-                if reservationId > 0, labName != "", description != "", firstImage != "", secondImage != "" {
+            if let reservationId = self.reservationId, let labName = self.baseView.nameExperimentTextField.text, let description = UserDefaultsStorage.shared.descriptionExperiment, let firstImage = self.firstImageStr, let secondImage = self.secondImageStr {
+                if reservationId > 0, labName != "", description != "", !firstImage.isEmpty, !secondImage.isEmpty {
                     self.viewModel.addDescription(reservationId: reservationId, name: labName, description: description, firstPhoto: firstImage, secondPhoto: secondImage)
                 } else {
                     Toast.text("Fill in all the items.").show()
@@ -105,20 +99,13 @@ class AddDescriptionViewController: UIViewController {
         PhotoHandler.shared.imagePickedBlock = { (image) in
             if self.chosenLeftPhotoPlace {
                 self.baseView.leftPhotoButton.setImage(image, for: .normal)
-//                if let jpegImage = image.jpegData(compressionQuality: 1.0) {
-//                    let strImage: String = jpegImage.base64EncodedString()
-//                    self.firstImageStr = strImage
-//                    print("strImage = \(strImage)")
-//                }
-                
-                let jpegImage = image.jpegData(compressionQuality: 1.0)
-                let strBase64 = jpegImage?.base64EncodedString(options: .lineLength64Characters)
-                print("strImage = \(strBase64)")
+                if let jpegImage = image.jpegData(compressionQuality: 1.0) {
+                    self.firstImageStr = jpegImage
+                }
             } else {
                 self.baseView.rightPhotoButton.setImage(image, for: .normal)
                 if let jpegImage = image.jpegData(compressionQuality: 1.0) {
-                    let strImage: String = jpegImage.base64EncodedString()
-                    self.secondImageStr = strImage
+                    self.secondImageStr = jpegImage
                 }
             }
         }
@@ -174,15 +161,23 @@ class AddDescriptionViewController: UIViewController {
         super.viewDidDisappear(animated)
         UserDefaultsStorage.shared.descriptionExperiment = ""
     }
+    
+    //MARK: - Remove Notification SaveResult
+    deinit {
+        notificationCenter.removeObserver(self, name: NSNotification.Name("SaveResult"), object: nil)
+    }
 }
 
 
 extension AddDescriptionViewController: AddDescriptionViewModelDelegate  {
     func reserveSuccess() {
+        self.navigationController?.popViewController(animated: true)
         
+        //MARK: - Post Notification SaveResult
+        notificationCenter.post(name: NSNotification.Name("SaveResult"), object: nil, userInfo: nil)
     }
     
-    func reserveFailed(error: String) {
+    func reserveFailed() {
         
     }
 }
