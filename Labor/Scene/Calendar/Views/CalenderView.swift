@@ -14,7 +14,7 @@ class CalendarView: UIView {
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
-    let timeList = ["08:00-9:00","09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "13:00-14:00", "14:00-15:00", "15:00-16:00"]
+    let timeList = ["8","9", "10", "11", "12", "13", "14", "15"]
     private let calendarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -146,7 +146,7 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         guard let month = Int(date.components(separatedBy: ".")[1]) else { return }
         guard let day = Int(date.components(separatedBy: ".")[0]) else { return }
-        guard let hour = Int(time.replacingOccurrences(of: "0", with: "").replacingOccurrences(of: ":", with: "")) else { return }
+        guard let hour = Int(time) else { return }
 
         let startTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour, minute: 0, second: 0)
         let endTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
