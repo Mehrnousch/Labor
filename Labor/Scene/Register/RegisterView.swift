@@ -34,6 +34,7 @@ class RegisterView: UIView {
         .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Passwort", textAlignment: .left, backGroundColor: .white)
         .sideIcon(UIImage(systemName: "lock")!, width: 24, height: 24, padding: 14)
         .setBorderDeselected()
+        .setSecureTextEntry()
         .build()
     
     let registerButton = ButtonBuilder()

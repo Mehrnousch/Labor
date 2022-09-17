@@ -67,6 +67,12 @@ class TextFieldBuilder {
     }
     
     @discardableResult
+    func setSecureTextEntry() -> TextFieldBuilder {
+        self.textfield.isSecureTextEntry = true
+        return self
+    }
+    
+    @discardableResult
     func sideIcon(_ icon: UIImage, width: CGFloat, height: CGFloat, padding: CGFloat) -> TextFieldBuilder {
         let imageTextField: UIImageView = ImageBuilder().setImage(icon).build()
         
@@ -79,6 +85,7 @@ class TextFieldBuilder {
     func enablePasswordToggle() {
         
     }
+    
     
     @discardableResult
     func setClear() -> TextFieldBuilder {
