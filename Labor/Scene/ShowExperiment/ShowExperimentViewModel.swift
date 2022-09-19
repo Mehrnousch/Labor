@@ -31,11 +31,12 @@ class ShowExperimentViewModel {
                 switch response.result { //MARK: - Fix
                 case .success(let data):
                     let myResponse = JSON(data)
-                    
+                    print("!!@@ = \(myResponse)")
                     let data = myResponse["data"]
                     let errors = myResponse["errors"]
                     let message = MessageModel(json: myResponse["message"])
-                    let photos = myResponse["experiment"]["photos"]
+                    let photos = data["experiment"]
+                    let photosJson = PhotosModel(json: photos)
                     print("!!@@ data = \(data)")
                     print("!!@@ errors = \(errors)")
                     print("!!@@ message = \(message)")
@@ -49,9 +50,8 @@ class ShowExperimentViewModel {
                         let experiment = DetailsEexperimentModel(json: data["experiment"])
                         self.delegate?.showExperimentSuccessful(result: experiment)
                         
-                        let dataJson = PhotosModel(json: myResponse)
-                        print("!!@@ dataJson = \(dataJson)")
-                        if let photos = dataJson.photos {
+                        print("!!@@ dataJson = \(photosJson)")
+                        if let photos = photosJson.photos {
                             self.delegate?.photosId(photoModel: photos)
                         }
                         

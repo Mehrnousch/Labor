@@ -61,14 +61,33 @@ class AddDescriptionViewController: UIViewController {
         baseView.saveButton.addAction { [weak self] in
             guard let self = self else { return }
             
-            if let reservationId = self.reservationId, let labName = self.baseView.nameExperimentTextField.text, let description = UserDefaultsStorage.shared.descriptionExperiment, let firstImage = self.firstImageStr, let secondImage = self.secondImageStr {
+            print(self.reservationId ?? "")
+            
+            if let reservationId = self.reservationId,
+               let labName = self.baseView.nameExperimentTextField.text,
+               let description = UserDefaultsStorage.shared.descriptionExperiment,
+               let firstImage = self.firstImageStr,
+               let secondImage = self.secondImageStr {
                 if reservationId > 0, labName != "", description != "", !firstImage.isEmpty, !secondImage.isEmpty {
                     self.viewModel.addDescription(reservationId: reservationId, name: labName, description: description, firstPhoto: firstImage, secondPhoto: secondImage)
+                    self.startUploadPhotos()
                 } else {
                     Toast.text("Fill in all the items.").show()
                 }
             }
         }
+    }
+    
+    func startUploadPhotos() {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.large
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
     }
     
     func allertHandler() {
@@ -171,13 +190,14 @@ class AddDescriptionViewController: UIViewController {
 
 extension AddDescriptionViewController: AddDescriptionViewModelDelegate  {
     func reserveSuccess() {
+        dismiss(animated: false) {
+            //MARK: - Post Notification SaveResult
+            self.notificationCenter.post(name: NSNotification.Name("SaveResult"), object: nil, userInfo: nil)
+        }
         self.navigationController?.popViewController(animated: true)
-        
-        //MARK: - Post Notification SaveResult
-        notificationCenter.post(name: NSNotification.Name("SaveResult"), object: nil, userInfo: nil)
     }
     
     func reserveFailed() {
-        
+        dismiss(animated: false, completion: nil)
     }
 }

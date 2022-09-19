@@ -28,9 +28,7 @@ class AddDescriptionViewModel {
         
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-//            for (key, value) in parameters {
-//                multipartFormData.append(value.data(using: .utf8)!, withName: "photos[0]")
-//            }
+                
                 multipartFormData.append(firstPhoto, withName: "photos[0]", fileName: "user41.jpg", mimeType: "image/jpeg")
                 multipartFormData.append(secondPhoto, withName: "photos[1]", fileName: "user31.jpg", mimeType: "image/jpeg")
                 multipartFormData.append(name.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName :"name")
@@ -42,6 +40,7 @@ class AddDescriptionViewModel {
                     
                     upload.responseJSON { data in
                         let myResponse = JSON(data.result.value)
+                        print("!!@@ data = \(data)")
 
                         let data = myResponse["data"]
                         let errors = myResponse["errors"]
@@ -68,45 +67,4 @@ class AddDescriptionViewModel {
                 }
             })
     }
-    
-    
-    
-//    let parameters: [String: Any] = [
-//        "name": name,
-//        "description": description,
-//        "photos[0]": firstPhoto,
-//        "photos[1]": secondPhoto,
-//    ]
-        
-//        Alamofire.uplo(ApiConstants.experimentSave(reservationId: reservationId), method: .post, parameters: parameters, encoding: URLEncoding(destination: .httpBody), headers: headers)
-//            .responseJSON { response in
-//                switch response.result { //MARK: - Fix
-//                case .success(let data):
-//                    let myResponse = JSON(data)
-//                    print("!!@@ myResponse = \(myResponse)")
-//
-//                    let data = myResponse["data"]
-//                    let errors = myResponse["errors"]
-//                    let message = MessageModel(json: myResponse["message"])
-//                    print("!!@@ data = \(data)")
-//                    print("!!@@ errors = \(errors)")
-//                    print("!!@@ message = \(message)")
-//
-//                    let statusCode = message.code
-//
-//                    if statusCode.contains(AppTheme.statusCode.error) { //MARK: - Failed
-//                        self.delegate?.reserveFailed(error: message.text)
-//                    } else if statusCode.contains(AppTheme.statusCode.success) { //MARK: - Success
-//                        self.delegate?.reserveSuccess()
-//                    }
-//
-//                case .failure(let error):
-//                    print("!Error = ", error)
-//                    self.delegate?.reserveFailed(error: "Error = \(error)")
-//                }
-//            }
-//    }
 }
-
-
-

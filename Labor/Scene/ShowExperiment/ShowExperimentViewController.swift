@@ -32,7 +32,6 @@ class ShowExperimentViewController: UIViewController {
                 
                 print("!!@@ reservationId \(reservationId)")
                 print("!!@@ experimentId \(experimentId)")
-                downloadImage()
                 viewModel.showExperiment(reservationId: reservationId, experimentId: experimentId)
             }
         }
@@ -50,26 +49,20 @@ class ShowExperimentViewController: UIViewController {
             return r
         }
         
-        let url = ApiConstants.downloadFile(id: 7)
-        baseView.experimentFirstImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
-        
-        let url2 = ApiConstants.downloadFile(id: 6)
-        baseView.experimentSecoundImage.kf.setImage(with: url2, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
-
-//        if !photosDetailes.isEmpty {
-//            for id in 0..<photosDetailes.count {
-//                switch id {
-//                case 0:
-//                    let url = ApiConstants.downloadFile(id: 7)
-//                    baseView.experimentFirstImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
-//                case 1:
-//                    let url = ApiConstants.downloadFile(id: 6)
-//                    baseView.experimentSecoundImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
-//                default:
-//                    break
-//                }
-//            }
-//        }
+        if !photosDetailes.isEmpty {
+            for id in 0..<photosDetailes.count {
+                switch id {
+                case 0:
+                    let url = ApiConstants.downloadFile(id: photosDetailes[0].id)
+                    baseView.experimentFirstImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+                case 1:
+                    let url = ApiConstants.downloadFile(id: photosDetailes[1].id)
+                    baseView.experimentSecoundImage.kf.setImage(with: url, placeholder: UIImage(named: ""), options: [.requestModifier(modifier)])
+                default:
+                    break
+                }
+            }
+        }
     }
     
     func layout() {
@@ -99,6 +92,7 @@ extension ShowExperimentViewController: ShowExperimentViewModelDelegate {
     
     func photosId(photoModel: [PhotoModel]) {
         self.photosDetailes = photoModel
+        downloadImage()
     }
     
     func showExperimentFailed() {
