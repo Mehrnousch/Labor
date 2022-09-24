@@ -73,6 +73,7 @@ class ReservedExperimentViewController: UIViewController {
 
     @objc func leftHandAction() {
         print("left bar button action")
+        self.coordinator?.toLogin()
     }
     
     func actionCell() {
