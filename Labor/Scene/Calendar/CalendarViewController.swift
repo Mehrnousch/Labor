@@ -93,6 +93,7 @@ extension CalendarViewController: CalendarViewModelDelegate {
         print(reservations)
         for item in 0 ..< reservations.count {
             allReservations.append(Int(reservations[item].startDate_Time))
+            
         }
         
         print("allReservations = \(allReservations)")

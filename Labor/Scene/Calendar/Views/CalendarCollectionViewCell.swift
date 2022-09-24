@@ -12,7 +12,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
 //    let borderView = ViewBuilder()
 //        .setCornerRadius(AppTheme.cell.cornerRadius)
-//        .setBorder(AppTheme.textField.borderColor)
 //        .setBackground(.white)
 //        .build()
     
@@ -60,16 +59,17 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func cellSelected(selected: Bool) {
-        if selected {
-            contentView.backgroundColor = .red
-            containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
-            timeLabel.textColor = .white
-        }else {
-            containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
-            timeLabel.textColor = .black
-        }
-    }
+//    func cellSelected(selected: Bool) {
+//        if selected {
+//            contentView.backgroundColor = .red
+//            containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
+//            
+//            timeLabel.textColor = .white
+//        }else {
+//            containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
+//            timeLabel.textColor = .black
+//        }
+//    }
     
     private func layout() {
 //        contentView.addSubview(borderView)
@@ -78,9 +78,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
 //            borderView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
 //            borderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-//            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: AppTheme.cell.paddingRight),
-//            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: AppTheme.cell.paddingLeft),
-            
+//            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+//            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+//
             containerTimeView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             containerTimeView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             containerTimeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),

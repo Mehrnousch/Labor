@@ -13,8 +13,10 @@ class CalendarView: UIView {
     let titleView = LabelBuilder()
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
-    
-    let timeList = ["8","9", "10", "11", "12", "13", "14", "15"]
+    var selectedIndexPath : IndexPath = []
+    let timeList = ["8","9","10","11","12","13","14","15"]
+    var timeListSelectionStates = [[Bool]]()
+    var CalendarViewController: CalendarViewController!
     private let calendarCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -39,6 +41,15 @@ class CalendarView: UIView {
         super.init(frame: frame)
         style()
         layout()
+        for _ in 0..<CalendarInformation.shared.calendarDate.count {
+            timeListSelectionStates.append([])
+        }
+        
+        for i in 0..<CalendarInformation.shared.calendarDate.count {
+            for _ in 0..<timeList.count {
+                timeListSelectionStates[i].append(false)
+            }
+        }
     }
     
     func style() {
@@ -65,6 +76,17 @@ class CalendarView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func changeSelectionState(_ section:Int, _ index:Int) {
+        if timeListSelectionStates[section][index] == false {
+            timeListSelectionStates[section][index] = true
+
+        }else {
+            timeListSelectionStates[section][index] = false
+
+        }
+        calendarCollectionView.reloadData()
     }
 }
 
@@ -95,6 +117,20 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
 //        cell.isSelected = false
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
 //        cell.isSelected = true
+//        if timeListSelectionStates[indexPath.section][indexPath.row] {
+//            cell.contentView.backgroundColor = .red
+//
+//        }else {
+//            cell.contentView.backgroundColor = .white
+//        }
+        
+        if indexPath ==  selectedIndexPath {
+             cell.containerTimeView.backgroundColor = UIColor.lightGray
+//             cell.backgroundColor = UIColor.gray
+        } else {
+             cell.containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
+//             cell.backgroundColor = UIColor.blue
+        }
         
         return cell
     }
@@ -139,7 +175,9 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
-        cell.cellSelected(selected: true)
+//        changeSelectionState(indexPath.section,indexPath.row)
+        selectedIndexPath = indexPath
+        calendarCollectionView.reloadData()
         let time = timeList[indexPath.row]
         let date = CalendarInformation.shared.calendarDate[indexPath.section]
         print("\(time)+\(date)")
@@ -155,8 +193,8 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         UserDefaultsStorage.shared.endExperiment = endTime
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
-        cell.cellSelected(selected: false)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
+//        cell.cellSelected(selected: false)
+//    }
 }

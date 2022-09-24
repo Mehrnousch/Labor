@@ -23,6 +23,7 @@ struct ReservedModel {
     var startDate_Time: Int32
     var endDate_Time: Int32
     var laboratory: Laboratory
+    var didSelecte:Bool
 
     init(json: JSON) {
         id = json["id"].intValue
@@ -31,6 +32,7 @@ struct ReservedModel {
         startDate_Time = json["start date-time"].int32Value
         endDate_Time = json["end date-time"].int32Value
         laboratory = Laboratory(json: json["laboratory"])
+        didSelecte = false
     }
 }
 

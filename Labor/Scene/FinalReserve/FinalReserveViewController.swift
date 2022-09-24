@@ -28,6 +28,8 @@ class FinalReserveViewController: UIViewController {
         navigtionBarConfigure()
         actionButtons()
         layout()
+        navigationController?.navigationBar.backgroundColor = .white
+        
     }
     
     func navigtionBarConfigure() {
