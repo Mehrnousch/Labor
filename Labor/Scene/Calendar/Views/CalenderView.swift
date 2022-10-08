@@ -9,7 +9,7 @@
 import UIKit
 
 class CalendarView: UIView {
-    
+
     let titleView = LabelBuilder()
         .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
@@ -122,6 +122,12 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
 //
 //        }else {
 //            cell.contentView.backgroundColor = .white
+//        }
+//        let startTimeExpirment = UserDefaultsStorage.shared.startExperiment
+//        var allReservations = [Int]()
+//        if allReservations.contains(Int(startTimeExpirment)) {
+//            cell.containerTimeView.backgroundColor = UIColor.systemPink
+//
 //        }
         
         if indexPath ==  selectedIndexPath {

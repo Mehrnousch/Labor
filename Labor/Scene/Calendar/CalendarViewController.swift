@@ -52,6 +52,7 @@ class CalendarViewController: UIViewController {
                 image: UIImage(named: "error")!,
                 title: "Time reservation",
                 subtitle: "The desired time is already reserved."
+                
             )
             toast.show()
         } else if startTimeExpirment > 0 {

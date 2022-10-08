@@ -61,10 +61,10 @@ class ReservedExperimentViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
-                                                                style: .plain,
-                                                                target: self,
-                                                                action: #selector(leftHandAction))
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
+//                                                                style: .plain,
+//                                                                target: self,
+//                                                                action: #selector(leftHandAction))
     }
     
     @objc func rightHandAction() {
@@ -73,7 +73,7 @@ class ReservedExperimentViewController: UIViewController {
 
     @objc func leftHandAction() {
         print("left bar button action")
-        self.coordinator?.toLogin()
+//        self.coordinator?.toLogin()
     }
     
     func actionCell() {

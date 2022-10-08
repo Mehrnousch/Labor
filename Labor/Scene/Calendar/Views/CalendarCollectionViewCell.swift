@@ -17,7 +17,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     let containerTimeView = ViewBuilder()
         .setCornerRadius(AppTheme.cell.cornerRadius)
-        .setBackground(AppTheme.view.backGround_blue_color)
+//        .setBackground(AppTheme.view.backGround_blue_color)
         .build()
     
     let timeLabel = LabelBuilder()

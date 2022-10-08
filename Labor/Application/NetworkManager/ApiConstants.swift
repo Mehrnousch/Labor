@@ -14,6 +14,8 @@ class ApiConstants {
     static let login: URL = URL(string: ApiConstants.baseApiURL + "/user/login")!
     static let reservedList: URL = URL(string: ApiConstants.baseApiURL + "/user/reservation/list")!
     static let Labs: URL = URL(string: ApiConstants.baseApiURL + "/laboratory/list")!
+//    reservationId is required
+//    The reservationId from View Model is passed here
     class func experimentList(reservationId: Int)-> URL {
         return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservationId)/experiment/list")!
     }

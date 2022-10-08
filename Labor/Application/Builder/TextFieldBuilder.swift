@@ -75,10 +75,11 @@ class TextFieldBuilder {
     @discardableResult
     func sideIcon(_ icon: UIImage, width: CGFloat, height: CGFloat, padding: CGFloat) -> TextFieldBuilder {
         let imageTextField: UIImageView = ImageBuilder().setImage(icon).build()
-        
         textfield.addSubview(imageTextField)
         imageTextField.anchor(leading: textfield.leadingAnchor, paddingLeft: padding, width: width, height: height, centerY: textfield.centerYAnchor)
         textfield.padding = UIEdgeInsets(top: 0, left: 56, bottom: 0, right: 24)
+        imageTextField.tintColor = AppTheme.view.backGround_red_color
+
         return self
     }
     @discardableResult
