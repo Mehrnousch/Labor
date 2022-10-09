@@ -187,13 +187,13 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let time = timeList[indexPath.row]
         let date = CalendarInformation.shared.calendarDate[indexPath.section]
         print("\(time)+\(date)")
-        
+        guard let year = Int(date.components(separatedBy: ".")[2]) else { return }
         guard let month = Int(date.components(separatedBy: ".")[1]) else { return }
         guard let day = Int(date.components(separatedBy: ".")[0]) else { return }
         guard let hour = Int(time) else { return }
 
-        let startTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour, minute: 0, second: 0)
-        let endTime = createUnixTimestamp(year: CalendarInformation.shared.currentYear, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
+        let startTime = createUnixTimestamp(year: year, month: month, day: day, hour: hour, minute: 0, second: 0)
+        let endTime = createUnixTimestamp(year: year, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
 
         UserDefaultsStorage.shared.startExperiment = startTime
         UserDefaultsStorage.shared.endExperiment = endTime

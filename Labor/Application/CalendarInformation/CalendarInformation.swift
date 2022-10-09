@@ -21,75 +21,147 @@ class CalendarInformation {
 
         switch currentMonth {
         case 1:
-            for day in currentDay...(Int(monthCountDay[0]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[0]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[1]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 2:
-            for day in currentDay...(Int(monthCountDay[1]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[1]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[2]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 3:
-            for day in currentDay...(Int(monthCountDay[2]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[2]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[3]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 4:
-            for day in currentDay...(Int(monthCountDay[3]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[3]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[4]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 5:
-            for day in currentDay...(Int(monthCountDay[4]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[4]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[5]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 6:
-            for day in currentDay...(Int(monthCountDay[5]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[5]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[6]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 7:
-            for day in currentDay...(Int(monthCountDay[6]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[6]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[7]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 8:
-            for day in currentDay...(Int(monthCountDay[7]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[7]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[8]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 9:
-            for day in currentDay...(Int(monthCountDay[8]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[8]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[9]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 10:
-            for day in currentDay...(Int(monthCountDay[9]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[9]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[10]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 11:
-            for day in currentDay...(Int(monthCountDay[10]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[10]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[11]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(currentMonth + 1).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         case 12:
-            for day in currentDay...(Int(monthCountDay[11]) ?? 0) {
-                let dayFormat = "\(day).\(currentMonth).\(currentYear)"
-                calendarDate.append(dayFormat)
+            let monCount = (Int(monthCountDay[11]) ?? 0)
+            for day in currentDay...monCount + (Int(monthCountDay[0]) ?? 0) {
+                if day <= monCount {
+                    let dayFormat = "\(day).\(currentMonth).\(currentYear)"
+                    calendarDate.append(dayFormat)
+                } else {
+                    let dayFormat = "\(day - monCount).\(1).\(currentYear + 1)"
+                    calendarDate.append(dayFormat)
+                }
             }
             
         default:

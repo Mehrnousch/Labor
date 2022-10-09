@@ -17,7 +17,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     let containerTimeView = ViewBuilder()
         .setCornerRadius(AppTheme.cell.cornerRadius)
-//        .setBackground(AppTheme.view.backGround_blue_color)
+        .setBackground(AppTheme.view.backGround_blue_color)
         .build()
     
     let timeLabel = LabelBuilder()
@@ -59,17 +59,17 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    func cellSelected(selected: Bool) {
-//        if selected {
-//            contentView.backgroundColor = .red
-//            containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
-//            
-//            timeLabel.textColor = .white
-//        }else {
-//            containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
-//            timeLabel.textColor = .black
-//        }
-//    }
+    func cellSelected(selected: Bool) {
+        if selected {
+            contentView.backgroundColor = .red
+            containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
+
+            timeLabel.textColor = .white
+        }else {
+            containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
+            timeLabel.textColor = .black
+        }
+    }
     
     private func layout() {
 //        contentView.addSubview(borderView)
