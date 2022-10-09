@@ -12,13 +12,10 @@ class CalendarInformation {
     static let shared = CalendarInformation()
     
     var calendarDate: [String] = []
-//    Number of year
     let currentYear = Calendar.current.component(.year, from: Date())
-//    Number of month
     let currentMonth = Calendar.current.component(.month, from: Date())
-//    Number of day
-    let currentDay = Calendar.current.component(.day, from: Date())
-//  Number of days in each month
+    let currentDay = Calendar.current.component(.day, from: Date()) + 1
+
     func formaterCalendar() {
         let monthCountDay = ["31", "29", "31", "30", "31", "31", "31", "31", "30", "31" , "30", "31"]
 

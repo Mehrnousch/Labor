@@ -62,6 +62,15 @@ class LoginViewController: UIViewController {
             self.coordinator?.toRegister()
         }
         
+//        baseView.hiddenButton.addAction {[weak self] in
+//            guard let self = self else { return }
+//            if let secureTextEntry == true {
+//                secureTextEntry = false
+//            } else {
+//                secureTextEntry = true
+//            }
+//            
+//        }
 
     }
     

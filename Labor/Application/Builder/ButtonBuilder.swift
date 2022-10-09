@@ -91,6 +91,7 @@ class ButtonBuilder {
 //        self.button.backgroundColor = .clear
         self.button.tintColor = .darkGray
         self.button.setImage(image, for: .normal)
+
         return self
     }
     

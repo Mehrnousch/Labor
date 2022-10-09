@@ -46,6 +46,10 @@ class LoginView: UIView {
         .setBorderDeselected()
         .setSecureTextEntry()
         .build()
+//
+//    let hiddenButton = ButtonBuilder()
+//        .setImage("eye")
+//        .build()
     
     let loginButton = ButtonBuilder()
         .setTitle("Anmelden", color: .white)
@@ -54,7 +58,7 @@ class LoginView: UIView {
         .build()
     
     let registerButton = ButtonBuilder()
-        .setTitle("Ein Konto erstellen", color: .white)
+        .setTitle("Konto erstellen", color: .white)
         .setBackground(AppTheme.button.dark_gray_color)
         .setCornerRadius(AppTheme.button.cornerRadius)
         .build()
@@ -79,6 +83,7 @@ class LoginView: UIView {
         fixedBottomView.addSubview(fixedBottomViewHeader)
         fixedBottomView.addSubview(emailTextField)
         fixedBottomView.addSubview(passwordTextField)
+//        passwordTextField.addSubview(hiddenButton)
         fixedBottomView.addSubview(loginButton)
         fixedBottomView.addSubview(registerButton)
         NSLayoutConstraint.activate([
@@ -114,6 +119,8 @@ class LoginView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
             passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
             passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
+//            hiddenButton.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor),
+//            hiddenButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -10),
             
             loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             loginButton.heightAnchor.constraint(equalToConstant: AppTheme.button.height),

@@ -37,6 +37,10 @@ class RegisterView: UIView {
         .setSecureTextEntry()
         .build()
     
+//    let hiddenButton = ButtonBuilder()
+//        .setImage("eye")
+//        .build()
+//
     let registerButton = ButtonBuilder()
         .setTitle("Registrieren", color: .white)
         .setBackground(AppTheme.button.backGround_color)
@@ -65,6 +69,7 @@ class RegisterView: UIView {
         fixedBottomView.addSubview(nameTextField)
         fixedBottomView.addSubview(emailTextField)
         fixedBottomView.addSubview(passwordTextField)
+//        passwordTextField.addSubview(hiddenButton)
         fixedBottomView.addSubview(registerButton)
         NSLayoutConstraint.activate([
             fixedBottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -88,6 +93,9 @@ class RegisterView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: AppTheme.textField.height),
             passwordTextField.leadingAnchor.constraint(equalTo: fixedBottomView.leadingAnchor, constant: AppTheme.view.paddingLeft),
             passwordTextField.trailingAnchor.constraint(equalTo: fixedBottomView.trailingAnchor, constant: AppTheme.view.paddingRight),
+            
+//            hiddenButton.centerYAnchor.constraint(equalTo: passwordTextField.centerYAnchor),
+//            hiddenButton.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor, constant: -10),
             
             registerButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             registerButton.bottomAnchor.constraint(equalTo: fixedBottomView.safeAreaLayoutGuide.bottomAnchor, constant: AppTheme.view.paddingBottom),

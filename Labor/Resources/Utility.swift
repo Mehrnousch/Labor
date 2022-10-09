@@ -176,11 +176,11 @@ class Utility {
     }
     
     class func timeStringFromUnixTime(unixTime: Double) -> String {
-        let offsetInSeconds = -10800
-        let unixTimeBerlin = unixTime + Double(offsetInSeconds)
-        let date = NSDate(timeIntervalSince1970: unixTimeBerlin)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        return dateFormatter.string(from: date as Date)
-    }
+            let offsetInSeconds = -12600
+            let unixTimeBerlin = unixTime + Double(offsetInSeconds)
+            let date = NSDate(timeIntervalSince1970: unixTimeBerlin)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            return dateFormatter.string(from: date as Date)
+        }
 }
