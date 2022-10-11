@@ -81,15 +81,15 @@ class FinalReserveViewController: UIViewController {
                 existenceManagerValue = 0
             }
             
-            if let title = self.baseView.experimentTitleTextField.text,
-               let description = self.baseView.experimentInfoTextView.text {
+            if let title = self.baseView.experimentTitleTextField.text,let description = self.baseView.experimentInfoTextView.text
+            {
                 
                 let startAt = UserDefaultsStorage.shared.startExperiment
                 let endAt = UserDefaultsStorage.shared.endExperiment
                 if startAt != 0.0,
                    endAt != 0.0,
                    title != "",
-                   description != "",
+//                   description != "",
                    agreeRulesValue > 0,
                    self.laborId > 0
                 {
