@@ -15,6 +15,7 @@ class ReservedExperimentView: UIView {
         .build()
     
     var selectedCell: (Int)-> Void = {_ in}
+    var deleteCell: (Int) -> Void = {_ in}
 
     var reservations: [ReservedModel] = []
     let experimenteTableView: UITableView = {
@@ -96,5 +97,19 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         let cellData = reservations[indexPath.row]
         selectedCell(cellData.id)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let cellData = reservations[indexPath.row]
+
+        let deleteAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
+            let item = self.reservations[indexPath.row]
+            self.deleteCell(cellData.id)
+            completion(true)
+        }
+        deleteAction.image = UIImage(named: "trash")
+        deleteAction.backgroundColor = UIColor.white
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

@@ -14,6 +14,7 @@ class LabBookView: UIView {
         .build()
     
     var selectedCell: (Int)-> Void = {_ in}
+    var deleteCell: (Int, Int) -> Void = {_, _ in}
 
     var experiments: [ExperimentModel] = []
     let detailesTableView: UITableView = {
@@ -31,6 +32,8 @@ class LabBookView: UIView {
         tableView.register(LabBookTableViewCell.self, forCellReuseIdentifier: "LabBookTableViewCell")
         return tableView
     }()
+    
+    var reservationId: Int?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,5 +103,19 @@ extension LabBookView: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         let cellRow = experiments[indexPath.row]
         selectedCell(cellRow.id)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
+            let item = self.experiments[indexPath.row]
+            if let reservationId = self.reservationId {
+                self.deleteCell(reservationId, item.id)
+            }
+            completion(true)
+        }
+        deleteAction.image = UIImage(named: "trash")
+        deleteAction.backgroundColor = UIColor.white
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

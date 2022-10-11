@@ -51,11 +51,13 @@ class LabBookViewController: UIViewController {
         if let reservationId = reservationId {
             if reservationId != 0 {
                 viewModel.experimentList(reservationId: reservationId)
+                self.baseView.reservationId = reservationId
             }
         }
         
         presentLoadingVC()
         actionCell()
+        deleteCell()
         layout()
         
         pullToRefresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -83,6 +85,12 @@ class LabBookViewController: UIViewController {
                     self.coordinator?.toShowExperiment(reservationId: reservationId, experimentId: experimentId)
                 }
             }
+        }
+    }
+    
+    func deleteCell() {
+        self.baseView.deleteCell = { reservedId, experimentId in
+            self.viewModel.deleteReservedExperiment(reservedId: reservedId, experimentId: experimentId)
         }
     }
     
@@ -118,6 +126,7 @@ class LabBookViewController: UIViewController {
 
 //MARK: - ViewModelDelegate
 extension LabBookViewController: LabBookViewModelDelegate {
+    
     func gettingReservedListSuccessful(experiments: [ExperimentModel]) {
         self.baseView.setData(experiments: experiments)
         self.loadingVC.dismiss(animated: true, completion: nil)
@@ -127,5 +136,26 @@ extension LabBookViewController: LabBookViewModelDelegate {
     func gettingReservedListFailed() {
         self.loadingVC.dismiss(animated: true, completion: nil)
         self.pullToRefresh.endRefreshing()
+    }
+    
+    
+    func deleteExperimentDescriptionSuccessful() {
+        self.pullToRefresh.beginRefreshing()
+        self.baseView.experiments = []
+        if let reservationId = reservationId {
+            if reservationId != 0 {
+                viewModel.experimentList(reservationId: reservationId)
+            }
+        }
+        self.baseView.detailesTableView.reloadData()
+    }
+    
+    func deleteExperimentDescriptionFailed() {
+        let toast = Toast.default(
+            image: UIImage(named: "error")!,
+            title: "Reservation Delete",
+            subtitle: "Your reservation was not deleted"
+        )
+        toast.show()
     }
 }

@@ -13,7 +13,7 @@ class SectionHeader: UICollectionReusableView {
     let label = LabelBuilder()
         .setText("", color: .label, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .setBackground(.secondarySystemBackground)
-        .setCornerRadius(AppTheme.cell.corner)
+        .setCornerRadius(AppTheme.view.cornerRadius)
         .setAlignment(.center)
         .build()
     

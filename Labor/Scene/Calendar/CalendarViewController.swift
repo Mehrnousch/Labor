@@ -95,7 +95,8 @@ extension CalendarViewController: CalendarViewModelDelegate {
             allReservations.append(Int(reservations[item].startDate_Time))
             
         }
-        
+        self.baseView.setData(timeList: ["8", "9", "10", "11", "12", "13", "14", "15"])
+        self.baseView.allReservations=allReservations
         print("allReservations = \(allReservations)")
     }
     

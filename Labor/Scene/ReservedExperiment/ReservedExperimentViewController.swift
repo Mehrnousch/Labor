@@ -31,6 +31,7 @@ class ReservedExperimentViewController: UIViewController {
         super.viewDidLoad()
         navigtionBarConfigure()
         actionCell()
+        deleteCell()
         layout()
         
         //MARK: - Get date for Calendar
@@ -56,7 +57,7 @@ class ReservedExperimentViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Tests gemacht"
+        title = "Experimente"
         self.navigationController?.navigationBar.tintColor = AppTheme.navigationItem.red_color
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
@@ -73,12 +74,17 @@ class ReservedExperimentViewController: UIViewController {
 
     @objc func leftHandAction() {
         print("left bar button action")
-//        self.coordinator?.toLogin()
     }
     
     func actionCell() {
         self.baseView.selectedCell = { reservationId in
             self.coordinator?.toLabBook(reservationId: reservationId)
+        }
+    }
+    
+    func deleteCell() {
+        self.baseView.deleteCell = { reservedId in
+            self.viewModel.deleteReservedExperiment(reservedId: reservedId)
         }
     }
     
@@ -124,6 +130,21 @@ extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate 
             image: UIImage(named: "error")!,
             title: "Reservations",
             subtitle: error
+        )
+        toast.show()
+    }
+    
+    func deleteReservedExperimentSuccessful() {
+        self.baseView.reservations = []
+        self.viewModel.getReservedList()
+        self.baseView.experimenteTableView.reloadData()
+    }
+    
+    func deleteReservedExperimentFailed() {
+        let toast = Toast.default(
+            image: UIImage(named: "error")!,
+            title: "Reservation Delete",
+            subtitle: "Your reservation was not deleted"
         )
         toast.show()
     }

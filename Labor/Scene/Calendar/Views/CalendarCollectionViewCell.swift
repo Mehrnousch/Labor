@@ -11,7 +11,8 @@ import UIKit
 class CalendarCollectionViewCell: UICollectionViewCell {
     
 //    let borderView = ViewBuilder()
-//        .setCornerRadius(AppTheme.cell.cornerRadius)
+//        .setCornerRadius(AppTheme.view.cornerRadius)
+//        .setBorder(AppTheme.textField.borderColor)
 //        .setBackground(.white)
 //        .build()
     
@@ -30,42 +31,47 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         layout()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cellSelected(selected: false)
+    }
+    
     private func cellStyle()  {
         translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .clear
-        timeLabel.isUserInteractionEnabled = true
     }
     
+//    func setupCell(data: String){
+//        timeLabel.text = data
+//    }
     func setupCell(data: String){
-        switch data {
-        case "8":
-            timeLabel.text = "08:00-09:00"
-        case "9":
-            timeLabel.text = "09:00-10:00"
-        case "10":
-            timeLabel.text = "10:00-11:00"
-        case "11":
-            timeLabel.text = "11:00-12:00"
-        case "12":
-            timeLabel.text = "12:00-13:00"
-        case "13":
-            timeLabel.text = "13:00-14:00"
-        case "14":
-            timeLabel.text = "14:00-15:00"
-        case "15":
-            timeLabel.text = "15:00-16:00"
-        default:
-            break
+            switch data {
+            case "8":
+                timeLabel.text = "08:00-09:00"
+            case "9":
+                timeLabel.text = "09:00-10:00"
+            case "10":
+                timeLabel.text = "10:00-11:00"
+            case "11":
+                timeLabel.text = "11:00-12:00"
+            case "12":
+                timeLabel.text = "12:00-13:00"
+            case "13":
+                timeLabel.text = "13:00-14:00"
+            case "14":
+                timeLabel.text = "14:00-15:00"
+            case "15":
+                timeLabel.text = "15:00-16:00"
+            default:
+                break
+            }
         }
-    }
     
     func cellSelected(selected: Bool) {
         if selected {
-            contentView.backgroundColor = .red
             containerTimeView.backgroundColor = AppTheme.view.backGround_red_color
-
             timeLabel.textColor = .white
-        }else {
+        } else {
             containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
             timeLabel.textColor = .black
         }
@@ -95,4 +101,3 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
