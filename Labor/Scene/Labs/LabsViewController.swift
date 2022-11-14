@@ -29,7 +29,7 @@ class LabsViewController: UIViewController {
     }
     
     private func navigtionBarConfigure() {
-        title = "Labs"
+        title = "Labors"
     }
     
     private func actionForSelectedCell() {

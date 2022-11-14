@@ -35,7 +35,7 @@ class AddDescriptionViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Add description"
+        title = "Beschreibung Hinzufügen"
     }
     
     func actionButtons() {

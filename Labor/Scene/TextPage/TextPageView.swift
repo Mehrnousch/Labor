@@ -18,7 +18,7 @@ class TextPageView: UIView {
     let saveButton = ButtonBuilder()
         .setBackground(AppTheme.view.backGround_red_color)
         .setCornerRadius(AppTheme.view.cornerRadius)
-        .setTitle("Save information", color: .white)
+        .setTitle("Senden", color: .white)
         .build()
     
     override init(frame: CGRect) {

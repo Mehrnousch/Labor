@@ -39,7 +39,7 @@ class ShowExperimentViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Experiment"
+        title = "Experiment Beschreibung"
     }
     
     func downloadImage() {

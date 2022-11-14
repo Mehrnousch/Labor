@@ -64,7 +64,7 @@ class LabBookViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Lab Book"
+        title = "Digitales Laborbuch"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))

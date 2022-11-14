@@ -9,9 +9,9 @@ import UIKit
 
 class AddDescriptionView: UIView {
     
-    let descriptionLabel = LabelBuilder()
-        .setText("Note :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
-        .build()
+//    let descriptionLabel = LabelBuilder()
+//        .setText("Note :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
+//        .build()
     
     let firstDescriptionLabel = DotLabelView()
     let secondDescriptionLabel = DotLabelView()
@@ -34,7 +34,7 @@ class AddDescriptionView: UIView {
         .build()
     
     let nameExperimentTextField = TextFieldBuilder()
-        .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Experiment name", textAlignment: .left, backGroundColor: .white)
+        .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Beschreibungstitel", textAlignment: .left, backGroundColor: .white)
         .setBorderDeselected()
         .build()
     
@@ -42,13 +42,13 @@ class AddDescriptionView: UIView {
         .setBackground(.clear)
         .setBorder(borderWidth: 1, borderColor: AppTheme.view.backGround_red_color.cgColor)
         .setCornerRadius(AppTheme.view.cornerRadius)
-        .setTitle("Please enter your description", color: AppTheme.view.backGround_red_color)
+        .setTitle("Text hinzufügen", color: AppTheme.view.backGround_red_color)
         .build()
         
     let saveButton = ButtonBuilder()
         .setBackground(AppTheme.view.backGround_red_color)
         .setCornerRadius(AppTheme.view.cornerRadius)
-        .setTitle("Save information", color: .white)
+        .setTitle("Senden", color: .white)
         .build()
 
     override init(frame: CGRect) {
@@ -67,14 +67,14 @@ class AddDescriptionView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         leftPhotoView.isUserInteractionEnabled = true
-        firstDescriptionLabel.setData(label: "You can add photos of your experiment here.")
-        secondDescriptionLabel.setData(label: "Since you can only add two photos, please take the photos correctly and at the right angle.")
-        thirdDescriptionLabel.setData(label: "And by clicking on the add text option, you can write a report of your test.")
+//        firstDescriptionLabel.setData(label: "You can add photos of your experiment here.")
+        secondDescriptionLabel.setData(label: "Hier können Sie zwei Fotos hinzufügen.")
+        thirdDescriptionLabel.setData(label: "Sie können Text hinzufügen auswählen, um Text hinzuzufügen oder über Ihr Experiment zu berichten.")
     }
     
     func layout() {
-        addSubview(descriptionLabel)
-        addSubview(firstDescriptionLabel)
+//        addSubview(descriptionLabel)
+//        addSubview(firstDescriptionLabel)
         addSubview(secondDescriptionLabel)
         addSubview(thirdDescriptionLabel)
         addSubview(nameExperimentTextField)
@@ -85,20 +85,20 @@ class AddDescriptionView: UIView {
         addSubview(descriptionButton)
         addSubview(saveButton)
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
+//            descriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
+//            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
+//
+//            firstDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
+//            firstDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            firstDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            firstDescriptionLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 4),
-            firstDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            firstDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            secondDescriptionLabel.topAnchor.constraint(equalTo: firstDescriptionLabel.bottomAnchor, constant: 4),
-            secondDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
-            secondDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
+            secondDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
+            secondDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            secondDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
 
             thirdDescriptionLabel.topAnchor.constraint(equalTo: secondDescriptionLabel.bottomAnchor, constant: 4),
-            thirdDescriptionLabel.leadingAnchor.constraint(equalTo: firstDescriptionLabel.leadingAnchor),
-            thirdDescriptionLabel.trailingAnchor.constraint(equalTo: firstDescriptionLabel.trailingAnchor),
+            thirdDescriptionLabel.leadingAnchor.constraint(equalTo: secondDescriptionLabel.leadingAnchor),
+            thirdDescriptionLabel.trailingAnchor.constraint(equalTo: secondDescriptionLabel.trailingAnchor),
             
             nameExperimentTextField.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
             nameExperimentTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),

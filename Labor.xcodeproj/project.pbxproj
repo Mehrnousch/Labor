@@ -87,8 +87,6 @@
 		56E85DDA28C4E75500F32FB2 /* ShowExperimentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */; };
 		56E85DDC28C4E76A00F32FB2 /* ShowExperimentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */; };
 		56E85DDE28C4E77A00F32FB2 /* ShowExperimentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */; };
-		56E85DE128C5454F00F32FB2 /* LaborItems+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */; };
-		56E85DE328C5456900F32FB2 /* LaborItems+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */; };
 		56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */; };
 		56EC3B4A28BB71C000C9F4C4 /* TextPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */; };
 		56EC3B4C28BB71D000C9F4C4 /* TextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */; };
@@ -199,8 +197,6 @@
 		56E85DD928C4E75500F32FB2 /* ShowExperimentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewController.swift; sourceTree = "<group>"; };
 		56E85DDB28C4E76A00F32FB2 /* ShowExperimentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentViewModel.swift; sourceTree = "<group>"; };
 		56E85DDD28C4E77A00F32FB2 /* ShowExperimentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowExperimentView.swift; sourceTree = "<group>"; };
-		56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaborItems+CoreDataClass.swift"; sourceTree = "<group>"; };
-		56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaborItems+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		56EC3B4728BB71AB00C9F4C4 /* TextPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageCoordinator.swift; sourceTree = "<group>"; };
 		56EC3B4928BB71C000C9F4C4 /* TextPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageViewController.swift; sourceTree = "<group>"; };
 		56EC3B4B28BB71D000C9F4C4 /* TextPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPageView.swift; sourceTree = "<group>"; };
@@ -264,7 +260,6 @@
 		562C110928A4D26600863C45 /* Labor */ = {
 			isa = PBXGroup;
 			children = (
-				56E85DDF28C5454000F32FB2 /* CoreData */,
 				562C112C28A4DF0E00863C45 /* Base */,
 				562C112D28A4DF1A00863C45 /* Scene */,
 				562C113228A4DFEE00863C45 /* Application */,
@@ -540,15 +535,6 @@
 			path = ShowExperiment;
 			sourceTree = "<group>";
 		};
-		56E85DDF28C5454000F32FB2 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				56E85DE028C5454F00F32FB2 /* LaborItems+CoreDataClass.swift */,
-				56E85DE228C5456900F32FB2 /* LaborItems+CoreDataProperties.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		56EC3B4628BB712E00C9F4C4 /* TextPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,10 +740,8 @@
 				56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */,
-				56E85DE328C5456900F32FB2 /* LaborItems+CoreDataProperties.swift in Sources */,
 				56EC3B4828BB71AB00C9F4C4 /* TextPageCoordinator.swift in Sources */,
 				565F8E2128A53AE700259852 /* LoginView.swift in Sources */,
-				56E85DE128C5454F00F32FB2 /* LaborItems+CoreDataClass.swift in Sources */,
 				562C115328A4E2E500863C45 /* CGRect.swift in Sources */,
 				56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */,
 				565F8E3628A6A9A000259852 /* LabsCoordinator.swift in Sources */,

@@ -6,7 +6,6 @@
 //
 
 
-import AVFoundation
 import UIKit
 import CropViewController
 import TOCropViewController
