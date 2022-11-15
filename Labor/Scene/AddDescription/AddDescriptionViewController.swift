@@ -23,8 +23,8 @@ class AddDescriptionViewController: UIViewController {
     var chosenRightPhotoPlace = false
     
     var reservationId: Int?
-    var firstImageStr: Data?
-    var secondImageStr: Data?
+    var firstImageStr = Data()
+    var secondImageStr = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,17 +63,11 @@ class AddDescriptionViewController: UIViewController {
             
             print(self.reservationId ?? "")
             
-            if let reservationId = self.reservationId,
-               let labName = self.baseView.nameExperimentTextField.text,
-               let description = UserDefaultsStorage.shared.descriptionExperiment,
-               let firstImage = self.firstImageStr,
-               let secondImage = self.secondImageStr {
-                if reservationId > 0, labName != "", description != "", !firstImage.isEmpty, !secondImage.isEmpty {
-                    self.viewModel.addDescription(reservationId: reservationId, name: labName, description: description, firstPhoto: firstImage, secondPhoto: secondImage)
-                    self.startUploadPhotos()
-                } else {
-                    Toast.text("Fill in all the items.").show()
-                }
+            if self.reservationId ?? 0 > 0, self.baseView.nameExperimentTextField.text != "", !self.firstImageStr.isEmpty, !self.secondImageStr.isEmpty {
+                self.viewModel.addDescription(reservationId: self.reservationId ?? 0, name: self.baseView.nameExperimentTextField.text ?? "", description: UserDefaultsStorage.shared.descriptionExperiment ?? "", firstPhoto: self.firstImageStr, secondPhoto: self.secondImageStr)
+                self.startUploadPhotos()
+            } else {
+                Toast.text("Please enter photos and experiment name.").show()
             }
         }
     }

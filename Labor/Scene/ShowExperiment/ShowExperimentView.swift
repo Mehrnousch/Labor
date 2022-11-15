@@ -65,7 +65,12 @@ class ShowExperimentView: UIView {
     func setData(result: DetailsEexperimentModel) {
         labName.text = result.reservation.laboratory.name
         experimentName.text = result.name
-        experimentDescription.text = result.description
+        if result.description != "" {
+            experimentDescription.text = result.description
+        } else {
+            experimentDescription.text = "No description has been entered for the experiment."
+            experimentDescription.textColor = UIColor.lightGray
+        }
     }
     
     func layout() {
