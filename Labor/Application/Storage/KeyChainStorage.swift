@@ -25,4 +25,11 @@ class KeyChainStorage {
             print(error)
         }
     }
+    static func delete() {
+            do {
+                try KeyChainManager.delete()
+            } catch {
+                print(error)
+            }
+        }
 }

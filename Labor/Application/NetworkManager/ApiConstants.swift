@@ -13,6 +13,7 @@ class ApiConstants {
     static let login: URL = URL(string: ApiConstants.baseApiURL + "/user/login")!
     static let reservedList: URL = URL(string: ApiConstants.baseApiURL + "/user/reservation/list")!
     static let Labs: URL = URL(string: ApiConstants.baseApiURL + "/laboratory/list")!
+    static let logout: URL = URL(string: ApiConstants.baseApiURL + "/user/logout")!
     class func experimentList(reservationId: Int) -> URL {
         return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservationId)/experiment/list")!
     }
@@ -38,3 +39,5 @@ class ApiConstants {
         return URL(string: ApiConstants.baseApiURL + "/user/reservation/\(reservedId)/experiment/\(experimentId)/delete")!
     }
 }
+
+

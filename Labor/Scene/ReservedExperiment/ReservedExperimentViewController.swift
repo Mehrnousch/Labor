@@ -62,19 +62,27 @@ class ReservedExperimentViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
-//                                                                style: .plain,
-//                                                                target: self,
-//                                                                action: #selector(leftHandAction))
+        //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "LogOut",
+        //                                                                style: .plain,
+        //                                                                target: self,
+        //                                                                action: #selector(leftHandAction))
+      
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Abmelden",
+                                                                        style: .plain,
+                                                                        target: self,
+                                                                        action: #selector(leftHandAction))
+        
+        
     }
     
     @objc func rightHandAction() {
         self.coordinator?.toLabs()
     }
 
-//    @objc func leftHandAction() {
-//        print("left bar button action")
-//    }
+    @objc func leftHandAction() {
+        self.viewModel.logout()
+        
+    }
     
     func actionCell() {
         self.baseView.selectedCell = { reservationId in
@@ -148,4 +156,13 @@ extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate 
         )
         toast.show()
     }
+    func logoutSuccessful() {
+            guard let VC = self.navigationController?.viewControllers.filter({$0.isKind(of: LoginViewController.self)}).first else {return}
+            self.navigationController?.popToViewController(VC, animated: true)
+            KeyChainStorage.delete()
+        }
+        
+        func logoutFailed(error: String) {
+            print(error)
+        }
 }
