@@ -72,9 +72,9 @@ class ReservedExperimentViewController: UIViewController {
         self.coordinator?.toLabs()
     }
 
-    @objc func leftHandAction() {
-        print("left bar button action")
-    }
+//    @objc func leftHandAction() {
+//        print("left bar button action")
+//    }
     
     func actionCell() {
         self.baseView.selectedCell = { reservationId in

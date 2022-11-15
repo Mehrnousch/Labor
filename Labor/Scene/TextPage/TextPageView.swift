@@ -12,7 +12,7 @@ class TextPageView: UIView {
     let textBox = UITextView()
     
     let placeHolderLabel = LabelBuilder()
-        .setText("Input description...", color: .lightGray, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText("Beschreiben Sie Ihr Experiment.", color: .lightGray, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let saveButton = ButtonBuilder()
