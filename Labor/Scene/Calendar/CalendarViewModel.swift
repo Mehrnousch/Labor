@@ -5,7 +5,6 @@
 //  Created by mehrnoush abdinian on 12.08.22.
 //
 
-import Foundation
 import SwiftyJSON
 import Alamofire
 

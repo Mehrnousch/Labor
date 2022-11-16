@@ -4,8 +4,7 @@
 //
 //  Created by mehrnoush abdinian on 04.09.22.
 //
-
-import Foundation
+import UIKit
 import SwiftyJSON
 import Alamofire
 

@@ -64,8 +64,8 @@ class FinalReserveView: UIView {
         protocolPdfButton.setLabel(label: "Protocol")
         cleanPdfButton.setLabel(label: "Clean")
         
-        agreeRulesButton.setLabel(label: "I read all the rules and agree with them.")
-        existenceManagerButton.setLabel(label: "I need the support of the laboratory manager.")
+        agreeRulesButton.setLabel(label: "Ich habe die Protokolle und Sicherheitsinformationen gelesen und stimme ihnen zu.*")
+        existenceManagerButton.setLabel(label: "Ich brauche die Unterstützung des Laborverantwortlichen.")
     }
     
     func layout() {

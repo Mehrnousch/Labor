@@ -5,7 +5,7 @@
 //  Created by mehrnoush abdinian on 11.09.22.
 //
 
-import Foundation
+import UIKit
 import SwiftyJSON
 
 struct DetailsEexperimentModel {

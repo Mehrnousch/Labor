@@ -13,7 +13,9 @@ class AddDescriptionView: UIView {
 //        .setText("Note :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
 //        .build()
     
-    let firstDescriptionLabel = DotLabelView()
+    let firstDescriptionLabel = LabelBuilder()
+        .setText("Title:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .build()
     let secondDescriptionLabel = DotLabelView()
     let thirdDescriptionLabel = DotLabelView()
     
@@ -67,14 +69,13 @@ class AddDescriptionView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         leftPhotoView.isUserInteractionEnabled = true
-//        firstDescriptionLabel.setData(label: "You can add photos of your experiment here.")
-        secondDescriptionLabel.setData(label: "Hier können Sie zwei Fotos hinzufügen.")
-        thirdDescriptionLabel.setData(label: "Sie können Text hinzufügen auswählen, um Text hinzuzufügen oder über Ihr Experiment zu berichten.")
+        secondDescriptionLabel.setData(label: "Bitte laden Sie zwei Fotos hoch.*")
+        thirdDescriptionLabel.setData(label: "Um Text hinzuzufügen, wählen Sie unten Text hinzufügen aus.")
     }
     
     func layout() {
 //        addSubview(descriptionLabel)
-//        addSubview(firstDescriptionLabel)
+        addSubview(firstDescriptionLabel)
         addSubview(secondDescriptionLabel)
         addSubview(thirdDescriptionLabel)
         addSubview(nameExperimentTextField)
@@ -88,24 +89,29 @@ class AddDescriptionView: UIView {
 //            descriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
 //            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
 //
-//            firstDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
-//            firstDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            firstDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+        
             
-            secondDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
-            secondDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            secondDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+           
 
-            thirdDescriptionLabel.topAnchor.constraint(equalTo: secondDescriptionLabel.bottomAnchor, constant: 4),
+            thirdDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
             thirdDescriptionLabel.leadingAnchor.constraint(equalTo: secondDescriptionLabel.leadingAnchor),
             thirdDescriptionLabel.trailingAnchor.constraint(equalTo: secondDescriptionLabel.trailingAnchor),
             
-            nameExperimentTextField.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
+            firstDescriptionLabel.topAnchor.constraint(equalTo: thirdDescriptionLabel.bottomAnchor, constant: 30),
+            firstDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
+            firstDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),
+            
+            nameExperimentTextField.topAnchor.constraint(equalTo: firstDescriptionLabel.bottomAnchor, constant: 10),
             nameExperimentTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),
             nameExperimentTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
             nameExperimentTextField.heightAnchor.constraint(equalToConstant: AppTheme.button.height),
             
-            leftPhotoView.topAnchor.constraint(equalTo: nameExperimentTextField.bottomAnchor, constant: 20),
+            
+            secondDescriptionLabel.topAnchor.constraint(equalTo: nameExperimentTextField.bottomAnchor, constant: 10),
+            secondDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
+            secondDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: AppTheme.view.paddingRight),
+            
+            leftPhotoView.topAnchor.constraint(equalTo: secondDescriptionLabel.bottomAnchor, constant: 20),
             leftPhotoView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             leftPhotoView.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -15),
             leftPhotoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2),

@@ -5,7 +5,7 @@
 //  Created by mehrnoush abdinian on 29.08.22.
 //
 
-import Foundation
+import UIKit
 
 class ApiConstants {
     static let baseApiURL: String = "https://api.laboratoryappointment.de/v1"
