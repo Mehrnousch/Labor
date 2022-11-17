@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
                 if name != "", email != "", password != "" {
                     self.viewModel.register(fullName: name, email: email, password: password)
                 } else {
-                    Toast.text("Fill in all the items.").show()
+                    Toast.text("Bitte füllen Sie alle Abschnitte aus.").show()
                 }
             }
         }

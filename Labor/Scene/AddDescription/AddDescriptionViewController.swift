@@ -67,13 +67,13 @@ class AddDescriptionViewController: UIViewController {
                 self.viewModel.addDescription(reservationId: self.reservationId ?? 0, name: self.baseView.nameExperimentTextField.text ?? "", description: UserDefaultsStorage.shared.descriptionExperiment ?? "", firstPhoto: self.firstImageStr, secondPhoto: self.secondImageStr)
                 self.startUploadPhotos()
             } else {
-                Toast.text("Please enter photos and experiment name.").show()
+                Toast.text("Bitte geben Sie zwei Fotos und einen Titel ein.").show()
             }
         }
     }
     
     func startUploadPhotos() {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "Warten Sie bitte...", preferredStyle: .alert)
 
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true

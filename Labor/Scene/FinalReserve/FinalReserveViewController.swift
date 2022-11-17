@@ -95,7 +95,7 @@ class FinalReserveViewController: UIViewController {
                 {
                     self.viewModel.finalReserve(laborId: self.laborId, startAt: startAt, endAt: endAt, supervisorNeeded: existenceManagerValue, title: title, description: description)
                 } else {
-                    Toast.text("Fill in all the items and check the desired options").show()
+                    Toast.text("Bitte füllen Sie die markierten Abschnitte aus.").show()
                 }
             }
         }

@@ -40,7 +40,7 @@ class LabBookViewController: UIViewController {
         let toast = Toast.default(
             image: UIImage(named: "success")!,
             title: "Experiment result",
-            subtitle: "Save result successfully."
+            subtitle: "Ergebnis erfolgreich speichern."
         )
         toast.show()
     }

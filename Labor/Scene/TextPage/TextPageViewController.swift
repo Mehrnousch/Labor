@@ -27,7 +27,7 @@ class TextPageViewContoller: UIViewController {
                     UserDefaultsStorage.shared.descriptionExperiment = description
                     self.dismiss(animated: true)
                 } else {
-                    Toast.text("Please enter the description").show()
+                    Toast.text("Bitte geben Sie die Beschreibung ein").show()
                 }
             }
         }

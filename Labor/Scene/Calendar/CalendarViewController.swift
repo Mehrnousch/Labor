@@ -68,8 +68,8 @@ class CalendarViewController: UIViewController {
         } else {
             let toast = Toast.default(
                 image: UIImage(named: "error")!,
-                title: "Time reservation",
-                subtitle: "You have not specified a time for experiment"
+                title: "Zeitreservierung",
+                subtitle: "Sie haben keine Zeit für das Experiment angegeben"
             )
             toast.show()
         }

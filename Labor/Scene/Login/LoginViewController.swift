@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
                     self.viewModel.login(email: email, password: password, deviceName: deviceName)
                     print("deviceName = \(deviceName)")
                 } else {
-                    Toast.text("Fill in all the items.").show()
+                    Toast.text("Bitte überprüfen Sie, ob Benutzername und Passwort korrekt eingegeben wurden.").show()
                 }
             }
         }
