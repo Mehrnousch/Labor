@@ -124,6 +124,7 @@ class ReservedExperimentViewController: UIViewController {
 
 //MARK: - ViewModelDelegate
 extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate {
+   
     func gettingReservedListSuccessful(reservations: [ReservedModel]) {
         self.baseView.setData(reservations: reservations)
         self.loadingVC.dismiss(animated: true, completion: nil)
@@ -157,8 +158,11 @@ extension ReservedExperimentViewController: ReservedExperimentViewModelDelegate 
         toast.show()
     }
     func logoutSuccessful() {
-            guard let VC = self.navigationController?.viewControllers.filter({$0.isKind(of: LoginViewController.self)}).first else {return}
-            self.navigationController?.popToViewController(VC, animated: true)
+            if let VC = self.navigationController?.viewControllers.filter({$0.isKind(of: LoginViewController.self)}).first {
+                self.navigationController?.popToViewController(VC, animated: true)
+            } else {
+                self.coordinator?.toLogin()
+            }
             KeyChainStorage.delete()
         }
         

@@ -55,6 +55,7 @@ class CalendarViewController: UIViewController {
             )
             toast.show()
         } else if startTimeExpirment > 0 {
+            let currentTimestamp = NSDate().timeIntervalSince1970
             if startTimeExpirment > currentTimestamp {
                 self.coordinator?.toFinalReserved(laborId: laborId)
             } else {
