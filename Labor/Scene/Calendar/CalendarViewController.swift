@@ -36,8 +36,8 @@ class CalendarViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Calendar"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Continue",
+//        title = " "
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fortsetzung",
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
@@ -45,13 +45,11 @@ class CalendarViewController: UIViewController {
     
     @objc func rightHandAction() {
         let startTimeExpirment = UserDefaultsStorage.shared.startExperiment
-        let currentTimestamp = NSDate().timeIntervalSince1970
-        
         if allReservations.contains(Int(startTimeExpirment)) {
             let toast = Toast.default(
                 image: UIImage(named: "error")!,
                 title: "Time reservation",
-                subtitle: "The desired time is already reserved."
+                subtitle: "Die gewünschte Zeit ist bereits reserviert."
             )
             toast.show()
         } else if startTimeExpirment > 0 {
@@ -62,7 +60,7 @@ class CalendarViewController: UIViewController {
                 let toast = Toast.default(
                     image: UIImage(named: "error")!,
                     title: "Time reservation",
-                    subtitle: "The selected time has passed"
+                    subtitle: "Die gewählte Termin ist abgelaufen"
                 )
                 toast.show()
             }

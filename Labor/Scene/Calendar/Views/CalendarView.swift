@@ -1,5 +1,5 @@
 //
-//  CalenderView.swift
+//  CalendarView.swift
 //  Labor
 //
 //  Created by mehrnoush abdinian on 12.08.22.
@@ -11,7 +11,7 @@ import UIKit
 class CalendarView: UIView {
     
     let titleView = LabelBuilder()
-        .setText("Please select the desired date:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .setText("Bitte wählen Sie den gewünschten Termin aus:", color: .darkGray, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     var allReservations = [Int]()
     var timeListSelectionStates = [[Bool]]()
