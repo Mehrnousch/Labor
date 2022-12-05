@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol PDFCoordinatorDelegate {
-
-}
-
 class PDFCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
@@ -25,9 +21,4 @@ class PDFCoordinator: BaseCoordinator {
         VC.pdfName = pdfName
         navigate(to: VC, with: .push)
     }
-}
-
-//MARK: - Delegate
-extension PDFCoordinator: PDFCoordinatorDelegate {
-    
 }

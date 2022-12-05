@@ -36,7 +36,7 @@ class CalendarView: UIView {
         cv.backgroundColor = .clear
         return cv
     }()
-        
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         style()
@@ -74,15 +74,15 @@ class CalendarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func changeSelectionState(_ section:Int, _ index:Int) {
-            if timeListSelectionStates[section][index] == false {
-                timeListSelectionStates[section][index] = true
-
-            }else {
-                timeListSelectionStates[section][index] = false
-
-            }
-            calendarCollectionView.reloadData()
+        if timeListSelectionStates[section][index] == false {
+            timeListSelectionStates[section][index] = true
+            
+        }else {
+            timeListSelectionStates[section][index] = false
+            
         }
+        calendarCollectionView.reloadData()
+    }
 }
 
 
@@ -119,21 +119,13 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let startTime = Int(createUnixTimestamp(year: year ?? 0, month: month ?? 0, day: day ?? 0, hour: hour ?? 0, minute: 0, second: 0))
         collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
         if indexPath ==  selectedIndexPath {
-                     cell.containerTimeView.backgroundColor = UIColor.lightGray
-        //             cell.backgroundColor = UIColor.gray
-                } else {
-                     cell.containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
-        //             cell.backgroundColor = UIColor.blue
-                }
+            cell.containerTimeView.backgroundColor = UIColor.lightGray
+        } else {
+            cell.containerTimeView.backgroundColor = AppTheme.view.backGround_blue_color
+        }
         if allReservations.contains(startTime) {
             cell.cellSelected(selected: true)
         }
-        
-//        if indexPath.section == 1, indexPath.row == 1 {
-//            cell.cellSelected(selected: true)
-//        }
-        
-//        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
         return cell
     }
     
@@ -154,9 +146,9 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
-    UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let padding: CGFloat =  200
-      let collectionViewSize = calendarCollectionView.frame.size.width - padding
+                        UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let padding: CGFloat =  200
+        let collectionViewSize = calendarCollectionView.frame.size.width - padding
         return CGSize(width: collectionViewSize/1.76, height: collectionViewSize/2.4)
     }
     
@@ -178,9 +170,8 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCollectionViewCell", for: indexPath) as! CalendarCollectionViewCell
         cell.cellSelected(selected: true)
-        //        changeSelectionState(indexPath.section,indexPath.row)
-                selectedIndexPath = indexPath
-                calendarCollectionView.reloadData()
+        selectedIndexPath = indexPath
+        calendarCollectionView.reloadData()
         let time = timeList[indexPath.row]
         let date = CalendarInformation.shared.calendarDate[indexPath.section]
         
@@ -188,10 +179,10 @@ extension CalendarView: UICollectionViewDelegate, UICollectionViewDataSource, UI
         guard let month = Int(date.components(separatedBy: ".")[1]) else { return }
         guard let day = Int(date.components(separatedBy: ".")[0]) else { return }
         guard let hour = Int(time) else { return }
-
+        
         let startTime = createUnixTimestamp(year: year, month: month, day: day, hour: hour, minute: 0, second: 0)
         let endTime = createUnixTimestamp(year: year, month: month, day: day, hour: hour + 1, minute: 0, second: 0)
-
+        
         UserDefaultsStorage.shared.startExperiment = startTime
         UserDefaultsStorage.shared.endExperiment = endTime
     }

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol ShowExperimentCoordinatorDelegate {
-
-}
-
 class ShowExperimentCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
@@ -27,9 +23,4 @@ class ShowExperimentCoordinator: BaseCoordinator {
         VC.experimentId = experimentId
         navigate(to: VC, with: .push)
     }
-}
-
-//MARK: - Delegate
-extension ShowExperimentCoordinator: ShowExperimentCoordinatorDelegate {
-        
 }

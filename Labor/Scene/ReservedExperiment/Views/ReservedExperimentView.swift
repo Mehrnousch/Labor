@@ -103,7 +103,6 @@ extension ReservedExperimentView: UITableViewDelegate, UITableViewDataSource {
         let cellData = reservations[indexPath.row]
 
         let deleteAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
-            let item = self.reservations[indexPath.row]
             self.deleteCell(cellData.id)
             completion(true)
         }

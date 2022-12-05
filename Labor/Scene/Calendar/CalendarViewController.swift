@@ -36,8 +36,7 @@ class CalendarViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-//        title = " "
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fortsetzung",
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Weiter",
                                                                  style: .plain,
                                                                  target: self,
                                                                  action: #selector(rightHandAction))
@@ -45,6 +44,7 @@ class CalendarViewController: UIViewController {
     
     @objc func rightHandAction() {
         let startTimeExpirment = UserDefaultsStorage.shared.startExperiment
+        
         if allReservations.contains(Int(startTimeExpirment)) {
             let toast = Toast.default(
                 image: UIImage(named: "error")!,
@@ -89,17 +89,15 @@ class CalendarViewController: UIViewController {
 //MARK: - ViewModelDelegate
 extension CalendarViewController: CalendarViewModelDelegate {
     func gettingReservedTimeSuccessful(reservations: [ReservedModel]) {
-        print(reservations)
         for item in 0 ..< reservations.count {
             allReservations.append(Int(reservations[item].startDate_Time))
             
         }
         self.baseView.setData(timeList: ["8", "9", "10", "11", "12", "13", "14", "15"])
         self.baseView.allReservations=allReservations
-        print("allReservations = \(allReservations)")
     }
     
     func gettingReservedTimeFailed() {
-        
+        print("Getting reserved time failed")
     }
 }

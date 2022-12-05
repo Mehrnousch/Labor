@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol RegisterCoordinatorDelegate {
-    
-}
-
 class RegisterCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
@@ -25,9 +21,4 @@ class RegisterCoordinator: BaseCoordinator {
         VC.coordinator = self
         navigate(to: VC, with: .present)
     }
-}
-
-//MARK: - Delegate
-extension RegisterCoordinator: RegisterCoordinatorDelegate {
-
 }

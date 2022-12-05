@@ -10,12 +10,6 @@ import UIKit
 
 class CalendarCollectionViewCell: UICollectionViewCell {
     
-//    let borderView = ViewBuilder()
-//        .setCornerRadius(AppTheme.view.cornerRadius)
-//        .setBorder(AppTheme.textField.borderColor)
-//        .setBackground(.white)
-//        .build()
-    
     let containerTimeView = ViewBuilder()
         .setCornerRadius(AppTheme.cell.cornerRadius)
         .setBackground(AppTheme.view.backGround_blue_color)
@@ -41,9 +35,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         contentView.backgroundColor = .clear
     }
     
-//    func setupCell(data: String){
-//        timeLabel.text = data
-//    }
     func setupCell(data: String){
             switch data {
             case "8":
@@ -78,15 +69,9 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     private func layout() {
-//        contentView.addSubview(borderView)
         contentView.addSubview(containerTimeView)
         containerTimeView.addSubview(timeLabel)
         NSLayoutConstraint.activate([
-//            borderView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-//            borderView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-//            borderView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-//            borderView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-//
             containerTimeView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             containerTimeView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             containerTimeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),

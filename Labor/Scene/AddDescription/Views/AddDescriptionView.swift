@@ -9,13 +9,10 @@ import UIKit
 
 class AddDescriptionView: UIView {
     
-//    let descriptionLabel = LabelBuilder()
-//        .setText("Note :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .bold)
-//        .build()
-    
     let firstDescriptionLabel = LabelBuilder()
         .setText("Title:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
+    
     let secondDescriptionLabel = DotLabelView()
     let thirdDescriptionLabel = DotLabelView()
     
@@ -74,7 +71,6 @@ class AddDescriptionView: UIView {
     }
     
     func layout() {
-//        addSubview(descriptionLabel)
         addSubview(firstDescriptionLabel)
         addSubview(secondDescriptionLabel)
         addSubview(thirdDescriptionLabel)
@@ -86,13 +82,6 @@ class AddDescriptionView: UIView {
         addSubview(descriptionButton)
         addSubview(saveButton)
         NSLayoutConstraint.activate([
-//            descriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
-//            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: AppTheme.view.paddingLeft),
-//
-        
-            
-           
-
             thirdDescriptionLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: AppTheme.view.paddingTop),
             thirdDescriptionLabel.leadingAnchor.constraint(equalTo: secondDescriptionLabel.leadingAnchor),
             thirdDescriptionLabel.trailingAnchor.constraint(equalTo: secondDescriptionLabel.trailingAnchor),

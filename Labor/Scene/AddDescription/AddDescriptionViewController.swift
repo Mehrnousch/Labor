@@ -89,17 +89,17 @@ class AddDescriptionViewController: UIViewController {
         let alert = UIAlertController(title: "Post photo", message: "Choose one of the following.", preferredStyle: UIAlertController.Style.alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Kamera", style: UIAlertAction.Style.default, handler: { _ in
             guard let topVC = self.navigationController?.topViewController else { return }
             PhotoHandler.shared.camera(vc: topVC)
         }))
         
-        alert.addAction(UIAlertAction(title: "Gallery", style: UIAlertAction.Style.default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Photos", style: UIAlertAction.Style.default, handler: { _ in
             guard let topVC = self.navigationController?.topViewController else { return }
             PhotoHandler.shared.photoLibrary(vc: topVC)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Abbrechen", style: UIAlertAction.Style.destructive, handler: { _ in
             self.dismiss(animated: true)
         }))
 

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TextPageCoordinatorDelegate {
-    
-}
-
 class TextPageCoordinator: BaseCoordinator {
     
     var navigationController: UINavigationController
@@ -24,9 +20,4 @@ class TextPageCoordinator: BaseCoordinator {
         VC.coordinator = self
         navigate(to: VC, with: .present)
     }
-}
-
-//MARK: - Delegate
-extension TextPageCoordinator: TextPageCoordinatorDelegate {
-
 }

@@ -28,8 +28,7 @@
 		562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114628A4E1FF00863C45 /* LoadingView.swift */; };
 		562C114928A4E21F00863C45 /* MainSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114828A4E21F00863C45 /* MainSpinner.swift */; };
 		562C114B28A4E25D00863C45 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114A28A4E25D00863C45 /* UIFont.swift */; };
-		562C114D28A4E28900863C45 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114C28A4E28900863C45 /* Data.swift */; };
-		562C114F28A4E2A600863C45 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114E28A4E2A600863C45 /* String.swift */; };
+		562C114D28A4E28900863C45 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C114C28A4E28900863C45 /* Date.swift */; };
 		562C115128A4E2C600863C45 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C115028A4E2C600863C45 /* UIView.swift */; };
 		562C115328A4E2E500863C45 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C115228A4E2E500863C45 /* CGRect.swift */; };
 		562C115528A4E30300863C45 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C115428A4E30300863C45 /* UITextView.swift */; };
@@ -60,14 +59,12 @@
 		565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3928A6A9C400259852 /* LabsViewController.swift */; };
 		565F8E3D28A6AB2F00259852 /* LabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3C28A6AB2F00259852 /* LabsView.swift */; };
 		565F8E3F28A6AB5400259852 /* labsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E3E28A6AB5400259852 /* labsTableViewCell.swift */; };
-		565F8E4128A6ACC800259852 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4028A6ACC800259852 /* UILabel.swift */; };
 		565F8E4528A6CAD300259852 /* CalendarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4428A6CAD300259852 /* CalendarCoordinator.swift */; };
 		565F8E4728A6CAE700259852 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4628A6CAE700259852 /* CalendarViewModel.swift */; };
 		565F8E4928A6CB0A00259852 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4828A6CB0A00259852 /* CalendarViewController.swift */; };
 		565F8E4B28A6CB3400259852 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalendarView.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
 		56655A6928CA448F002F5861 /* PDFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A6828CA448F002F5861 /* PDFButton.swift */; };
-		56655A6B28CA44B6002F5861 /* PDFsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A6A28CA44B6002F5861 /* PDFsView.swift */; };
 		56655A6D28CA4577002F5861 /* Security.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6C28CA4577002F5861 /* Security.pdf */; };
 		56655A7028CA4599002F5861 /* Protocol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6E28CA4599002F5861 /* Protocol.pdf */; };
 		56655A7128CA4599002F5861 /* Clean.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6F28CA4599002F5861 /* Clean.pdf */; };
@@ -103,7 +100,7 @@
 		56EC3B6728BB76B500C9F4C4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6628BB76B500C9F4C4 /* Kingfisher */; };
 		56EC3B6A28BB76D100C9F4C4 /* CropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6928BB76D100C9F4C4 /* CropViewController */; };
 		56EC3B6C28BB76D100C9F4C4 /* TOCropViewController in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B6B28BB76D100C9F4C4 /* TOCropViewController */; };
-		56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */; };
+		56EC3B6E28BB840900C9F4C4 /* PhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6D28BB840900C9F4C4 /* PhotoHandler.swift */; };
 		56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */; };
 		56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */; };
 		56EC3B7828BD20B000C9F4C4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 56EC3B7728BD20B000C9F4C4 /* SwiftyJSON */; };
@@ -141,8 +138,7 @@
 		562C114628A4E1FF00863C45 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		562C114828A4E21F00863C45 /* MainSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSpinner.swift; sourceTree = "<group>"; };
 		562C114A28A4E25D00863C45 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		562C114C28A4E28900863C45 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		562C114E28A4E2A600863C45 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		562C114C28A4E28900863C45 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		562C115028A4E2C600863C45 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		562C115228A4E2E500863C45 /* CGRect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		562C115428A4E30300863C45 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
@@ -172,14 +168,12 @@
 		565F8E3928A6A9C400259852 /* LabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsViewController.swift; sourceTree = "<group>"; };
 		565F8E3C28A6AB2F00259852 /* LabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsView.swift; sourceTree = "<group>"; };
 		565F8E3E28A6AB5400259852 /* labsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = labsTableViewCell.swift; sourceTree = "<group>"; };
-		565F8E4028A6ACC800259852 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		565F8E4428A6CAD300259852 /* CalendarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCoordinator.swift; sourceTree = "<group>"; };
 		565F8E4628A6CAE700259852 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		565F8E4828A6CB0A00259852 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		565F8E4A28A6CB3400259852 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		56655A6828CA448F002F5861 /* PDFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButton.swift; sourceTree = "<group>"; };
-		56655A6A28CA44B6002F5861 /* PDFsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFsView.swift; sourceTree = "<group>"; };
 		56655A6C28CA4577002F5861 /* Security.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Security.pdf; sourceTree = "<group>"; };
 		56655A6E28CA4599002F5861 /* Protocol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Protocol.pdf; sourceTree = "<group>"; };
 		56655A6F28CA4599002F5861 /* Clean.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Clean.pdf; sourceTree = "<group>"; };
@@ -210,7 +204,7 @@
 		56EC3B5F28BB74B000C9F4C4 /* AddDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionViewModel.swift; sourceTree = "<group>"; };
 		56EC3B6128BB755000C9F4C4 /* AddDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDescriptionView.swift; sourceTree = "<group>"; };
 		56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLabelView.swift; sourceTree = "<group>"; };
-		56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		56EC3B6D28BB840900C9F4C4 /* PhotoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHandler.swift; sourceTree = "<group>"; };
 		56EC3B6F28BB874400C9F4C4 /* SeactionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeactionHeader.swift; sourceTree = "<group>"; };
 		56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		56EC3B7D28BD372000C9F4C4 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
@@ -332,7 +326,7 @@
 				562C114228A4E15F00863C45 /* LoadingButton */,
 				562C115C28A4E3A700863C45 /* PaddingTextField.swift */,
 				56EC3B6328BB759500C9F4C4 /* DotLabelView.swift */,
-				56EC3B6D28BB840900C9F4C4 /* CameraHandler.swift */,
+				56EC3B6D28BB840900C9F4C4 /* PhotoHandler.swift */,
 				56ED46D028C26BCA002E9EC7 /* CheckBoxButton.swift */,
 			);
 			path = Component;
@@ -375,13 +369,11 @@
 			isa = PBXGroup;
 			children = (
 				562C114A28A4E25D00863C45 /* UIFont.swift */,
-				562C114C28A4E28900863C45 /* Data.swift */,
-				562C114E28A4E2A600863C45 /* String.swift */,
+				562C114C28A4E28900863C45 /* Date.swift */,
 				562C115028A4E2C600863C45 /* UIView.swift */,
 				562C115228A4E2E500863C45 /* CGRect.swift */,
 				562C115428A4E30300863C45 /* UITextView.swift */,
 				565F8E2228A53C2E00259852 /* UIButton.swift */,
-				565F8E4028A6ACC800259852 /* UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -489,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				56655A6828CA448F002F5861 /* PDFButton.swift */,
-				56655A6A28CA44B6002F5861 /* PDFsView.swift */,
 			);
 			path = PDF;
 			sourceTree = "<group>";
@@ -728,7 +719,7 @@
 				565F8E3A28A6A9C400259852 /* LabsViewController.swift in Sources */,
 				566F06BE28CF9BCD000174EE /* PhotosModel.swift in Sources */,
 				562C114728A4E1FF00863C45 /* LoadingView.swift in Sources */,
-				56EC3B6E28BB840900C9F4C4 /* CameraHandler.swift in Sources */,
+				56EC3B6E28BB840900C9F4C4 /* PhotoHandler.swift in Sources */,
 				56E85DD828C4E73900F32FB2 /* ShowExperimentCoordinator.swift in Sources */,
 				566F06BC28CDCE6F000174EE /* DetailExperimentModel.swift in Sources */,
 				562C115B28A4E37F00863C45 /* HapticGenerator.swift in Sources */,
@@ -736,7 +727,6 @@
 				56ED46CA28C1379C002E9EC7 /* FinalReserveViewController.swift in Sources */,
 				56E85DDC28C4E76A00F32FB2 /* ShowExperimentViewModel.swift in Sources */,
 				562C115528A4E30300863C45 /* UITextView.swift in Sources */,
-				565F8E4128A6ACC800259852 /* UILabel.swift in Sources */,
 				56E85DD328C486B800F32FB2 /* CalendarInformation.swift in Sources */,
 				56EC3B5628BB72CB00C9F4C4 /* LabBookView.swift in Sources */,
 				5672BA1428C1151300BB812A /* KeyChainStorage.swift in Sources */,
@@ -768,8 +758,6 @@
 				565F8E4B28A6CB3400259852 /* CalendarView.swift in Sources */,
 				562C110D28A4D26600863C45 /* SceneDelegate.swift in Sources */,
 				56EC3B5228BB72AA00C9F4C4 /* LabBookViewController.swift in Sources */,
-				56655A6B28CA44B6002F5861 /* PDFsView.swift in Sources */,
-				562C114F28A4E2A600863C45 /* String.swift in Sources */,
 				562C115128A4E2C600863C45 /* UIView.swift in Sources */,
 				5672BA1228C114F400BB812A /* KeyChainManager.swift in Sources */,
 				565F8E1D28A53AB900259852 /* LoginViewModel.swift in Sources */,
@@ -788,7 +776,7 @@
 				562C114B28A4E25D00863C45 /* UIFont.swift in Sources */,
 				562C116728A4FDB500863C45 /* RegisterViewModel.swift in Sources */,
 				56E85DD528C4E60D00F32FB2 /* ExperimentsModel.swift in Sources */,
-				562C114D28A4E28900863C45 /* Data.swift in Sources */,
+				562C114D28A4E28900863C45 /* Date.swift in Sources */,
 				56EC3B7028BB874400C9F4C4 /* SeactionHeader.swift in Sources */,
 				562C113C28A4E0EE00863C45 /* ViewBuilder.swift in Sources */,
 				565F8E2828A53D6F00259852 /* ReservedExperimentViewModel.swift in Sources */,

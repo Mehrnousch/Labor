@@ -46,10 +46,7 @@ class LoginView: UIView {
         .setBorderDeselected()
         .setSecureTextEntry()
         .build()
-//
-//    let hiddenButton = ButtonBuilder()
-//        .setImage("eye")
-//        .build()
+
     
     let loginButton = ButtonBuilder()
         .setTitle("Anmelden", color: .white)

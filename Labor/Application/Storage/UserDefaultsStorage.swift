@@ -10,16 +10,10 @@ import UIKit
 class UserDefaultsStorage {
     
     static let shared: UserDefaultsStorage = UserDefaultsStorage()
-    private let token = "token"
     private let calendarStartExperiment = "startTime"
     private let calendarEndExperiment = "endTime"
     private let description = "description"
 
-    var accountToken: String? {
-        get { return getString(token) }
-        set { setString(token, value: newValue) }
-    }
-    
     var startExperiment: Double {
         get { return double(for: calendarStartExperiment) }
         set { set(newValue, for: calendarStartExperiment) }
@@ -45,15 +39,6 @@ class UserDefaultsStorage {
         } else  {
             UserDefaults.standard.removeObject(forKey: name)
         }
-        UserDefaults.standard.synchronize()
-    }
-    
-    private func bool(for key: String) -> Bool? {
-        return UserDefaults.standard.value(forKey: key) as? Bool
-    }
-    
-    private func set(_ value: Bool, for key: String) {
-        UserDefaults.standard.set(value, forKey: key)
         UserDefaults.standard.synchronize()
     }
     

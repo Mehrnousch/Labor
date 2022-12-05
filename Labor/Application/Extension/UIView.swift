@@ -27,17 +27,6 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
     
-    func pin(to superView: UIView, onKeyboard: Bool = false) {
-        topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
-        if (onKeyboard) {
-            bottomAnchor.constraint(equalTo: superView.keyboardLayoutGuide.topAnchor).isActive = true
-        } else {
-            bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
-        }
-    }
-    
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 leading: NSLayoutXAxisAnchor? = nil,
                 bottom: NSLayoutYAxisAnchor? = nil,
