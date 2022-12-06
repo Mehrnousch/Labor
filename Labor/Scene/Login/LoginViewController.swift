@@ -11,8 +11,7 @@ import Toast
 
 class LoginViewController: UIViewController {
     
-    var chosenEyeSlash = false
-    var chosenEye = false
+   
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var coordinator: LoginCoordinator?

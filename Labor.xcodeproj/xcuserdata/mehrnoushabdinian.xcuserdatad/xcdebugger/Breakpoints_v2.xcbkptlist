@@ -34,6 +34,38 @@
             endingLineNumber = "10"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "14E38B5C-7344-4111-B1B6-8E7030489A8D - f7d1b02f0a52713d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Labor.RegisterCoordinator.deinit"
+                  moduleName = "Labor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mehrnoushabdinian/Desktop/NewLabor/Labor/Labor/Scene/Register/RegisterCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "14E38B5C-7344-4111-B1B6-8E7030489A8D - db852d2c1c61c231"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Labor.RegisterCoordinator.__deallocating_deinit"
+                  moduleName = "Labor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mehrnoushabdinian/Desktop/NewLabor/Labor/Labor/Scene/Register/RegisterCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
