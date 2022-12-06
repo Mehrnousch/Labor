@@ -48,7 +48,7 @@ class LabBookTableViewCell: UITableViewCell {
         if dascription != "" {
             experimentDescription.text = experiment.dascription
         } else {
-            experimentDescription.text = "There is no description of the experiment."
+            experimentDescription.text = "Für das Experiment wurde keine Beschreibung eingegeben."
         }
     }
     

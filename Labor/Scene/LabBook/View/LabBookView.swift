@@ -10,7 +10,7 @@ import UIKit
 class LabBookView: UIView {
     
     let emptyList = LabelBuilder()
-        .setText("Es gibt keine Beschreibung für diesen Experiment, bitte drücken Sie die positive Button oben, um Ihre eigene Beschreibung hinzuzufügen.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
+        .setText("Es gibt keine Beschreibung für dieses Experiment, bitte drücken Sie den + Button oben recht, um Ihre eigene Beschreibung hinzuzufügen.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
         .build()
     
     var selectedCell: (Int)-> Void = {_ in}

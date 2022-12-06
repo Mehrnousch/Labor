@@ -10,7 +10,7 @@ import UIKit
 class ShowExperimentView: UIView {
     
     let labNameTitle = LabelBuilder()
-        .setText("Lab name :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText("Laborname :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let labName = LabelBuilder()
@@ -18,7 +18,7 @@ class ShowExperimentView: UIView {
         .build()
     
     let experimentNameTitle = LabelBuilder()
-        .setText("Experiment name :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText("Beschreibungstitel :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let experimentName = LabelBuilder()
@@ -26,7 +26,7 @@ class ShowExperimentView: UIView {
         .build()
     
     let experimentDescriptionViewLabel = LabelBuilder()
-        .setText("Experiment description :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText("Beschreibung des Experiments :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let experimentDescriptionView = ViewBuilder()
@@ -68,7 +68,7 @@ class ShowExperimentView: UIView {
         if result.description != "" {
             experimentDescription.text = result.description
         } else {
-            experimentDescription.text = "No description has been entered for the experiment."
+            experimentDescription.text = "Für das Experiment wurde keine Beschreibung eingegeben."
             experimentDescription.textColor = UIColor.lightGray
         }
     }

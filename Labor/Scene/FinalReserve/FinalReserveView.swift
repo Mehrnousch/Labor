@@ -28,7 +28,7 @@ class FinalReserveView: UIView {
         .build()
     
     let experimentTitleTextField = TextFieldBuilder()
-        .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Title", textAlignment: .left, backGroundColor: .white)
+        .mainSetting(keyboardType: .default, radius: AppTheme.textField.cornerRadius, placeholder: "Titel", textAlignment: .left, backGroundColor: .white)
         .setBorderDeselected()
         .build()
     
@@ -60,9 +60,9 @@ class FinalReserveView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         
-        securityPdfButton.setLabel(label: "Security")
-        protocolPdfButton.setLabel(label: "Protocol")
-        cleanPdfButton.setLabel(label: "Clean")
+        securityPdfButton.setLabel(label: "Sicherheit")
+        protocolPdfButton.setLabel(label: "Protokoll")
+        cleanPdfButton.setLabel(label: "Benutzerhinweis")
         
         agreeRulesButton.setLabel(label: "Ich habe die Protokolle und Sicherheitsinformationen gelesen und stimme ihnen zu.*")
         existenceManagerButton.setLabel(label: "Ich brauche die Unterstützung des Laborverantwortlichen.")

@@ -10,7 +10,7 @@ import UIKit
 class AddDescriptionView: UIView {
     
     let firstDescriptionLabel = LabelBuilder()
-        .setText("Title:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
+        .setText("Titel:*", color: .black, fontSize: AppTheme.label.minimumSize, fontWeight: .regular)
         .build()
     
     let secondDescriptionLabel = DotLabelView()

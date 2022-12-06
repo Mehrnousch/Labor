@@ -33,7 +33,7 @@ class FinalReserveViewController: UIViewController {
     }
     
     func navigtionBarConfigure() {
-        title = "Final reserve"
+        title = ""
     }
     
     func actionButtons() {

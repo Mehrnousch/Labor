@@ -11,7 +11,7 @@ import UIKit
 class ReservedExperimentView: UIView {
     
     let emptyList = LabelBuilder()
-        .setText("No laboratory has been reserved please press the plus button above to reserve the desired laboratory.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
+        .setText("Es wurde kein Labor reserviert, bitte klicken Sie auf den + Button oben recht , um das gewünschte Labor zu reservieren.", color: .darkGray, fontSize: AppTheme.label.maximumSize, fontWeight: .regular)
         .build()
     
     var selectedCell: (Int)-> Void = {_ in}
