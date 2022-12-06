@@ -15,7 +15,7 @@ class LabBookTableViewCell: UITableViewCell {
         .build()
     
     let experimentNameTitle = LabelBuilder()
-        .setText("Experiment name :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText(" Beschreibungstitel :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let experimentName = LabelBuilder()
@@ -23,7 +23,7 @@ class LabBookTableViewCell: UITableViewCell {
         .build()
     
     let experimentDescriptionTitle = LabelBuilder()
-        .setText("Experiment description :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
+        .setText("Beschreibung des Experiments :", color: .black, fontSize: AppTheme.label.normalSize, fontWeight: .regular)
         .build()
     
     let experimentDescription = LabelBuilder()

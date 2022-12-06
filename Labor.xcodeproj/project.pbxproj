@@ -65,11 +65,11 @@
 		565F8E4B28A6CB3400259852 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4A28A6CB3400259852 /* CalendarView.swift */; };
 		565F8E4F28A6CB6400259852 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */; };
 		56655A6928CA448F002F5861 /* PDFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A6828CA448F002F5861 /* PDFButton.swift */; };
-		56655A6D28CA4577002F5861 /* Security.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6C28CA4577002F5861 /* Security.pdf */; };
-		56655A7028CA4599002F5861 /* Protocol.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6E28CA4599002F5861 /* Protocol.pdf */; };
-		56655A7128CA4599002F5861 /* Clean.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6F28CA4599002F5861 /* Clean.pdf */; };
+		56655A7028CA4599002F5861 /* Protokoll.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6E28CA4599002F5861 /* Protokoll.pdf */; };
+		56655A7128CA4599002F5861 /* Benutzerhinweis.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56655A6F28CA4599002F5861 /* Benutzerhinweis.pdf */; };
 		56655A7428CA47B8002F5861 /* PDFCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7328CA47B8002F5861 /* PDFCoordinator.swift */; };
 		56655A7628CA47F6002F5861 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56655A7528CA47F6002F5861 /* PDFViewController.swift */; };
+		566B912E293FBD2D001E7F22 /* Sicherheit.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 566B912D293FBD2D001E7F22 /* Sicherheit.pdf */; };
 		566F06BC28CDCE6F000174EE /* DetailExperimentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */; };
 		566F06BE28CF9BCD000174EE /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F06BD28CF9BCD000174EE /* PhotosModel.swift */; };
 		5672BA0C28BEA7E600BB812A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 5672BA0B28BEA7E600BB812A /* Toast */; };
@@ -174,11 +174,11 @@
 		565F8E4A28A6CB3400259852 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		565F8E4E28A6CB6400259852 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		56655A6828CA448F002F5861 /* PDFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFButton.swift; sourceTree = "<group>"; };
-		56655A6C28CA4577002F5861 /* Security.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Security.pdf; sourceTree = "<group>"; };
-		56655A6E28CA4599002F5861 /* Protocol.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Protocol.pdf; sourceTree = "<group>"; };
-		56655A6F28CA4599002F5861 /* Clean.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Clean.pdf; sourceTree = "<group>"; };
+		56655A6E28CA4599002F5861 /* Protokoll.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Protokoll.pdf; sourceTree = "<group>"; };
+		56655A6F28CA4599002F5861 /* Benutzerhinweis.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Benutzerhinweis.pdf; sourceTree = "<group>"; };
 		56655A7328CA47B8002F5861 /* PDFCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCoordinator.swift; sourceTree = "<group>"; };
 		56655A7528CA47F6002F5861 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		566B912D293FBD2D001E7F22 /* Sicherheit.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sicherheit.pdf; sourceTree = "<group>"; };
 		566F06BB28CDCE6F000174EE /* DetailExperimentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailExperimentModel.swift; sourceTree = "<group>"; };
 		566F06BD28CF9BCD000174EE /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		5672BA1128C114F400BB812A /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
@@ -384,9 +384,9 @@
 				562C112328A4D4ED00863C45 /* Font */,
 				562C115F28A4E40A00863C45 /* AppTheme.swift */,
 				562C116128A4E44000863C45 /* Utility.swift */,
-				56655A6C28CA4577002F5861 /* Security.pdf */,
-				56655A6F28CA4599002F5861 /* Clean.pdf */,
-				56655A6E28CA4599002F5861 /* Protocol.pdf */,
+				56655A6F28CA4599002F5861 /* Benutzerhinweis.pdf */,
+				566B912D293FBD2D001E7F22 /* Sicherheit.pdf */,
+				56655A6E28CA4599002F5861 /* Protokoll.pdf */,
 				56EC3B7128BB8A9900C9F4C4 /* Image.xcassets */,
 				562C111628A4D26700863C45 /* Assets.xcassets */,
 				562C111828A4D26700863C45 /* LaunchScreen.storyboard */,
@@ -682,11 +682,11 @@
 			files = (
 				562C112828A4D53E00863C45 /* Roboto-Medium.ttf in Resources */,
 				562C112B28A4D53E00863C45 /* Roboto-Regular.ttf in Resources */,
-				56655A7128CA4599002F5861 /* Clean.pdf in Resources */,
+				566B912E293FBD2D001E7F22 /* Sicherheit.pdf in Resources */,
+				56655A7128CA4599002F5861 /* Benutzerhinweis.pdf in Resources */,
 				562C111A28A4D26700863C45 /* LaunchScreen.storyboard in Resources */,
 				562C112A28A4D53E00863C45 /* Roboto-Bold.ttf in Resources */,
-				56655A6D28CA4577002F5861 /* Security.pdf in Resources */,
-				56655A7028CA4599002F5861 /* Protocol.pdf in Resources */,
+				56655A7028CA4599002F5861 /* Protokoll.pdf in Resources */,
 				56EC3B7228BB8A9900C9F4C4 /* Image.xcassets in Resources */,
 				562C112928A4D53E00863C45 /* Roboto-Light.ttf in Resources */,
 				562C111728A4D26700863C45 /* Assets.xcassets in Resources */,

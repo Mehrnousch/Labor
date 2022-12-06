@@ -16,9 +16,9 @@ public enum AppTheme {
     }
     
     enum pdfName {
-        static let protocolPdf: String = "Protocol"
-        static let securityPdf: String = "Security"
-        static let cleanPdf: String = "Clean"
+        static let protocolPdf: String = "Protokoll"
+        static let securityPdf: String = "Sicherheit"
+        static let cleanPdf: String = "Benutzerhinweis"
     }
     
     enum label {
