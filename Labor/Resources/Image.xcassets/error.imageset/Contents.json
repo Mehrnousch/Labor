@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "warning_FILL0_wght400_GRAD0_opsz48@1x.png",
+      "filename" : "warning_FILL0_wght700_GRAD200_opsz48 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "warning_FILL0_wght400_GRAD0_opsz48@2x.png",
+      "filename" : "warning_FILL0_wght700_GRAD200_opsz48 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "warning_FILL0_wght400_GRAD0_opsz48@3x.png",
+      "filename" : "warning_FILL0_wght700_GRAD200_opsz48 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
